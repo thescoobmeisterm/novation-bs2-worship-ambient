@@ -104,8 +104,15 @@
       transform: translateY(2px);
       box-shadow: 0 0 12px #00f0ff;
     }
+    .seq-step, .seq-preset-btn, #toggle-seq-btn, #clear-seq-btn, #octave-down, #octave-up, #panic-btn {
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      -webkit-user-select: none;
+    }
     .seq-step {
       transition: all 0.1s ease;
+      cursor: pointer;
     }
     .seq-step.active {
       background-color: #00f0ff !important;
@@ -627,7 +634,7 @@
           </div>
 
           <!-- Interactive Step Matrix -->
-          <div class="overflow-x-auto pb-2">
+          <div class="overflow-x-auto pb-2 overscroll-contain" style="-webkit-overflow-scrolling: touch;">
             <div id="piano-roll-grid" class="min-w-[640px] space-y-1 select-none">
               <!-- Note Rows rendered dynamically by JS -->
             </div>
@@ -5523,38 +5530,125 @@ const worshipSongsData = [
     let seqIsPlaying = false;
     let seqTimer = null;
     let currentSeqStep = 0;
+    let prevSeqStep = -1;
+    let seqButtonsMap = [];
+
+    function updateStepButtonUI(btn, isActive, isBeatStart) {
+      if (!btn) return;
+      if (isActive) {
+        btn.className = 'seq-step flex-1 h-7 sm:h-6 rounded text-[10px] font-mono border transition-all active bg-brand-cyan text-black border-brand-cyan shadow-sm';
+      } else {
+        btn.className = 'seq-step flex-1 h-7 sm:h-6 rounded text-[10px] font-mono border transition-all ' +
+                        (isBeatStart ? 'bg-[#1b2336] border-slate-600 text-slate-400' : 'bg-[#111724] border-slate-800 text-slate-500');
+      }
+    }
+
+    function updateAllStepButtons() {
+      if (!seqButtonsMap.length) return;
+      SEQ_ROWS.forEach((row, rIdx) => {
+        for (let step = 0; step < 16; step++) {
+          const btn = seqButtonsMap[rIdx] ? seqButtonsMap[rIdx][step] : null;
+          if (btn) {
+            const isBeatStart = (step % 4 === 0);
+            updateStepButtonUI(btn, seqGrid[rIdx][step], isBeatStart);
+          }
+        }
+      });
+    }
+
+    let lastStepToggleTime = 0;
+    function toggleStep(rIdx, step, btn, isBeatStart, row) {
+      const now = Date.now();
+      if (now - lastStepToggleTime < 80) return;
+      lastStepToggleTime = now;
+
+      // CRITICAL FOR IOS: Synchronously unlock & resume audio in direct gesture
+      const ctx = getAudioContext();
+      if (ctx) {
+        unlockAudioHardware(ctx);
+        if (ctx.state === 'suspended') {
+          ctx.resume();
+        }
+      }
+
+      seqGrid[rIdx][step] = !seqGrid[rIdx][step];
+      updateStepButtonUI(btn, seqGrid[rIdx][step], isBeatStart);
+
+      if (seqGrid[rIdx][step]) {
+        noteOn(row.note + (octaveOffset * 12), 100);
+        setTimeout(() => noteOff(row.note + (octaveOffset * 12)), 180);
+      }
+    }
 
     function buildPianoRoll() {
       const grid = document.getElementById('piano-roll-grid');
+      if (!grid) return;
+
+      // If already initialized, update button visuals without destroying the DOM
+      if (seqButtonsMap.length === SEQ_ROWS.length && grid.children.length === SEQ_ROWS.length) {
+        updateAllStepButtons();
+        return;
+      }
+
       grid.innerHTML = '';
+      seqButtonsMap = [];
 
       SEQ_ROWS.forEach((row, rIdx) => {
         const rowEl = document.createElement('div');
         rowEl.className = 'flex items-center gap-1';
 
         const label = document.createElement('div');
-        label.className = 'w-10 text-[10px] font-mono font-bold text-slate-400 text-right pr-2 shrink-0';
+        label.className = 'w-10 text-[10px] font-mono font-bold text-slate-400 text-right pr-2 shrink-0 select-none';
         label.textContent = row.label;
         rowEl.appendChild(label);
 
+        seqButtonsMap[rIdx] = [];
+
         for (let step = 0; step < 16; step++) {
           const btn = document.createElement('button');
+          btn.type = 'button';
           const isBeatStart = (step % 4 === 0);
-          btn.className = 'seq-step flex-1 h-6 rounded text-[10px] font-mono border transition-all ' +
-                          (seqGrid[rIdx][step] ? 'active bg-brand-cyan text-black border-brand-cyan' :
-                          (isBeatStart ? 'bg-[#1b2336] border-slate-600 text-slate-400' : 'bg-[#111724] border-slate-800 text-slate-500'));
+          updateStepButtonUI(btn, seqGrid[rIdx][step], isBeatStart);
           btn.dataset.row = rIdx;
           btn.dataset.step = step;
 
-          btn.addEventListener('click', () => {
-            seqGrid[rIdx][step] = !seqGrid[rIdx][step];
-            if (seqGrid[rIdx][step]) {
-              noteOn(row.note + (octaveOffset * 12), 100);
-              setTimeout(() => noteOff(row.note + (octaveOffset * 12)), 180);
+          // Touch gestures handling with pan detection for iOS Safari & Chrome
+          let touchStartX = 0;
+          let touchStartY = 0;
+          let touchMoved = false;
+
+          btn.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+              touchStartX = e.touches[0].clientX;
+              touchStartY = e.touches[0].clientY;
+              touchMoved = false;
             }
-            buildPianoRoll();
+            const ctx = getAudioContext();
+            if (ctx && ctx.state === 'suspended') ctx.resume();
+          }, { passive: true });
+
+          btn.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 1) {
+              const dx = Math.abs(e.touches[0].clientX - touchStartX);
+              const dy = Math.abs(e.touches[0].clientY - touchStartY);
+              if (dx > 8 || dy > 8) {
+                touchMoved = true;
+              }
+            }
+          }, { passive: true });
+
+          btn.addEventListener('touchend', (e) => {
+            if (!touchMoved) {
+              e.preventDefault();
+              toggleStep(rIdx, step, btn, isBeatStart, row);
+            }
           });
 
+          btn.addEventListener('click', () => {
+            toggleStep(rIdx, step, btn, isBeatStart, row);
+          });
+
+          seqButtonsMap[rIdx][step] = btn;
           rowEl.appendChild(btn);
         }
 
@@ -5569,14 +5663,18 @@ const worshipSongsData = [
       const stepDuration = (60 / bpm) / 4;
       const gate = parseFloat(document.getElementById('seq-gate').value) || 0.7;
 
-      document.querySelectorAll('.seq-step').forEach(el => el.classList.remove('head'));
-      document.querySelectorAll('[data-step="' + currentSeqStep + '"]').forEach(el => el.classList.add('head'));
+      // Playhead highlight update
+      if (prevSeqStep >= 0 && prevSeqStep !== currentSeqStep) {
+        document.querySelectorAll(`.seq-step[data-step="${prevSeqStep}"]`).forEach(el => el.classList.remove('head'));
+      }
+      document.querySelectorAll(`.seq-step[data-step="${currentSeqStep}"]`).forEach(el => el.classList.add('head'));
+      prevSeqStep = currentSeqStep;
 
       SEQ_ROWS.forEach((row, rIdx) => {
         if (seqGrid[rIdx][currentSeqStep]) {
           const note = row.note + (octaveOffset * 12);
           noteOn(note, 105);
-          setTimeout(() => noteOff(note), stepDuration * gate * 1000);
+          setTimeout(() => noteOff(note), Math.max(20, stepDuration * gate * 1000));
         }
       });
 
@@ -5585,24 +5683,40 @@ const worshipSongsData = [
     }
 
     function toggleSequencer() {
+      // CRITICAL FOR IOS: Synchronously unlock & resume audio in direct user gesture
+      const ctx = getAudioContext();
+      if (ctx) {
+        unlockAudioHardware(ctx);
+        if (ctx.state === 'suspended') {
+          ctx.resume();
+        }
+      }
+
       seqIsPlaying = !seqIsPlaying;
       const btnText = document.getElementById('seq-play-text');
       const btnIcon = document.getElementById('seq-play-icon');
 
       if (seqIsPlaying) {
-        btnText.textContent = 'Stop Pattern';
-        btnIcon.textContent = '⏹';
+        if (btnText) btnText.textContent = 'Stop Pattern';
+        if (btnIcon) btnIcon.textContent = '⏹';
         currentSeqStep = 0;
+        prevSeqStep = -1;
         runSequencerStep();
       } else {
-        btnText.textContent = 'Play Pattern';
-        btnIcon.textContent = '▶';
-        if (seqTimer) clearTimeout(seqTimer);
-        document.querySelectorAll('.seq-step').forEach(el => el.classList.remove('head'));
+        if (btnText) btnText.textContent = 'Play Pattern';
+        if (btnIcon) btnIcon.textContent = '▶';
+        if (seqTimer) {
+          clearTimeout(seqTimer);
+          seqTimer = null;
+        }
+        document.querySelectorAll('.seq-step.head').forEach(el => el.classList.remove('head'));
       }
     }
 
     function loadSeqPreset(presetName) {
+      const ctx = getAudioContext();
+      if (ctx && ctx.state === 'suspended') ctx.resume();
+
       seqGrid = Array(SEQ_ROWS.length).fill(null).map(() => Array(16).fill(false));
 
       if (presetName === 'refinery') {
@@ -6522,32 +6636,109 @@ function initSongRecommender() {
         initWebMIDI();
       });
 
-      document.getElementById('panic-btn').addEventListener('click', panicAllNotes);
+      const panicBtn = document.getElementById('panic-btn');
+      if (panicBtn) {
+        let lastPanic = 0;
+        const handlePanic = (e) => {
+          if (e.type === 'touchstart') e.preventDefault();
+          const now = Date.now();
+          if (now - lastPanic < 200) return;
+          lastPanic = now;
+          panicAllNotes();
+        };
+        panicBtn.addEventListener('touchstart', handlePanic, { passive: false });
+        panicBtn.addEventListener('click', handlePanic);
+      }
 
-      document.getElementById('toggle-seq-btn').addEventListener('click', toggleSequencer);
-      document.getElementById('clear-seq-btn').addEventListener('click', () => {
-        seqGrid = Array(SEQ_ROWS.length).fill(null).map(() => Array(16).fill(false));
-        buildPianoRoll();
-      });
+      const toggleSeqBtn = document.getElementById('toggle-seq-btn');
+      if (toggleSeqBtn) {
+        let lastToggleTime = 0;
+        const handleSeqToggle = (e) => {
+          if (e.type === 'touchstart') e.preventDefault();
+          const now = Date.now();
+          if (now - lastToggleTime < 250) return;
+          lastToggleTime = now;
+          toggleSequencer();
+        };
+        toggleSeqBtn.addEventListener('touchstart', handleSeqToggle, { passive: false });
+        toggleSeqBtn.addEventListener('click', handleSeqToggle);
+      }
+
+      const clearSeqBtn = document.getElementById('clear-seq-btn');
+      if (clearSeqBtn) {
+        let lastClearTime = 0;
+        const handleClearSeq = (e) => {
+          if (e.type === 'touchstart') e.preventDefault();
+          const now = Date.now();
+          if (now - lastClearTime < 200) return;
+          lastClearTime = now;
+          const ctx = getAudioContext();
+          if (ctx) {
+            unlockAudioHardware(ctx);
+            if (ctx.state === 'suspended') ctx.resume();
+          }
+          seqGrid = Array(SEQ_ROWS.length).fill(null).map(() => Array(16).fill(false));
+          buildPianoRoll();
+        };
+        clearSeqBtn.addEventListener('touchstart', handleClearSeq, { passive: false });
+        clearSeqBtn.addEventListener('click', handleClearSeq);
+      }
+
       document.querySelectorAll('.seq-preset-btn').forEach(btn => {
-        btn.addEventListener('click', () => loadSeqPreset(btn.dataset.preset));
+        let lastPresetTime = 0;
+        const handlePresetClick = (e) => {
+          if (e.type === 'touchstart') e.preventDefault();
+          const now = Date.now();
+          if (now - lastPresetTime < 200) return;
+          lastPresetTime = now;
+          const ctx = getAudioContext();
+          if (ctx) {
+            unlockAudioHardware(ctx);
+            if (ctx.state === 'suspended') ctx.resume();
+          }
+          loadSeqPreset(btn.dataset.preset);
+        };
+        btn.addEventListener('touchstart', handlePresetClick, { passive: false });
+        btn.addEventListener('click', handlePresetClick);
       });
+
       document.getElementById('seq-bpm').addEventListener('input', (e) => {
         document.getElementById('bpm-val').textContent = e.target.value + ' BPM';
       });
 
-      document.getElementById('octave-down').addEventListener('click', () => {
-        if (octaveOffset > -2) {
-          octaveOffset--;
-          document.getElementById('octave-display').textContent = 'Oct: ' + octaveOffset;
-        }
-      });
-      document.getElementById('octave-up').addEventListener('click', () => {
-        if (octaveOffset < 2) {
-          octaveOffset++;
-          document.getElementById('octave-display').textContent = 'Oct: ' + octaveOffset;
-        }
-      });
+      const octDownBtn = document.getElementById('octave-down');
+      if (octDownBtn) {
+        let lastOctDown = 0;
+        const handleOctDown = (e) => {
+          if (e.type === 'touchstart') e.preventDefault();
+          const now = Date.now();
+          if (now - lastOctDown < 150) return;
+          lastOctDown = now;
+          if (octaveOffset > -2) {
+            octaveOffset--;
+            document.getElementById('octave-display').textContent = 'Oct: ' + octaveOffset;
+          }
+        };
+        octDownBtn.addEventListener('touchstart', handleOctDown, { passive: false });
+        octDownBtn.addEventListener('click', handleOctDown);
+      }
+
+      const octUpBtn = document.getElementById('octave-up');
+      if (octUpBtn) {
+        let lastOctUp = 0;
+        const handleOctUp = (e) => {
+          if (e.type === 'touchstart') e.preventDefault();
+          const now = Date.now();
+          if (now - lastOctUp < 150) return;
+          lastOctUp = now;
+          if (octaveOffset < 2) {
+            octaveOffset++;
+            document.getElementById('octave-display').textContent = 'Oct: ' + octaveOffset;
+          }
+        };
+        octUpBtn.addEventListener('touchstart', handleOctUp, { passive: false });
+        octUpBtn.addEventListener('click', handleOctUp);
+      }
 
       // Front-Panel Real-Time Control Listeners
       const osc1Wave = document.getElementById('osc1-wave');
