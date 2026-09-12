@@ -5408,48 +5408,48 @@
           <div class="space-y-4">
             <div class="flex items-center justify-between gap-2">
               <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-[#0d121d] text-brand-cyan border border-brand-border">
-                Slot \${p.slot}
+                Slot ${p.slot}
               </span>
               <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-800 text-slate-300 border border-slate-700">
-                \${p.categoryLabel}
+                ${p.categoryLabel}
               </span>
             </div>
 
             <div>
               <h3 class="text-xl font-bold text-white tracking-tight flex items-center gap-2">
-                <span>\${p.name}</span>
-                \${p.id === "02" || p.id === "04" ? '<span class="text-xs px-2 py-0.5 rounded bg-cyan-500/20 text-brand-cyan font-mono border border-cyan-500/40">SERVICE CORE</span>' : ''}
+                <span>${p.name}</span>
+                ${p.id === "02" || p.id === "04" ? '<span class="text-xs px-2 py-0.5 rounded bg-cyan-500/20 text-brand-cyan font-mono border border-cyan-500/40">SERVICE CORE</span>' : ''}
               </h3>
-              <p class="text-xs font-mono text-slate-400 mt-0.5">\${p.file}</p>
+              <p class="text-xs font-mono text-slate-400 mt-0.5">${p.file}</p>
             </div>
 
             <div class="text-xs text-slate-300 leading-relaxed">
-              \${p.soundDescription}
+              ${p.soundDescription}
             </div>
 
             <div class="p-3 rounded-xl bg-black/40 border border-[#1e273b] space-y-1 text-xs">
               <div class="font-bold text-brand-cyan text-[11px] uppercase tracking-wider">Suggested Songs &amp; Service Moments:</div>
-              <p class="text-slate-300 italic">\${p.songs}</p>
+              <p class="text-slate-300 italic">${p.songs}</p>
             </div>
 
             <div class="text-[11px] text-slate-400 space-y-1 font-mono">
-              <div><span class="text-slate-500">Inspiration:</span> \${p.inspiration}</div>
-              <div><span class="text-slate-500">Controls:</span> \${p.controls}</div>
+              <div><span class="text-slate-500">Inspiration:</span> ${p.inspiration}</div>
+              <div><span class="text-slate-500">Controls:</span> ${p.controls}</div>
             </div>
           </div>
 
           <div class="pt-5 mt-5 border-t border-brand-border space-y-2">
             <div class="grid grid-cols-2 gap-2">
-              <button class="play-wav-btn w-full px-3 py-2 rounded-xl text-xs font-semibold bg-brand-card hover:bg-slate-800 text-brand-cyan border border-brand-border transition-colors flex items-center justify-center gap-1.5" data-patch-id="\${p.id}" data-sample-file="\${p.sample}">
+              <button class="play-wav-btn w-full px-3 py-2 rounded-xl text-xs font-semibold bg-brand-card hover:bg-slate-800 text-brand-cyan border border-brand-border transition-colors flex items-center justify-center gap-1.5" data-patch-id="${p.id}" data-sample-file="${p.sample}">
                 ▶ Play Studio WAV
               </button>
-              <button class="load-synth-btn w-full px-3 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-brand-cyan to-brand-teal text-black hover:bg-white transition-all flex items-center justify-center gap-1.5" data-patch-idx="\${patchData.findIndex(x => x.id === p.id)}">
+              <button class="load-synth-btn w-full px-3 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-brand-cyan to-brand-teal text-black hover:bg-white transition-all flex items-center justify-center gap-1.5" data-patch-idx="${patchData.findIndex(x => x.id === p.id)}">
                 🎹 Load into Synth
               </button>
             </div>
-            <a href="patches/\${p.file}" download class="w-full px-3 py-1.5 rounded-xl text-xs font-mono text-slate-400 hover:text-white bg-black/50 hover:bg-black border border-brand-border flex items-center justify-center gap-1 transition-colors">
+            <a href="patches/${p.file}" download class="w-full px-3 py-1.5 rounded-xl text-xs font-mono text-slate-400 hover:text-white bg-black/50 hover:bg-black border border-brand-border flex items-center justify-center gap-1 transition-colors">
               <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-              Download \${p.file}
+              Download ${p.file}
             </a>
           </div>
         `;
@@ -5580,12 +5580,12 @@
         item.className = 'px-4 py-2.5 hover:bg-[#1b2336] cursor-pointer flex items-center justify-between text-xs transition-colors';
         item.innerHTML = `
           <div>
-            <span class="font-bold text-white text-sm">\${song.title}</span>
-            <span class="text-slate-400 ml-2 font-mono">• \${song.artist}</span>
+            <span class="font-bold text-white text-sm">${song.title}</span>
+            <span class="text-slate-400 ml-2 font-mono">• ${song.artist}</span>
           </div>
           <div class="flex items-center gap-2 font-mono text-[11px]">
-            <span class="px-2 py-0.5 rounded bg-black/50 text-brand-cyan">Key \${song.key}</span>
-            <span class="px-2 py-0.5 rounded bg-black/50 text-slate-300">\${song.bpm} BPM</span>
+            <span class="px-2 py-0.5 rounded bg-black/50 text-brand-cyan">Key ${song.key}</span>
+            <span class="px-2 py-0.5 rounded bg-black/50 text-slate-300">${song.bpm} BPM</span>
           </div>
         `;
         item.addEventListener('click', () => {
@@ -5697,22 +5697,22 @@
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-brand-border">
             <div>
               <div class="flex items-center gap-2 flex-wrap">
-                <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">\${song.title}</h3>
-                \${isDynamic ? '<span class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono">Dynamic Heuristic Match</span>' : ''}
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">${song.title}</h3>
+                ${isDynamic ? '<span class="text-xs px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30 font-mono">Dynamic Heuristic Match</span>' : ''}
               </div>
-              <p class="text-sm font-semibold text-brand-cyan mt-0.5 font-mono">\${song.artist}</p>
+              <p class="text-sm font-semibold text-brand-cyan mt-0.5 font-mono">${song.artist}</p>
             </div>
 
             <!-- Badges & Add to Setlist Button -->
             <div class="flex items-center gap-2 flex-wrap">
               <span class="px-3 py-1 rounded-xl text-xs font-mono font-bold bg-black/60 text-slate-200 border border-brand-border">
-                Key: <span class="text-brand-cyan">\${song.key}</span>
+                Key: <span class="text-brand-cyan">${song.key}</span>
               </span>
               <span class="px-3 py-1 rounded-xl text-xs font-mono font-bold bg-black/60 text-slate-200 border border-brand-border">
-                BPM: <span class="text-brand-cyan">\${song.bpm}</span>
+                BPM: <span class="text-brand-cyan">${song.bpm}</span>
               </span>
               <span class="px-3 py-1 rounded-xl text-xs font-semibold bg-emerald-950/50 text-emerald-300 border border-emerald-800/50 font-mono">
-                \${song.energy}
+                ${song.energy}
               </span>
               <button id="add-to-setlist-btn" class="px-3.5 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-brand-cyan to-brand-teal text-black hover:from-white hover:to-brand-cyan transition-all flex items-center gap-1.5 shadow-md shadow-brand-cyan/20">
                 <span>＋</span> <span>Add to Setlist</span>
@@ -5730,29 +5730,29 @@
                   <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-brand-cyan/20 text-brand-cyan border border-brand-cyan/40 font-mono">
                     Primary Bedrock
                   </span>
-                  <span class="text-xs font-mono text-slate-400">Slot \${primaryPatch.slot}</span>
+                  <span class="text-xs font-mono text-slate-400">Slot ${primaryPatch.slot}</span>
                 </div>
                 <div>
                   <h4 class="text-xl font-extrabold text-white flex items-center gap-2">
-                    <span>\${primaryPatch.name}</span>
-                    \${primaryPatch.id === "02" || primaryPatch.id === "04" ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-cyan-500/20 text-brand-cyan font-mono border border-cyan-500/30">CORE</span>' : ''}
+                    <span>${primaryPatch.name}</span>
+                    ${primaryPatch.id === "02" || primaryPatch.id === "04" ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-cyan-500/20 text-brand-cyan font-mono border border-cyan-500/30">CORE</span>' : ''}
                   </h4>
-                  <p class="text-xs font-mono text-slate-400 mt-0.5">\${primaryPatch.categoryLabel}</p>
+                  <p class="text-xs font-mono text-slate-400 mt-0.5">${primaryPatch.categoryLabel}</p>
                 </div>
                 <div class="p-3 rounded-lg bg-black/40 border border-[#1d273a] text-xs text-slate-200">
                   <span class="font-bold text-brand-cyan block mb-0.5">Arrangement Role:</span>
-                  \${song.primaryRole}
+                  ${song.primaryRole}
                 </div>
                 <p class="text-xs text-slate-400 font-mono leading-relaxed">
-                  <span class="text-slate-500">Tone Profile:</span> \${primaryPatch.soundDescription}
+                  <span class="text-slate-500">Tone Profile:</span> ${primaryPatch.soundDescription}
                 </p>
               </div>
 
               <div class="pt-3 border-t border-[#1a2336] flex items-center gap-2">
-                <button class="play-wav-btn flex-1 px-3 py-2 rounded-xl text-xs font-semibold bg-brand-card hover:bg-slate-800 text-brand-cyan border border-brand-border transition-colors flex items-center justify-center gap-1.5" data-patch-id="\${primaryPatch.id}" data-sample-file="\${primaryPatch.sample}">
+                <button class="play-wav-btn flex-1 px-3 py-2 rounded-xl text-xs font-semibold bg-brand-card hover:bg-slate-800 text-brand-cyan border border-brand-border transition-colors flex items-center justify-center gap-1.5" data-patch-id="${primaryPatch.id}" data-sample-file="${primaryPatch.sample}">
                   ▶ Play Studio WAV
                 </button>
-                <button class="load-synth-btn flex-1 px-3 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-brand-cyan to-brand-teal text-black hover:bg-white transition-all flex items-center justify-center gap-1.5" data-patch-idx="\${primaryIdx}">
+                <button class="load-synth-btn flex-1 px-3 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-brand-cyan to-brand-teal text-black hover:bg-white transition-all flex items-center justify-center gap-1.5" data-patch-idx="${primaryIdx}">
                   🎹 Load Synth
                 </button>
               </div>
@@ -5765,29 +5765,29 @@
                   <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-teal-500/20 text-teal-300 border border-teal-500/40 font-mono">
                     Chorus &amp; Bridge Elevation
                   </span>
-                  <span class="text-xs font-mono text-slate-400">Slot \${secondaryPatch.slot}</span>
+                  <span class="text-xs font-mono text-slate-400">Slot ${secondaryPatch.slot}</span>
                 </div>
                 <div>
                   <h4 class="text-xl font-extrabold text-white flex items-center gap-2">
-                    <span>\${secondaryPatch.name}</span>
-                    \${secondaryPatch.id === "02" || secondaryPatch.id === "04" ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-cyan-500/20 text-brand-cyan font-mono border border-cyan-500/30">CORE</span>' : ''}
+                    <span>${secondaryPatch.name}</span>
+                    ${secondaryPatch.id === "02" || secondaryPatch.id === "04" ? '<span class="text-[10px] px-1.5 py-0.5 rounded bg-cyan-500/20 text-brand-cyan font-mono border border-cyan-500/30">CORE</span>' : ''}
                   </h4>
-                  <p class="text-xs font-mono text-slate-400 mt-0.5">\${secondaryPatch.categoryLabel}</p>
+                  <p class="text-xs font-mono text-slate-400 mt-0.5">${secondaryPatch.categoryLabel}</p>
                 </div>
                 <div class="p-3 rounded-lg bg-black/40 border border-[#1d273a] text-xs text-slate-200">
                   <span class="font-bold text-teal-300 block mb-0.5">Arrangement Role:</span>
-                  \${song.secondaryRole}
+                  ${song.secondaryRole}
                 </div>
                 <p class="text-xs text-slate-400 font-mono leading-relaxed">
-                  <span class="text-slate-500">Tone Profile:</span> \${secondaryPatch.soundDescription}
+                  <span class="text-slate-500">Tone Profile:</span> ${secondaryPatch.soundDescription}
                 </p>
               </div>
 
               <div class="pt-3 border-t border-[#1a2336] flex items-center gap-2">
-                <button class="play-wav-btn flex-1 px-3 py-2 rounded-xl text-xs font-semibold bg-brand-card hover:bg-slate-800 text-teal-300 border border-brand-border transition-colors flex items-center justify-center gap-1.5" data-patch-id="\${secondaryPatch.id}" data-sample-file="\${secondaryPatch.sample}">
+                <button class="play-wav-btn flex-1 px-3 py-2 rounded-xl text-xs font-semibold bg-brand-card hover:bg-slate-800 text-teal-300 border border-brand-border transition-colors flex items-center justify-center gap-1.5" data-patch-id="${secondaryPatch.id}" data-sample-file="${secondaryPatch.sample}">
                   ▶ Play Studio WAV
                 </button>
-                <button class="load-synth-btn flex-1 px-3 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-brand-teal to-brand-cyan text-black hover:bg-white transition-all flex items-center justify-center gap-1.5" data-patch-idx="\${secondaryIdx}">
+                <button class="load-synth-btn flex-1 px-3 py-2 rounded-xl text-xs font-semibold bg-gradient-to-r from-brand-teal to-brand-cyan text-black hover:bg-white transition-all flex items-center justify-center gap-1.5" data-patch-idx="${secondaryIdx}">
                   🎹 Load Synth
                 </button>
               </div>
@@ -5802,7 +5802,7 @@
             </div>
             <div class="space-y-0.5 text-xs">
               <span class="font-bold text-amber-300 uppercase tracking-wider font-mono">Live FOH Sound Engineer &amp; Player Tip:</span>
-              <p class="text-slate-300 leading-relaxed font-sans">\${song.fohTip}</p>
+              <p class="text-slate-300 leading-relaxed font-sans">${song.fohTip}</p>
             </div>
           </div>
 
@@ -5924,33 +5924,33 @@
         row.innerHTML = `
           <div class="flex items-center gap-3">
             <span class="w-6 h-6 rounded-full bg-[#1b2336] text-brand-cyan text-xs font-mono font-bold flex items-center justify-center shrink-0">
-              \${idx + 1}
+              ${idx + 1}
             </span>
             <div>
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="font-bold text-white text-sm">\${item.title}</span>
-                <span class="text-xs text-slate-400 font-mono">• \${item.artist}</span>
+                <span class="font-bold text-white text-sm">${item.title}</span>
+                <span class="text-xs text-slate-400 font-mono">• ${item.artist}</span>
               </div>
               <div class="flex items-center gap-2 font-mono text-[11px] text-slate-400 mt-0.5">
-                <span class="text-brand-cyan font-bold">Key \${item.key}</span>
+                <span class="text-brand-cyan font-bold">Key ${item.key}</span>
                 <span>•</span>
-                <span>\${item.bpm} BPM</span>
+                <span>${item.bpm} BPM</span>
               </div>
             </div>
           </div>
 
           <div class="flex items-center gap-2 flex-wrap">
-            \${p1 ? `
-              <button class="setlist-load-btn px-2.5 py-1 rounded-lg text-xs font-mono bg-black/60 hover:bg-black text-brand-cyan border border-brand-cyan/30 flex items-center gap-1 transition-colors" data-patch-idx="\${p1Idx}">
-                🎹 Bedrock: \${p1.name} (P\${p1.slot})
+            ${p1 ? `
+              <button class="setlist-load-btn px-2.5 py-1 rounded-lg text-xs font-mono bg-black/60 hover:bg-black text-brand-cyan border border-brand-cyan/30 flex items-center gap-1 transition-colors" data-patch-idx="${p1Idx}">
+                🎹 Bedrock: ${p1.name} (P${p1.slot})
               </button>
             ` : ''}
-            \${p2 ? `
-              <button class="setlist-load-btn px-2.5 py-1 rounded-lg text-xs font-mono bg-black/60 hover:bg-black text-teal-300 border border-teal-500/30 flex items-center gap-1 transition-colors" data-patch-idx="\${p2Idx}">
-                🎹 Build: \${p2.name} (P\${p2.slot})
+            ${p2 ? `
+              <button class="setlist-load-btn px-2.5 py-1 rounded-lg text-xs font-mono bg-black/60 hover:bg-black text-teal-300 border border-teal-500/30 flex items-center gap-1 transition-colors" data-patch-idx="${p2Idx}">
+                🎹 Build: ${p2.name} (P${p2.slot})
               </button>
             ` : ''}
-            <button class="setlist-remove-btn text-slate-500 hover:text-red-400 p-1.5 rounded text-xs transition-colors" data-title="\${item.title}" title="Remove from Setlist">
+            <button class="setlist-remove-btn text-slate-500 hover:text-red-400 p-1.5 rounded text-xs transition-colors" data-title="${item.title}" title="Remove from Setlist">
               ✕
             </button>
           </div>
@@ -5979,22 +5979,15 @@
         return;
       }
 
-      let text = '=== THE REFINERY CHURCH — SUNDAY BASS STATION II SETLIST ===
-
-';
+      let text = '=== THE REFINERY CHURCH — SUNDAY BASS STATION II SETLIST ===\n\n';
       list.forEach((item, idx) => {
         const p1 = patchData.find(p => p.id === item.primaryId);
         const p2 = patchData.find(p => p.id === item.secondaryId);
-        text += `\${idx + 1}. \${item.title} — \${item.artist}
-`;
-        text += `   Key: \${item.key} | BPM: \${item.bpm}
-`;
-        if (p1) text += `   • Bedrock: Slot \${p1.slot} - \${p1.name}
-`;
-        if (p2) text += `   • Elevation: Slot \${p2.slot} - \${p2.name}
-`;
-        text += '
-';
+        text += (idx + 1) + '. ' + item.title + ' — ' + item.artist + '\n';
+        text += '   Key: ' + item.key + ' | BPM: ' + item.bpm + '\n';
+        if (p1) text += '   • Bedrock: Slot ' + p1.slot + ' - ' + p1.name + '\n';
+        if (p2) text += '   • Elevation: Slot ' + p2.slot + ' - ' + p2.name + '\n';
+        text += '\n';
       });
       text += 'Refinery Creative • https://www.refineryohio.com/';
 
@@ -6007,9 +6000,7 @@
         }
       }).catch(err => {
         console.warn('Could not copy to clipboard:', err);
-        alert('Setlist summary:
-
-' + text);
+        alert('Setlist summary:\n\n' + text);
       });
     }
 
