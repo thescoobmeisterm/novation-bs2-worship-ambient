@@ -68,7 +68,21 @@ if (fs.existsSync(indexSrc)) {
     console.log('Copied index.html');
 }
 
-// Copy assets folder (Logo, etc.)
+// Copy print_qr_sticker.html
+const qrPrintSrc = path.join(rootDir, 'print_qr_sticker.html');
+if (fs.existsSync(qrPrintSrc)) {
+    fs.copyFileSync(qrPrintSrc, path.join(targetDir, 'print_qr_sticker.html'));
+    console.log('Copied print_qr_sticker.html');
+}
+
+// Copy PNG sticker files in patches dir if any
+const patchPngs = fs.readdirSync(sourcePatchesDir).filter(f => f.endsWith('.png'));
+for (const f of patchPngs) {
+    fs.copyFileSync(path.join(sourcePatchesDir, f), path.join(targetDir, f));
+    console.log(`Copied patch PNG: ${f}`);
+}
+
+// Copy assets folder (Logo, QR code, badges, etc.)
 const targetAssetsDir = path.join(targetDir, 'assets');
 if (!fs.existsSync(targetAssetsDir)) {
     fs.mkdirSync(targetAssetsDir, { recursive: true });
@@ -82,4 +96,4 @@ if (fs.existsSync(sourceAssetsDir)) {
     }
 }
 
-console.log('\nAll 48 patches, bank, guide, soundboard, index.html, assets, and audio samples successfully synchronized to Downloads!');
+console.log('\nAll 48 patches, bank, guide, soundboard, index.html, print_qr_sticker.html, assets, QR badges, and audio samples successfully synchronized to Downloads!');
