@@ -223,13 +223,19 @@
 
         <!-- Hero Feature Badges -->
         <div class="grid grid-cols-2 gap-3 w-full lg:w-auto font-mono text-xs">
-          <div class="p-4 rounded-xl bg-brand-card/90 border border-brand-border">
-            <div class="text-brand-cyan font-bold text-sm">SLOT 001 &amp; 003</div>
+          <div id="hero-patch-badge" class="p-4 rounded-xl bg-brand-card/90 border border-brand-border cursor-pointer hover:border-brand-cyan hover:shadow-md hover:shadow-cyan-500/10 transition-all group select-none" title="Click to browse and select all 48 patches">
+            <div class="flex items-center justify-between">
+              <div class="text-brand-cyan font-bold text-sm group-hover:text-white transition-colors">SLOT 001 &amp; 003</div>
+              <span class="text-[9px] font-mono text-teal-400/90 bg-teal-950/60 border border-teal-600/40 px-1.5 py-0.5 rounded group-hover:bg-brand-cyan group-hover:text-black transition-colors">SELECT ▾</span>
+            </div>
             <div class="text-white font-medium mt-1">Refinery Special</div>
             <div class="text-slate-400 text-[11px] mt-0.5">Dual Saw Bedrock + "Heaven" Arp</div>
           </div>
-          <div class="p-4 rounded-xl bg-brand-card/90 border border-brand-border">
-            <div class="text-emerald-400 font-bold text-sm">WEB AUDIO ENGINE</div>
+          <div id="hero-engine-badge" class="p-4 rounded-xl bg-brand-card/90 border border-brand-border cursor-pointer hover:border-emerald-400 hover:shadow-md hover:shadow-emerald-500/10 transition-all group select-none" title="Click to browse all 48 patches">
+            <div class="flex items-center justify-between">
+              <div class="text-emerald-400 font-bold text-sm group-hover:text-white transition-colors">WEB AUDIO ENGINE</div>
+              <span class="text-[9px] font-mono text-emerald-400/90 bg-emerald-950/60 border border-emerald-600/40 px-1.5 py-0.5 rounded group-hover:bg-emerald-400 group-hover:text-black transition-colors">PATCHES ▾</span>
+            </div>
             <div class="text-white font-medium mt-1">Analog Emulation</div>
             <div class="text-slate-400 text-[11px] mt-0.5">Classic OTA + Acid Diode Filter</div>
           </div>
@@ -302,18 +308,39 @@
             </div>
           </div>
 
-          <!-- LCD Display (Authentic Novation Cyan Screen) -->
-          <div class="lcd-screen px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl border border-teal-700/60 shadow-inner flex flex-col justify-center flex-1 min-w-0 w-full lg:max-w-xl xl:max-w-2xl overflow-hidden mx-auto">
-            <div class="flex items-center justify-between text-xs font-mono tracking-wider text-teal-300 gap-2 min-w-0">
-              <span id="lcd-slot" class="shrink-0 font-bold">[ P001 ]</span>
-              <span id="lcd-category" class="truncate text-right text-[11px] text-teal-300/90 shrink min-w-0">1. WORSHIP FOUNDATION</span>
+          <!-- LCD Display (Authentic Novation Cyan Screen) & Patch Stepping -->
+          <div class="flex items-center gap-2 flex-1 min-w-0 w-full lg:max-w-xl xl:max-w-2xl mx-auto">
+            <button id="patch-prev-btn" class="h-full px-2.5 sm:px-3 py-3 rounded-xl bg-black/60 hover:bg-brand-card text-brand-cyan border border-teal-800/60 font-mono text-xs font-bold transition-all shrink-0 active:scale-95 flex flex-col items-center justify-center gap-0.5 select-none cursor-pointer" title="Previous Patch (P-)">
+              <span>◀</span>
+              <span class="text-[9px] text-slate-400">DEC</span>
+            </button>
+
+            <div id="lcd-screen-badge" class="lcd-screen px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl border border-teal-700/60 shadow-inner flex flex-col justify-center flex-1 min-w-0 overflow-hidden cursor-pointer hover:border-brand-cyan hover:shadow-lg hover:shadow-cyan-950/40 transition-all group select-none" title="Click to browse and select all 48 patches">
+              <div class="flex items-center justify-between text-xs font-mono tracking-wider text-teal-300 gap-2 min-w-0">
+                <span id="lcd-slot" class="shrink-0 font-bold group-hover:text-white transition-colors">[ P001 ]</span>
+                <span class="text-[10px] text-teal-400/80 group-hover:text-brand-cyan font-mono flex items-center gap-1 shrink-0">
+                  <span>PATCH SELECTOR</span>
+                  <span class="text-[9px]">▾</span>
+                </span>
+                <span id="lcd-category" class="truncate text-right text-[11px] text-teal-300/90 shrink min-w-0">1. WORSHIP FOUNDATION</span>
+              </div>
+              <div id="lcd-name" class="text-base sm:text-lg lg:text-xl font-bold tracking-widest text-brand-cyan group-hover:text-white uppercase my-0.5 truncate transition-colors">
+                REFINERY SPEC
+              </div>
+              <div class="flex items-center justify-between gap-2 min-w-0">
+                <div id="lcd-param" class="text-[11px] font-mono text-teal-400/90 truncate block min-w-0 flex-1">
+                  Dual Saw + Sine Sub • Overdrive 127
+                </div>
+                <span class="text-[9px] font-mono text-teal-300/80 bg-teal-950/70 border border-teal-600/40 px-1.5 py-0.2 rounded shrink-0 group-hover:bg-brand-cyan group-hover:text-black transition-colors">
+                  BROWSE ALL (48)
+                </span>
+              </div>
             </div>
-            <div id="lcd-name" class="text-base sm:text-lg lg:text-xl font-bold tracking-widest text-brand-cyan uppercase my-0.5 truncate">
-              REFINERY SPEC
-            </div>
-            <div id="lcd-param" class="text-[11px] font-mono text-teal-400/90 truncate block min-w-0">
-              Dual Saw + Sine Sub • Overdrive 127
-            </div>
+
+            <button id="patch-next-btn" class="h-full px-2.5 sm:px-3 py-3 rounded-xl bg-black/60 hover:bg-brand-card text-brand-cyan border border-teal-800/60 font-mono text-xs font-bold transition-all shrink-0 active:scale-95 flex flex-col items-center justify-center gap-0.5 select-none cursor-pointer" title="Next Patch (P+)">
+              <span>▶</span>
+              <span class="text-[9px] text-slate-400">INC</span>
+            </button>
           </div>
 
           <!-- Master Volume & Output -->
@@ -1037,6 +1064,53 @@
 
     </div>
   </footer>
+
+  <!-- ================= PATCH SELECTOR MODAL ================= -->
+  <div id="patch-selector-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden flex items-center justify-center p-3 sm:p-6 transition-opacity duration-200">
+    <div class="bg-[#0f1422] border border-brand-border rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl shadow-cyan-950/50 overflow-hidden">
+      
+      <!-- Modal Header -->
+      <div class="p-4 sm:p-5 border-b border-brand-border flex items-center justify-between bg-[#13192b] shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-3 h-8 bg-brand-cyan rounded-sm shrink-0"></div>
+          <div>
+            <div class="text-xs font-mono font-bold tracking-widest text-brand-cyan uppercase">Novation Bass Station II</div>
+            <h3 class="text-lg sm:text-xl font-bold text-white tracking-tight">Hardware Patch Selector (000–047)</h3>
+          </div>
+        </div>
+        <button id="close-patch-modal-btn" class="w-8 h-8 rounded-lg bg-brand-card hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center border border-brand-border text-base transition-colors select-none cursor-pointer" title="Close (Esc)">
+          ✕
+        </button>
+      </div>
+
+      <!-- Search & Lane Filter Bar -->
+      <div class="p-3 sm:p-4 border-b border-brand-border bg-[#0b0e17] space-y-3 shrink-0">
+        <div class="relative">
+          <input id="modal-patch-search" type="text" placeholder="Search 48 patches by name, lane, or tag (e.g. swell, arp, sub, moog)..." class="w-full bg-[#13192b] text-sm text-slate-200 placeholder-slate-500 rounded-xl px-4 py-2.5 pl-10 border border-brand-border focus:outline-none focus:border-brand-cyan focus:ring-1 focus:ring-brand-cyan font-mono transition-all">
+          <svg class="w-4 h-4 text-slate-500 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        </div>
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs font-mono scrollbar-thin">
+          <button class="modal-lane-tab px-3 py-1 rounded-lg bg-brand-cyan text-black font-bold whitespace-nowrap transition-colors cursor-pointer" data-lane="all">All (48)</button>
+          <button class="modal-lane-tab px-3 py-1 rounded-lg bg-brand-card hover:bg-slate-800 text-slate-300 whitespace-nowrap transition-colors cursor-pointer" data-lane="worship">1. Worship (12)</button>
+          <button class="modal-lane-tab px-3 py-1 rounded-lg bg-brand-card hover:bg-slate-800 text-slate-300 whitespace-nowrap transition-colors cursor-pointer" data-lane="postrock">2. Post-Rock (12)</button>
+          <button class="modal-lane-tab px-3 py-1 rounded-lg bg-brand-card hover:bg-slate-800 text-slate-300 whitespace-nowrap transition-colors cursor-pointer" data-lane="ambient">3. Ambient (12)</button>
+          <button class="modal-lane-tab px-3 py-1 rounded-lg bg-brand-card hover:bg-slate-800 text-slate-300 whitespace-nowrap transition-colors cursor-pointer" data-lane="funk">4. Funk &amp; Gospel (12)</button>
+        </div>
+      </div>
+
+      <!-- Patch Grid / List (Scrollable) -->
+      <div id="modal-patch-list" class="flex-1 overflow-y-auto p-3 sm:p-5 space-y-2 overscroll-contain">
+        <!-- Rendered dynamically by renderModalPatchList() -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-3 sm:p-4 border-t border-brand-border bg-[#0b0e17] flex items-center justify-between text-xs font-mono text-slate-400 shrink-0">
+        <span id="modal-patch-count">Showing 48 of 48 patches</span>
+        <span class="hidden sm:inline text-slate-500">Click any patch to load into synth • Press ESC to close</span>
+      </div>
+
+    </div>
+  </div>
 
   <!-- ================= CLIENT JAVASCRIPT: SYNTH ENGINE, PIANO ROLL, MIDI & MANUAL ================= -->
   <script>
@@ -5370,6 +5444,11 @@ const worshipSongsData = [
       }
       updateChassisUI(p);
 
+      const modal = document.getElementById('patch-selector-modal');
+      if (modal && !modal.classList.contains('hidden')) {
+        renderModalPatchList(currentModalFilterLane, document.getElementById('modal-patch-search')?.value || '');
+      }
+
       if (autoAudition && p.demoRiff && p.demoRiff.length > 0) {
         panicAllNotes();
         p.demoRiff.forEach(step => {
@@ -6604,9 +6683,157 @@ function initSongRecommender() {
       });
     }
 
-    
 
-        window.addEventListener('DOMContentLoaded', () => {
+    // ================= PATCH SELECTOR MODAL & HARDWARE STEPPING CONTROLLER =================
+    let currentModalFilterLane = 'all';
+
+    function openPatchSelectorModal() {
+      const modal = document.getElementById('patch-selector-modal');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      renderModalPatchList(currentModalFilterLane, document.getElementById('modal-patch-search')?.value || '');
+
+      setTimeout(() => {
+        const searchInput = document.getElementById('modal-patch-search');
+        if (searchInput) searchInput.focus();
+        const activeCard = document.querySelector('.modal-patch-active-card');
+        if (activeCard) {
+          activeCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 50);
+    }
+
+    function closePatchSelectorModal() {
+      const modal = document.getElementById('patch-selector-modal');
+      if (!modal) return;
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function stepPatch(delta) {
+      if (!patchData || patchData.length === 0) return;
+      let nextIndex = currentPatchIndex + delta;
+      if (nextIndex < 0) nextIndex = patchData.length - 1;
+      if (nextIndex >= patchData.length) nextIndex = 0;
+      loadPatchIntoSynth(nextIndex, true);
+    }
+
+    function renderModalPatchList(lane = 'all', query = '') {
+      const container = document.getElementById('modal-patch-list');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const q = (query || '').trim().toLowerCase();
+
+      const filtered = patchData.map((patch, originalIndex) => ({ patch, originalIndex })).filter(({ patch }) => {
+        const matchesLane = (lane === 'all' || patch.category === lane);
+        if (!matchesLane) return false;
+        if (!q) return true;
+
+        const inName = (patch.name || '').toLowerCase().includes(q);
+        const inSlot = ('p' + patch.slot).toLowerCase().includes(q) || (patch.slot || '').includes(q);
+        const inCategory = (patch.categoryLabel || '').toLowerCase().includes(q) || (patch.category || '').toLowerCase().includes(q);
+        const inDesc = (patch.soundDescription || '').toLowerCase().includes(q);
+        const inTags = (patch.tags || []).some(t => t.toLowerCase().includes(q));
+        const inSongs = (patch.songs || '').toLowerCase().includes(q);
+        const inInspiration = (patch.inspiration || '').toLowerCase().includes(q);
+        return inName || inSlot || inCategory || inDesc || inTags || inSongs || inInspiration;
+      });
+
+      const countEl = document.getElementById('modal-patch-count');
+      if (countEl) {
+        countEl.textContent = `Showing ${filtered.length} of ${patchData.length} patches`;
+      }
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="py-12 text-center text-slate-500 font-mono text-sm">
+            No patches found matching "${query}". Try another search term or lane.
+          </div>
+        `;
+        return;
+      }
+
+      filtered.forEach(({ patch, originalIndex }) => {
+        const isActive = (originalIndex === currentPatchIndex);
+        const card = document.createElement('div');
+        card.className = `p-3 sm:p-4 rounded-xl border transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 cursor-pointer ${
+          isActive 
+            ? 'modal-patch-active-card bg-teal-950/50 border-brand-cyan shadow-lg shadow-cyan-950/40 ring-1 ring-brand-cyan/50' 
+            : 'bg-[#13192b]/70 border-brand-border hover:border-slate-500 hover:bg-[#13192b]'
+        }`;
+
+        const tagHtml = (patch.tags || []).slice(0, 3).map(t => 
+          `<span class="px-1.5 py-0.5 rounded text-[10px] font-mono bg-slate-800/80 text-slate-400 border border-slate-700/50">#${t}</span>`
+        ).join(' ');
+
+        const categoryBadgeColor = 
+          patch.category === 'worship' ? 'text-emerald-400 border-emerald-800/50 bg-emerald-950/40' :
+          patch.category === 'postrock' ? 'text-indigo-400 border-indigo-800/50 bg-indigo-950/40' :
+          patch.category === 'ambient' ? 'text-cyan-400 border-cyan-800/50 bg-cyan-950/40' :
+          'text-amber-400 border-amber-800/50 bg-amber-950/40';
+
+        card.innerHTML = `
+          <div class="flex items-start sm:items-center gap-3 min-w-0 flex-1">
+            <div class="font-mono text-xs px-2 py-1 rounded bg-black/60 border ${isActive ? 'border-brand-cyan text-brand-cyan font-bold shadow-sm shadow-cyan-500/20' : 'border-slate-800 text-slate-400'} shrink-0">
+              P${patch.slot}
+            </div>
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="font-bold text-sm sm:text-base ${isActive ? 'text-brand-cyan' : 'text-white'} truncate">${patch.name}</h4>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full border ${categoryBadgeColor} shrink-0">
+                  ${patch.categoryLabel}
+                </span>
+                ${patch.isArp ? '<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-purple-950/60 text-purple-300 border border-purple-800/50 shrink-0">⚡ ARP</span>' : ''}
+                ${isActive ? '<span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-brand-cyan text-black font-bold shrink-0">ACTIVE IN SYNTH</span>' : ''}
+              </div>
+              <p class="text-xs text-slate-400 mt-1 line-clamp-1 sm:line-clamp-2 leading-relaxed">
+                ${patch.soundDescription || ''}
+              </p>
+              <div class="flex items-center gap-1.5 mt-1.5 flex-wrap">
+                ${tagHtml}
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+            ${patch.sample ? `
+              <button class="modal-audition-btn px-2.5 py-1.5 rounded-lg text-xs font-mono bg-black/60 hover:bg-slate-800 text-slate-300 border border-slate-700/60 hover:text-brand-cyan hover:border-brand-cyan transition-colors flex items-center gap-1 cursor-pointer" data-sample="${patch.sample}" data-id="${patch.id}" title="Audition studio recording">
+                <svg class="w-3 h-3 text-teal-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                <span>Audition</span>
+              </button>
+            ` : ''}
+            <button class="modal-load-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold ${
+              isActive 
+                ? 'bg-brand-cyan text-black' 
+                : 'bg-teal-950 hover:bg-brand-cyan text-brand-cyan hover:text-black border border-teal-700/60'
+            } transition-all flex items-center gap-1 cursor-pointer">
+              <span>${isActive ? '✓ Loaded' : 'Load Synth'}</span>
+            </button>
+          </div>
+        `;
+
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('.modal-audition-btn')) return;
+          loadPatchIntoSynth(originalIndex, true);
+          closePatchSelectorModal();
+          document.getElementById('synth-section')?.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        const auditionBtn = card.querySelector('.modal-audition-btn');
+        if (auditionBtn) {
+          auditionBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            playStudioSample(patch.id, patch.sample);
+          });
+        }
+
+        container.appendChild(card);
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
       buildKeyboard();
       buildPianoRoll();
       loadSeqPreset('refinery');
@@ -6663,6 +6890,45 @@ function initSongRecommender() {
         el.addEventListener('touchend', handler);
         el.addEventListener('click', handler);
       }
+
+      // Hardware Patch Stepping & Modal Trigger Bindings
+      bindControlTap(document.getElementById('patch-prev-btn'), 'patch-prev', () => stepPatch(-1));
+      bindControlTap(document.getElementById('patch-next-btn'), 'patch-next', () => stepPatch(1));
+      bindControlTap(document.getElementById('lcd-screen-badge'), 'lcd-open', () => openPatchSelectorModal());
+      bindControlTap(document.getElementById('hero-patch-badge'), 'hero-patch-open', () => openPatchSelectorModal());
+      bindControlTap(document.getElementById('hero-engine-badge'), 'hero-engine-open', () => openPatchSelectorModal());
+
+      const closePatchBtn = document.getElementById('close-patch-modal-btn');
+      if (closePatchBtn) {
+        closePatchBtn.addEventListener('click', closePatchSelectorModal);
+      }
+
+      const patchModalEl = document.getElementById('patch-selector-modal');
+      if (patchModalEl) {
+        patchModalEl.addEventListener('click', (e) => {
+          if (e.target === patchModalEl) closePatchSelectorModal();
+        });
+      }
+
+      const modalSearchInput = document.getElementById('modal-patch-search');
+      if (modalSearchInput) {
+        modalSearchInput.addEventListener('input', (e) => {
+          renderModalPatchList(currentModalFilterLane, e.target.value);
+        });
+      }
+
+      document.querySelectorAll('.modal-lane-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.modal-lane-tab').forEach(t => {
+            t.classList.remove('bg-brand-cyan', 'text-black', 'font-bold');
+            t.classList.add('bg-brand-card', 'text-slate-300');
+          });
+          tab.classList.add('bg-brand-cyan', 'text-black', 'font-bold');
+          tab.classList.remove('bg-brand-card', 'text-slate-300');
+          currentModalFilterLane = tab.dataset.lane;
+          renderModalPatchList(currentModalFilterLane, document.getElementById('modal-patch-search')?.value || '');
+        });
+      });
 
       bindControlTap(document.getElementById('panic-btn'), 'panic', () => panicAllNotes());
       bindControlTap(document.getElementById('toggle-seq-btn'), 'toggle-seq', () => toggleSequencer());
@@ -6828,6 +7094,9 @@ function initSongRecommender() {
 
       const pressedQwerty = new Set();
       window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closePatchSelectorModal();
+        }
         if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT') return;
         if (e.code === 'KeyZ') {
           if (octaveOffset > -2) {
