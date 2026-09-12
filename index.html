@@ -4978,9 +4978,11 @@ const worshipSongsData = [
         };
 
         // Safari / WebKit requires at least 1 input channel and a live input connection
-        // to prevent WebKit from garbage-collecting or muting the ScriptProcessorNode!
-        this.processor = this.ctx.createScriptProcessor(1024, 1, 2);
+        // to prevent WebKit from muting or dropping the node.
+        // Also CRITICAL: node must be retained globally on window to prevent WebKit GC!
+        this.processor = this.ctx.createScriptProcessor(2048, 1, 2);
         this.processor.onaudioprocess = (e) => this.processBlock(e);
+        window._bs2AudioProcessor = this.processor;
 
         try {
           const dummySource = this.ctx.createConstantSource ? this.ctx.createConstantSource() : this.ctx.createBufferSource();
@@ -4990,6 +4992,7 @@ const worshipSongsData = [
           }
           dummySource.connect(this.processor);
           dummySource.start(0);
+          window._bs2DummySource = dummySource;
         } catch (err) {
           // Fallback dummy oscillator if ConstantSource not available
           try {
@@ -4999,6 +5002,7 @@ const worshipSongsData = [
             dummyOsc.connect(dummyGain);
             dummyGain.connect(this.processor);
             dummyOsc.start(0);
+            window._bs2DummyOsc = dummyOsc;
           } catch(e) {}
         }
 
@@ -5224,18 +5228,21 @@ const worshipSongsData = [
     let currentAudioPlayer = null;
     let currentPlayingWavId = null;
 
+    let audioHardwareUnlocked = false;
     function unlockAudioHardware(ctx) {
       if (!ctx) return;
       if (ctx.state === 'suspended') {
         ctx.resume();
       }
-      // Play a 1-sample silent buffer to unlock iOS Safari hardware audio pipeline
+      if (audioHardwareUnlocked) return;
+      // Play a 1-sample silent buffer once to unlock iOS Safari hardware audio pipeline
       try {
         const buffer = ctx.createBuffer(1, 1, 22050);
         const source = ctx.createBufferSource();
         source.buffer = buffer;
         source.connect(ctx.destination);
         source.start(0);
+        audioHardwareUnlocked = true;
       } catch(e) {}
     }
 
@@ -5556,11 +5563,15 @@ const worshipSongsData = [
       });
     }
 
-    let lastStepToggleTime = 0;
+    const stepToggleTimestamps = new Map();
     function toggleStep(rIdx, step, btn, isBeatStart, row) {
+      const key = `${rIdx}_${step}`;
       const now = Date.now();
-      if (now - lastStepToggleTime < 80) return;
-      lastStepToggleTime = now;
+      const last = stepToggleTimestamps.get(key) || 0;
+      // WebKit synthetic clicks fire ~300-350ms after touchend.
+      // 450ms debounce for the SAME button completely blocks duplicate click reversal!
+      if (now - last < 450) return;
+      stepToggleTimestamps.set(key, now);
 
       // CRITICAL FOR IOS: Synchronously unlock & resume audio in direct gesture
       const ctx = getAudioContext();
@@ -5615,31 +5626,30 @@ const worshipSongsData = [
           // Touch gestures handling with pan detection for iOS Safari & Chrome
           let touchStartX = 0;
           let touchStartY = 0;
-          let touchMoved = false;
+          let isScrolling = false;
 
           btn.addEventListener('touchstart', (e) => {
             if (e.touches.length === 1) {
               touchStartX = e.touches[0].clientX;
               touchStartY = e.touches[0].clientY;
-              touchMoved = false;
+              isScrolling = false;
             }
             const ctx = getAudioContext();
             if (ctx && ctx.state === 'suspended') ctx.resume();
           }, { passive: true });
 
           btn.addEventListener('touchmove', (e) => {
-            if (e.touches.length === 1) {
+            if (e.touches.length === 1 && !isScrolling) {
               const dx = Math.abs(e.touches[0].clientX - touchStartX);
               const dy = Math.abs(e.touches[0].clientY - touchStartY);
-              if (dx > 8 || dy > 8) {
-                touchMoved = true;
+              if (dx > 25 || dy > 25) {
+                isScrolling = true;
               }
             }
           }, { passive: true });
 
           btn.addEventListener('touchend', (e) => {
-            if (!touchMoved) {
-              e.preventDefault();
+            if (!isScrolling) {
               toggleStep(rIdx, step, btn, isBeatStart, row);
             }
           });
@@ -5714,9 +5724,6 @@ const worshipSongsData = [
     }
 
     function loadSeqPreset(presetName) {
-      const ctx = getAudioContext();
-      if (ctx && ctx.state === 'suspended') ctx.resume();
-
       seqGrid = Array(SEQ_ROWS.length).fill(null).map(() => Array(16).fill(false));
 
       if (presetName === 'refinery') {
@@ -6636,109 +6643,57 @@ function initSongRecommender() {
         initWebMIDI();
       });
 
-      const panicBtn = document.getElementById('panic-btn');
-      if (panicBtn) {
-        let lastPanic = 0;
-        const handlePanic = (e) => {
-          if (e.type === 'touchstart') e.preventDefault();
+      const controlActionTimes = new Map();
+      function bindControlTap(el, actionId, callback) {
+        if (!el) return;
+        const handler = (e) => {
           const now = Date.now();
-          if (now - lastPanic < 200) return;
-          lastPanic = now;
-          panicAllNotes();
-        };
-        panicBtn.addEventListener('touchstart', handlePanic, { passive: false });
-        panicBtn.addEventListener('click', handlePanic);
-      }
+          const last = controlActionTimes.get(actionId) || 0;
+          if (now - last < 450) return;
+          controlActionTimes.set(actionId, now);
 
-      const toggleSeqBtn = document.getElementById('toggle-seq-btn');
-      if (toggleSeqBtn) {
-        let lastToggleTime = 0;
-        const handleSeqToggle = (e) => {
-          if (e.type === 'touchstart') e.preventDefault();
-          const now = Date.now();
-          if (now - lastToggleTime < 250) return;
-          lastToggleTime = now;
-          toggleSequencer();
-        };
-        toggleSeqBtn.addEventListener('touchstart', handleSeqToggle, { passive: false });
-        toggleSeqBtn.addEventListener('click', handleSeqToggle);
-      }
-
-      const clearSeqBtn = document.getElementById('clear-seq-btn');
-      if (clearSeqBtn) {
-        let lastClearTime = 0;
-        const handleClearSeq = (e) => {
-          if (e.type === 'touchstart') e.preventDefault();
-          const now = Date.now();
-          if (now - lastClearTime < 200) return;
-          lastClearTime = now;
           const ctx = getAudioContext();
           if (ctx) {
             unlockAudioHardware(ctx);
             if (ctx.state === 'suspended') ctx.resume();
           }
-          seqGrid = Array(SEQ_ROWS.length).fill(null).map(() => Array(16).fill(false));
-          buildPianoRoll();
+
+          callback(e);
         };
-        clearSeqBtn.addEventListener('touchstart', handleClearSeq, { passive: false });
-        clearSeqBtn.addEventListener('click', handleClearSeq);
+        el.addEventListener('touchend', handler);
+        el.addEventListener('click', handler);
       }
+
+      bindControlTap(document.getElementById('panic-btn'), 'panic', () => panicAllNotes());
+      bindControlTap(document.getElementById('toggle-seq-btn'), 'toggle-seq', () => toggleSequencer());
+      bindControlTap(document.getElementById('clear-seq-btn'), 'clear-seq', () => {
+        seqGrid = Array(SEQ_ROWS.length).fill(null).map(() => Array(16).fill(false));
+        updateAllStepButtons();
+      });
 
       document.querySelectorAll('.seq-preset-btn').forEach(btn => {
-        let lastPresetTime = 0;
-        const handlePresetClick = (e) => {
-          if (e.type === 'touchstart') e.preventDefault();
-          const now = Date.now();
-          if (now - lastPresetTime < 200) return;
-          lastPresetTime = now;
-          const ctx = getAudioContext();
-          if (ctx) {
-            unlockAudioHardware(ctx);
-            if (ctx.state === 'suspended') ctx.resume();
-          }
+        bindControlTap(btn, 'preset-' + btn.dataset.preset, () => {
           loadSeqPreset(btn.dataset.preset);
-        };
-        btn.addEventListener('touchstart', handlePresetClick, { passive: false });
-        btn.addEventListener('click', handlePresetClick);
+        });
       });
 
       document.getElementById('seq-bpm').addEventListener('input', (e) => {
         document.getElementById('bpm-val').textContent = e.target.value + ' BPM';
       });
 
-      const octDownBtn = document.getElementById('octave-down');
-      if (octDownBtn) {
-        let lastOctDown = 0;
-        const handleOctDown = (e) => {
-          if (e.type === 'touchstart') e.preventDefault();
-          const now = Date.now();
-          if (now - lastOctDown < 150) return;
-          lastOctDown = now;
-          if (octaveOffset > -2) {
-            octaveOffset--;
-            document.getElementById('octave-display').textContent = 'Oct: ' + octaveOffset;
-          }
-        };
-        octDownBtn.addEventListener('touchstart', handleOctDown, { passive: false });
-        octDownBtn.addEventListener('click', handleOctDown);
-      }
+      bindControlTap(document.getElementById('octave-down'), 'oct-down', () => {
+        if (octaveOffset > -2) {
+          octaveOffset--;
+          document.getElementById('octave-display').textContent = 'Oct: ' + octaveOffset;
+        }
+      });
 
-      const octUpBtn = document.getElementById('octave-up');
-      if (octUpBtn) {
-        let lastOctUp = 0;
-        const handleOctUp = (e) => {
-          if (e.type === 'touchstart') e.preventDefault();
-          const now = Date.now();
-          if (now - lastOctUp < 150) return;
-          lastOctUp = now;
-          if (octaveOffset < 2) {
-            octaveOffset++;
-            document.getElementById('octave-display').textContent = 'Oct: ' + octaveOffset;
-          }
-        };
-        octUpBtn.addEventListener('touchstart', handleOctUp, { passive: false });
-        octUpBtn.addEventListener('click', handleOctUp);
-      }
+      bindControlTap(document.getElementById('octave-up'), 'oct-up', () => {
+        if (octaveOffset < 2) {
+          octaveOffset++;
+          document.getElementById('octave-display').textContent = 'Oct: ' + octaveOffset;
+        }
+      });
 
       // Front-Panel Real-Time Control Listeners
       const osc1Wave = document.getElementById('osc1-wave');
