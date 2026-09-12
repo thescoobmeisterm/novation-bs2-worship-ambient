@@ -1,0 +1,10 @@
+{
+  "name": "bs2-postrock-ambient-worship",
+  "version": "1.0.0",
+  "description": "Post-Rock, Ambient, and Worship Patches for Novation Bass Station II",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/generate_patches.js",
+    "verify": "node tools/verify_patches.js"
+  }
+}
