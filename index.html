@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
   <title>Refinery Creative — Novation Bass Station II Patch Manual & Synthesizer</title>
   <meta name="description" content="Official sound manual, audio showcase, and interactive Web Audio synthesizer emulator for the 48-patch Novation Bass Station II collection. Created for The Refinery Church worship ministry.">
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
@@ -277,7 +277,7 @@
           </div>
 
           <!-- LCD Display (Authentic Novation Cyan Screen) -->
-          <div class="lcd-screen px-6 py-3.5 rounded-xl border border-teal-700/60 shadow-inner flex flex-col justify-center min-w-[280px] sm:min-w-[340px]">
+          <div class="lcd-screen px-6 py-3.5 rounded-xl border border-teal-700/60 shadow-inner flex flex-col justify-center w-full sm:w-auto max-w-full">
             <div class="flex items-center justify-between text-xs font-mono tracking-wider text-teal-300">
               <span id="lcd-slot">[ P001 ]</span>
               <span id="lcd-category">CUSTOM SERVICE CORE</span>
@@ -6545,8 +6545,31 @@ const worshipSongsData = [
           sidechainPump: false, isSampleAndHold: false, shRate: 6.0
         };
 
-        this.processor = this.ctx.createScriptProcessor(1024, 0, 2);
+        // Safari / WebKit requires at least 1 input channel and a live input connection
+        // to prevent WebKit from garbage-collecting or muting the ScriptProcessorNode!
+        this.processor = this.ctx.createScriptProcessor(1024, 1, 2);
         this.processor.onaudioprocess = (e) => this.processBlock(e);
+
+        try {
+          const dummySource = this.ctx.createConstantSource ? this.ctx.createConstantSource() : this.ctx.createBufferSource();
+          if (!this.ctx.createConstantSource) {
+            dummySource.buffer = this.ctx.createBuffer(1, 1, this.sampleRate);
+            dummySource.loop = true;
+          }
+          dummySource.connect(this.processor);
+          dummySource.start(0);
+        } catch (err) {
+          // Fallback dummy oscillator if ConstantSource not available
+          try {
+            const dummyOsc = this.ctx.createOscillator();
+            const dummyGain = this.ctx.createGain();
+            dummyGain.gain.value = 0.00001;
+            dummyOsc.connect(dummyGain);
+            dummyGain.connect(this.processor);
+            dummyOsc.start(0);
+          } catch(e) {}
+        }
+
         this.processor.connect(this.ctx.destination);
       }
 
@@ -6769,17 +6792,40 @@ const worshipSongsData = [
     let currentAudioPlayer = null;
     let currentPlayingWavId = null;
 
+    function unlockAudioHardware(ctx) {
+      if (!ctx) return;
+      if (ctx.state === 'suspended') {
+        ctx.resume();
+      }
+      // Play a 1-sample silent buffer to unlock iOS Safari hardware audio pipeline
+      try {
+        const buffer = ctx.createBuffer(1, 1, 22050);
+        const source = ctx.createBufferSource();
+        source.buffer = buffer;
+        source.connect(ctx.destination);
+        source.start(0);
+      } catch(e) {}
+    }
+
     function getAudioContext() {
       if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return null;
+        audioCtx = new AudioContextClass();
         synthEngine = new BassStationEngine(audioCtx);
         synthEngine.setPatch(patchData[currentPatchIndex].synthParams);
       }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
+      unlockAudioHardware(audioCtx);
       return audioCtx;
     }
+
+    // Register global touch/click audio unblocker for iOS Safari
+    const unlockEvents = ['touchstart', 'touchend', 'mousedown', 'pointerdown', 'keydown'];
+    function unlockAudioOnFirstGesture() {
+      getAudioContext();
+      unlockEvents.forEach(evt => window.removeEventListener(evt, unlockAudioOnFirstGesture, true));
+    }
+    unlockEvents.forEach(evt => window.addEventListener(evt, unlockAudioOnFirstGesture, { capture: true, once: true, passive: true }));
 
     function midiToFreq(midi) {
       return 440 * Math.pow(2, (midi - 69) / 12);
@@ -7936,7 +7982,8 @@ const worshipSongsData = [
       buildPianoRoll();
       loadSeqPreset('refinery');
       renderPatchDirectory('all', '');
-      loadPatchIntoSynth(1, false);
+      updateChassisUI(patchData[1]);
+      currentPatchIndex = 1;
       initSongRecommender();
 
       document.querySelectorAll('.filter-tab').forEach(tab => {
