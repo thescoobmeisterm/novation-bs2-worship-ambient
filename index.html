@@ -998,53 +998,63 @@
     "controls": "Mod Wheel opens filter cutoff (+25) for high-energy choruses. Smooth 5ms attack eliminates key-click.",
     "synthParams": {
       "osc1Wave": "triangle",
-      "osc1Oct": -1,
-      "osc1Detune": 0,
-      "osc2Wave": "sine",
-      "osc2Oct": -1,
-      "osc2Detune": 0,
+      "osc1Level": 0.5,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
+      "osc2Wave": "saw",
+      "osc2Level": 0,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 0,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 120,
+      "subLevel": 1,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 140,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 26,
-      "resonance": 15,
-      "modEnvDepth": 0,
-      "overdrive": 20,
+      "resonance": 0.1,
+      "drive": 1.1,
       "distortion": 0,
-      "ampAttack": 0.008,
-      "ampDecay": 0.8,
-      "ampSustain": 1.0,
-      "ampRelease": 0.15,
+      "ampAttack": 0.02,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.35,
       "modAttack": 0.01,
       "modDecay": 0.5,
-      "modSustain": 0.0,
-      "modRelease": 0.1,
-      "glide": 0.02,
-      "lfo1Rate": 1,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.8
+        "start": 0.2,
+        "len": 1.8,
+        "dur": 1.8,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.8
-      },
-      {
-        "note": 34,
-        "dur": 0.8
-      },
-      {
-        "note": 36,
-        "dur": 1.2
+        "start": 2.1,
+        "len": 1.9,
+        "dur": 1.9,
+        "note": 34
       }
     ]
   },
@@ -1063,57 +1073,63 @@
     "controls": "Channel Aftertouch dynamically blows open filter cutoff (+40) for soaring chorus builds and vocal climaxes.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -7,
+      "osc1Level": 0.8,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 7,
+      "osc2Level": 0.35,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 10,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 115,
+      "subLevel": 0.9,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 230,
+      "filterEnvAmt": 260,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 33,
-      "resonance": 25,
-      "modEnvDepth": 18,
-      "overdrive": 127,
-      "distortion": 18,
-      "ampAttack": 0.005,
-      "ampDecay": 0.6,
+      "resonance": 0.35,
+      "drive": 2.2,
+      "distortion": 0.18,
+      "ampAttack": 0.01,
+      "ampDecay": 0.5,
       "ampSustain": 0.95,
-      "ampRelease": 0.25,
-      "modAttack": 0.005,
-      "modDecay": 0.45,
-      "modSustain": 0.1,
+      "ampRelease": 0.35,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
       "modRelease": 0.2,
-      "glide": 0.03,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.4
+        "start": 0.1,
+        "len": 1.8,
+        "dur": 1.8,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.4
-      },
-      {
-        "note": 38,
-        "dur": 0.4
-      },
-      {
-        "note": 41,
-        "dur": 0.6
-      },
-      {
-        "note": 36,
-        "dur": 1.0
+        "start": 2.1,
+        "len": 2.1,
+        "dur": 2.1,
+        "note": 34
       }
     ]
   },
@@ -1132,45 +1148,57 @@
     "controls": "Mod Wheel sweeps LFO2 filter breathing; pair with a stereo shimmer reverb pedal for massive atmospheric pads.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -9,
+      "osc1Level": 0.75,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 9,
+      "osc2Level": 0.35,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 11,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 110,
-      "noiseLevel": 5,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "subLevel": 0.85,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 180,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 30,
-      "resonance": 28,
-      "modEnvDepth": 35,
-      "overdrive": 110,
-      "distortion": 14,
-      "ampAttack": 1.2,
-      "ampDecay": 1.5,
-      "ampSustain": 0.9,
-      "ampRelease": 1.8,
-      "modAttack": 1.4,
-      "modDecay": 1.8,
-      "modSustain": 0.8,
-      "modRelease": 1.8,
-      "glide": 0.08,
-      "lfo1Rate": 1.5,
-      "lfo1Depth": 2,
-      "lfo2Rate": 0.4,
-      "lfo2Depth": 15
+      "resonance": 0.32,
+      "drive": 1.9,
+      "distortion": 0.15,
+      "ampAttack": 1.1,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.8,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": true,
+      "swellCutoffBoost": 220,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 2.2
-      },
-      {
-        "note": 34,
-        "dur": 2.2
+        "start": 0.2,
+        "len": 4.4,
+        "dur": 4.4,
+        "note": 36
       }
     ]
   },
@@ -1189,69 +1217,135 @@
     "controls": "Lean on aftertouch during live builds to blow the filter wide open before dropping back into tight groove.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -8,
+      "osc1Level": 0.8,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 8,
+      "osc2Level": 0.35,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 10,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 105,
+      "subLevel": 0.9,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 240,
+      "filterEnvAmt": 420,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 12,
-      "resonance": 42,
-      "modEnvDepth": 48,
-      "overdrive": 127,
-      "distortion": 18,
-      "ampAttack": 0.002,
-      "ampDecay": 0.22,
-      "ampSustain": 0.0,
-      "ampRelease": 0.08,
-      "modAttack": 0.002,
-      "modDecay": 0.2,
-      "modSustain": 0.0,
-      "modRelease": 0.08,
-      "glide": 0.0,
-      "lfo1Rate": 4,
-      "lfo1Depth": 0,
-      "lfo2Rate": 2,
-      "lfo2Depth": 0
+      "resonance": 0.42,
+      "drive": 2.2,
+      "distortion": 0.18,
+      "ampAttack": 0.005,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.09,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.12
+        "start": 0,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.12
+        "start": 0.25,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 48,
-        "dur": 0.12
+        "start": 0.5,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.12
+        "start": 0.75,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 46,
-        "dur": 0.12
+        "start": 1,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.12
+        "start": 1.25,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 48,
-        "dur": 0.12
+        "start": 1.5,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.12
+        "start": 1.75,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 2,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 2.25,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 2.5,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 2.75,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 3,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 34
+      },
+      {
+        "start": 3.25,
+        "len": 0.6,
+        "dur": 0.6,
+        "note": 36
       }
     ]
   },
@@ -1270,61 +1364,141 @@
     "controls": "Mod Wheel introduces rhythmic LFO2 filter modulation for wobble effects.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -8,
+      "osc1Level": 0.75,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 8,
+      "osc2Level": 0.35,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 8,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 100,
+      "subLevel": 0.9,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 260,
+      "filterEnvAmt": 450,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 36,
-      "resonance": 52,
-      "modEnvDepth": 45,
-      "overdrive": 127,
-      "distortion": 22,
-      "ampAttack": 0.003,
-      "ampDecay": 0.25,
-      "ampSustain": 0.05,
+      "resonance": 0.45,
+      "drive": 2.2,
+      "distortion": 0.22,
+      "ampAttack": 0.005,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
       "ampRelease": 0.08,
-      "modAttack": 0.003,
-      "modDecay": 0.22,
-      "modSustain": 0.0,
-      "modRelease": 0.08,
-      "glide": 0.0,
-      "lfo1Rate": 3,
-      "lfo1Depth": 0,
-      "lfo2Rate": 4,
-      "lfo2Depth": 10
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.14
+        "start": 0,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 43,
-        "dur": 0.14
+        "start": 0.24,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 46,
-        "dur": 0.14
+        "start": 0.48,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 48
       },
       {
-        "note": 48,
-        "dur": 0.14
+        "start": 0.72,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 46,
-        "dur": 0.14
+        "start": 0.96,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 43,
-        "dur": 0.14
+        "start": 1.2,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 46
+      },
+      {
+        "start": 1.44,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 1.68,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 48
+      },
+      {
+        "start": 1.92,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 2.16,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 2.4,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 48
+      },
+      {
+        "start": 2.64,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 2.88,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 39
+      },
+      {
+        "start": 3.12,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 38
+      },
+      {
+        "start": 3.36,
+        "len": 0.5,
+        "dur": 0.5,
+        "note": 36
       }
     ]
   },
@@ -1343,57 +1517,81 @@
     "controls": "Velocity dynamically controls filter cutoff; aftertouch adds subtle grit.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": -1,
-      "osc1Detune": 0,
+      "osc1Level": 0.8,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 4,
+      "osc2Level": 0.4,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 4,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 95,
+      "subLevel": 0.75,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 220,
+      "filterEnvAmt": 500,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 42,
-      "resonance": 20,
-      "modEnvDepth": 35,
-      "overdrive": 65,
-      "distortion": 10,
+      "resonance": 0.28,
+      "drive": 1.6,
+      "distortion": 0.1,
       "ampAttack": 0.005,
-      "ampDecay": 0.55,
-      "ampSustain": 0.75,
-      "ampRelease": 0.2,
-      "modAttack": 0.004,
-      "modDecay": 0.35,
-      "modSustain": 0.1,
-      "modRelease": 0.15,
-      "glide": 0.02,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.15,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.35
+        "start": 0.1,
+        "len": 0.7,
+        "dur": 0.7,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.35
+        "start": 0.9,
+        "len": 0.7,
+        "dur": 0.7,
+        "note": 36
       },
       {
-        "note": 41,
-        "dur": 0.35
+        "start": 1.7,
+        "len": 0.5,
+        "dur": 0.5,
+        "note": 41
       },
       {
-        "note": 43,
-        "dur": 0.5
+        "start": 2.3,
+        "len": 0.5,
+        "dur": 0.5,
+        "note": 43
       },
       {
-        "note": 36,
-        "dur": 0.8
+        "start": 2.9,
+        "len": 0.9,
+        "dur": 0.9,
+        "note": 36
       }
     ]
   },
@@ -1412,49 +1610,72 @@
     "controls": "Portamento set to 80ms; digging into aftertouch increases LFO1 vibrato depth.",
     "synthParams": {
       "osc1Wave": "triangle",
-      "osc1Oct": -1,
-      "osc1Detune": 0,
+      "osc1Level": 0.85,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "sine",
-      "osc2Oct": 0,
-      "osc2Detune": 3,
+      "osc2Level": 0.45,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 6,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 90,
+      "subLevel": 0.7,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 210,
+      "filterEnvAmt": 280,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 34,
-      "resonance": 38,
-      "modEnvDepth": 25,
-      "overdrive": 40,
+      "resonance": 0.25,
+      "drive": 1.3,
       "distortion": 0,
-      "ampAttack": 0.01,
-      "ampDecay": 0.7,
-      "ampSustain": 0.85,
-      "ampRelease": 0.3,
-      "modAttack": 0.015,
+      "ampAttack": 0.03,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.25,
+      "modAttack": 0.01,
       "modDecay": 0.5,
-      "modSustain": 0.2,
-      "modRelease": 0.25,
-      "glide": 0.08,
-      "lfo1Rate": 4.5,
-      "lfo1Depth": 4,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0.22,
+      "vibrato": 0.25,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
+        "start": 0.1,
+        "len": 1.2,
+        "dur": 1.2,
         "note": 36,
-        "dur": 0.6
+        "prevMidi": 36
       },
       {
+        "start": 1.3,
+        "len": 1,
+        "dur": 1,
         "note": 41,
-        "dur": 0.6
+        "prevMidi": 36
       },
       {
+        "start": 2.3,
+        "len": 1.9,
+        "dur": 1.9,
         "note": 39,
-        "dur": 1.0
+        "prevMidi": 41
       }
     ]
   },
@@ -1473,45 +1694,57 @@
     "controls": "Hold root note during instrumental builds; filter blooms slowly over 2.5 seconds.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": -10,
+      "osc1Level": 0.75,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 10,
+      "osc2Level": 0.7,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 14,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 105,
-      "noiseLevel": 10,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "subLevel": 0.65,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 220,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 32,
-      "resonance": 30,
-      "modEnvDepth": 35,
-      "overdrive": 85,
-      "distortion": 35,
-      "ampAttack": 0.9,
-      "ampDecay": 1.2,
+      "resonance": 0.42,
+      "drive": 1.8,
+      "distortion": 0.35,
+      "ampAttack": 1.2,
+      "ampDecay": 0.5,
       "ampSustain": 0.95,
-      "ampRelease": 1.4,
-      "modAttack": 1.1,
-      "modDecay": 1.4,
-      "modSustain": 0.85,
-      "modRelease": 1.4,
-      "glide": 0.06,
-      "lfo1Rate": 0.8,
-      "lfo1Depth": 3,
-      "lfo2Rate": 0.5,
-      "lfo2Depth": 8
+      "ampRelease": 0.7,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 3,
+      "stereoSpace": true,
+      "spaceMix": 0.35,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": true,
+      "swellCutoffBoost": 380,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 2.5
-      },
-      {
-        "note": 43,
-        "dur": 2.0
+        "start": 0.2,
+        "len": 4.4,
+        "dur": 4.4,
+        "note": 36
       }
     ]
   },
@@ -1530,53 +1763,63 @@
     "controls": "Aftertouch opens cutoff (+30); FOH sound engineers love the clean sub anchor.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -6,
+      "osc1Level": 0.9,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 6,
+      "osc2Level": 0.8,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 10,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 125,
-      "noiseLevel": 15,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "subLevel": 1.1,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 380,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 48,
-      "resonance": 32,
-      "modEnvDepth": 20,
-      "overdrive": 127,
-      "distortion": 88,
-      "ampAttack": 0.005,
-      "ampDecay": 0.6,
+      "resonance": 0.28,
+      "drive": 3.5,
+      "distortion": 0.88,
+      "ampAttack": 0.01,
+      "ampDecay": 0.5,
       "ampSustain": 0.95,
-      "ampRelease": 0.3,
-      "modAttack": 0.008,
+      "ampRelease": 0.35,
+      "modAttack": 0.01,
       "modDecay": 0.5,
-      "modSustain": 0.3,
-      "modRelease": 0.25,
-      "glide": 0.03,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.5
+        "start": 0.1,
+        "len": 2,
+        "dur": 2,
+        "note": 36
       },
       {
-        "note": 34,
-        "dur": 0.5
-      },
-      {
-        "note": 36,
-        "dur": 0.5
-      },
-      {
-        "note": 39,
-        "dur": 0.8
+        "start": 2.2,
+        "len": 2,
+        "dur": 2,
+        "note": 34
       }
     ]
   },
@@ -1595,45 +1838,57 @@
     "controls": "Play root and fifth simultaneously; adjust Mod Wheel for slow PWM pulse width sweep.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": -1,
-      "osc1Detune": -5,
+      "osc1Level": 0.7,
+      "osc1Octave": 0,
+      "osc1Pw": 0.65,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 5,
-      "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 100,
-      "noiseLevel": 12,
-      "filterType": "lp",
-      "filterSlope": 12,
+      "osc2Level": 0.65,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 7,
+      "osc2Pw": 0.5,
+      "subWave": "pulse",
+      "subLevel": 0.65,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 240,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "12dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 35,
-      "resonance": 25,
-      "modEnvDepth": 20,
-      "overdrive": 95,
-      "distortion": 25,
-      "ampAttack": 0.5,
-      "ampDecay": 1.0,
+      "resonance": 0.32,
+      "drive": 2,
+      "distortion": 0.25,
+      "ampAttack": 0.8,
+      "ampDecay": 0.5,
       "ampSustain": 0.95,
-      "ampRelease": 1.2,
-      "modAttack": 0.7,
-      "modDecay": 1.2,
-      "modSustain": 0.8,
-      "modRelease": 1.2,
-      "glide": 0.05,
-      "lfo1Rate": 0.6,
-      "lfo1Depth": 5,
-      "lfo2Rate": 0.3,
-      "lfo2Depth": 10
+      "ampRelease": 1,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 2,
+      "stereoSpace": true,
+      "spaceMix": 0.32,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 2.5
-      },
-      {
-        "note": 43,
-        "dur": 2.2
+        "start": 0.2,
+        "len": 4.5,
+        "dur": 4.5,
+        "note": 36
       }
     ]
   },
@@ -1647,54 +1902,77 @@
     "categoryLabel": "2. Post-Rock Power",
     "badgeColor": "rose",
     "soundDescription": "Singing high lead voiced 2 octaves up using the ACID diode ladder filter. Smooth portamento glide and vocal aftertouch vibrato.",
-    "inspiration": "Sigur R\u00f3s (J\u00f3nsi's bowed guitar melodies), Explosions in the Sky.",
+    "inspiration": "Sigur Rós (Jónsi's bowed guitar melodies), Explosions in the Sky.",
     "songs": "Highlands (Hillsong UNITED), Touch the Sky (Hillsong UNITED), King of My Heart (Bethel).",
     "controls": "Play melodic phrases high on the keyboard; aftertouch triggers intense singing vibrato.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 1,
-      "osc1Detune": -4,
+      "osc1Level": 0.85,
+      "osc1Octave": 2,
+      "osc1Pw": 0.5,
       "osc2Wave": "triangle",
-      "osc2Oct": 1,
-      "osc2Detune": 4,
+      "osc2Level": 0.55,
+      "osc2Octave": 2,
+      "osc2DetuneCents": 8,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 40,
+      "subLevel": 0.25,
+      "subOctave": 1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
-      "filterAcid": true,
-      "cutoff": 45,
-      "resonance": 55,
-      "modEnvDepth": 30,
-      "overdrive": 70,
-      "distortion": 18,
-      "ampAttack": 0.05,
-      "ampDecay": 0.8,
-      "ampSustain": 0.9,
-      "ampRelease": 0.6,
-      "modAttack": 0.08,
-      "modDecay": 0.6,
-      "modSustain": 0.4,
-      "modRelease": 0.5,
-      "glide": 0.1,
-      "lfo1Rate": 5.5,
-      "lfo1Depth": 6,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "baseCutoff": 450,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
+      "filterAcid": false,
+      "resonance": 0.58,
+      "drive": 1.7,
+      "distortion": 0.18,
+      "ampAttack": 0.15,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.5,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0.2,
+      "vibrato": 0.38,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.38,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
+        "start": 0.1,
+        "len": 1.2,
+        "dur": 1.2,
         "note": 60,
-        "dur": 0.6
+        "prevMidi": 60
       },
       {
+        "start": 1.3,
+        "len": 1.2,
+        "dur": 1.2,
         "note": 65,
-        "dur": 0.6
+        "prevMidi": 60
       },
       {
+        "start": 2.5,
+        "len": 2.2,
+        "dur": 2.2,
         "note": 67,
-        "dur": 1.2
+        "prevMidi": 65
       }
     ]
   },
@@ -1713,49 +1991,63 @@
     "controls": "Gentle touch; roll back Mod Wheel completely for a dark, intimate felt-hammer tone.",
     "synthParams": {
       "osc1Wave": "triangle",
-      "osc1Oct": -1,
-      "osc1Detune": 0,
+      "osc1Level": 0.85,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "sine",
-      "osc2Oct": -1,
-      "osc2Detune": 2,
+      "osc2Level": 0.4,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 0,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 80,
+      "subLevel": 0.75,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 160,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 28,
-      "resonance": 10,
-      "modEnvDepth": 15,
-      "overdrive": 15,
+      "resonance": 0.15,
+      "drive": 1.1,
       "distortion": 0,
-      "ampAttack": 0.02,
-      "ampDecay": 0.7,
-      "ampSustain": 0.7,
-      "ampRelease": 0.4,
-      "modAttack": 0.025,
-      "modDecay": 0.4,
-      "modSustain": 0.05,
-      "modRelease": 0.3,
-      "glide": 0.03,
-      "lfo1Rate": 1,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampAttack": 0.25,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.45,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 2,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.7
+        "start": 0.2,
+        "len": 1.8,
+        "dur": 1.8,
+        "note": 36
       },
       {
-        "note": 33,
-        "dur": 0.7
-      },
-      {
-        "note": 36,
-        "dur": 1.0
+        "start": 2.1,
+        "len": 2,
+        "dur": 2,
+        "note": 33
       }
     ]
   },
@@ -1774,45 +2066,57 @@
     "controls": "Mod Wheel sweeps wow & flutter depth; warmth without harsh highs.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": -1,
-      "osc1Detune": -8,
+      "osc1Level": 0.75,
+      "osc1Octave": 0,
+      "osc1Pw": 0.6,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 8,
+      "osc2Level": 0.55,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 12,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 85,
-      "noiseLevel": 18,
-      "filterType": "lp",
-      "filterSlope": 12,
+      "subLevel": 0.65,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 240,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "12dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 38,
-      "resonance": 20,
-      "modEnvDepth": 18,
-      "overdrive": 50,
-      "distortion": 12,
-      "ampAttack": 0.06,
-      "ampDecay": 0.8,
-      "ampSustain": 0.85,
+      "resonance": 0.22,
+      "drive": 1.5,
+      "distortion": 0.15,
+      "ampAttack": 0.3,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
       "ampRelease": 0.5,
-      "modAttack": 0.1,
-      "modDecay": 0.7,
-      "modSustain": 0.4,
-      "modRelease": 0.5,
-      "glide": 0.04,
-      "lfo1Rate": 1.8,
-      "lfo1Depth": 5,
-      "lfo2Rate": 0.5,
-      "lfo2Depth": 8
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 5,
+      "stereoSpace": true,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 1.8
-      },
-      {
-        "note": 38,
-        "dur": 1.8
+        "start": 0.2,
+        "len": 4,
+        "dur": 4,
+        "note": 36
       }
     ]
   },
@@ -1831,41 +2135,57 @@
     "controls": "Pair with a long hall or shimmer reverb pedal; hold root chord notes during prayer.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -12,
+      "osc1Level": 0.7,
+      "osc1Octave": 1,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 12,
+      "osc2Level": 0.65,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 9,
+      "osc2Pw": 0.45,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 75,
-      "noiseLevel": 10,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "subLevel": 0.5,
+      "subOctave": 0,
+      "noiseLevel": 0,
+      "baseCutoff": 150,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 140,
+      "filterSlope": "12dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 25,
-      "resonance": 30,
-      "modEnvDepth": 40,
-      "overdrive": 40,
+      "resonance": 0.3,
+      "drive": 1.4,
       "distortion": 0,
-      "ampAttack": 2.5,
-      "ampDecay": 2.0,
+      "ampAttack": 2.2,
+      "ampDecay": 0.5,
       "ampSustain": 0.95,
-      "ampRelease": 2.5,
-      "modAttack": 2.8,
-      "modDecay": 2.0,
-      "modSustain": 0.8,
-      "modRelease": 2.5,
-      "glide": 0.1,
-      "lfo1Rate": 0.5,
-      "lfo1Depth": 2,
-      "lfo2Rate": 0.25,
-      "lfo2Depth": 18
+      "ampRelease": 1.2,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.42,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5.5
     },
     "demoRiff": [
       {
-        "note": 48,
-        "dur": 3.5
+        "start": 0.2,
+        "len": 5,
+        "dur": 5,
+        "note": 48
       }
     ]
   },
@@ -1884,61 +2204,87 @@
     "controls": "Play arpeggiated melodic figures through a stereo delay pedal set to dotted-eighth notes.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": 1,
-      "osc1Detune": 0,
+      "osc1Level": 0.85,
+      "osc1Octave": 2,
+      "osc1Pw": 0.85,
       "osc2Wave": "sine",
-      "osc2Oct": 1,
-      "osc2Detune": 3,
+      "osc2Level": 0.5,
+      "osc2Octave": 3,
+      "osc2DetuneCents": 7,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
       "subLevel": 0,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "bp",
-      "filterSlope": 24,
+      "baseCutoff": 520,
+      "filterEnvAmt": 480,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "bp",
       "filterAcid": false,
-      "cutoff": 55,
-      "resonance": 68,
-      "modEnvDepth": 45,
-      "overdrive": 25,
+      "resonance": 0.68,
+      "drive": 1.2,
       "distortion": 0,
-      "ampAttack": 0.002,
-      "ampDecay": 0.35,
-      "ampSustain": 0.0,
-      "ampRelease": 0.12,
-      "modAttack": 0.002,
-      "modDecay": 0.25,
-      "modSustain": 0.0,
-      "modRelease": 0.1,
-      "glide": 0.0,
-      "lfo1Rate": 3,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampAttack": 0.005,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.35,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.45,
+      "spaceTime": 0.38,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 60,
-        "dur": 0.18
+        "start": 0.1,
+        "len": 0.3,
+        "dur": 0.3,
+        "note": 60
       },
       {
-        "note": 67,
-        "dur": 0.18
+        "start": 0.6,
+        "len": 0.3,
+        "dur": 0.3,
+        "note": 67
       },
       {
-        "note": 72,
-        "dur": 0.18
+        "start": 1.1,
+        "len": 0.3,
+        "dur": 0.3,
+        "note": 72
       },
       {
-        "note": 67,
-        "dur": 0.18
+        "start": 1.6,
+        "len": 0.3,
+        "dur": 0.3,
+        "note": 67
       },
       {
-        "note": 65,
-        "dur": 0.18
+        "start": 2.1,
+        "len": 0.3,
+        "dur": 0.3,
+        "note": 65
       },
       {
-        "note": 60,
-        "dur": 0.35
+        "start": 2.6,
+        "len": 0.8,
+        "dur": 0.8,
+        "note": 60
       }
     ]
   },
@@ -1952,46 +2298,62 @@
     "categoryLabel": "3. Ambient Soundscape",
     "badgeColor": "amber",
     "soundDescription": "Hypnotic dual-LFO soundscape blending PWM shimmer with slow filter sweep and a delicate analog white noise bed.",
-    "inspiration": "Jon Hopkins, Nordic ambient soundscapes, Sigur R\u00f3s interludes.",
+    "inspiration": "Jon Hopkins, Nordic ambient soundscapes, Sigur Rós interludes.",
     "songs": "Selah I / II (Hillsong UNITED), Agnus Dei (Bethel Music), baptism / prayer bed.",
     "controls": "Mod Wheel sweeps white noise and filter shimmer; ideal for prayer moments.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -7,
+      "osc1Level": 0.7,
+      "osc1Octave": 1,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 7,
+      "osc2Level": 0.6,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 10,
+      "osc2Pw": 0.7,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 70,
-      "noiseLevel": 25,
-      "filterType": "lp",
-      "filterSlope": 12,
+      "subLevel": 0.5,
+      "subOctave": 0,
+      "noiseLevel": 0.06,
+      "baseCutoff": 210,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 120,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 32,
-      "resonance": 35,
-      "modEnvDepth": 25,
-      "overdrive": 30,
+      "resonance": 0.42,
+      "drive": 1.3,
       "distortion": 0,
-      "ampAttack": 1.0,
-      "ampDecay": 1.5,
-      "ampSustain": 0.9,
-      "ampRelease": 1.8,
-      "modAttack": 1.2,
-      "modDecay": 1.5,
-      "modSustain": 0.7,
-      "modRelease": 1.8,
-      "glide": 0.08,
-      "lfo1Rate": 1.2,
-      "lfo1Depth": 4,
-      "lfo2Rate": 0.3,
-      "lfo2Depth": 16
+      "ampAttack": 1,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.8,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.38,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
-        "note": 48,
-        "dur": 3.0
+        "start": 0.2,
+        "len": 4.5,
+        "dur": 4.5,
+        "note": 48
       }
     ]
   },
@@ -2010,41 +2372,57 @@
     "controls": "Aftertouch introduces warm grit; sits behind acoustic guitar like a warm blanket.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": 0,
-      "osc1Detune": -6,
+      "osc1Level": 0.75,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "triangle",
-      "osc2Oct": 0,
-      "osc2Detune": 6,
+      "osc2Level": 0.65,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 8,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 30,
-      "noiseLevel": 8,
-      "filterType": "bp",
-      "filterSlope": 24,
+      "subLevel": 0,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 380,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "bp",
       "filterAcid": false,
-      "cutoff": 42,
-      "resonance": 45,
-      "modEnvDepth": 20,
-      "overdrive": 45,
-      "distortion": 15,
-      "ampAttack": 0.4,
-      "ampDecay": 1.2,
-      "ampSustain": 0.85,
-      "ampRelease": 1.0,
-      "modAttack": 0.6,
-      "modDecay": 1.2,
-      "modSustain": 0.5,
-      "modRelease": 1.0,
-      "glide": 0.05,
-      "lfo1Rate": 1.5,
-      "lfo1Depth": 2,
-      "lfo2Rate": 0.4,
-      "lfo2Depth": 12
+      "resonance": 0.48,
+      "drive": 1.5,
+      "distortion": 0.15,
+      "ampAttack": 0.6,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.7,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.35,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 48,
-        "dur": 2.8
+        "start": 0.2,
+        "len": 4,
+        "dur": 4,
+        "note": 48
       }
     ]
   },
@@ -2063,49 +2441,72 @@
     "controls": "Aftertouch increases vibrato and opens filter; perfect for expressive vocal counter-melodies.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": 1,
-      "osc1Detune": -5,
+      "osc1Level": 0.75,
+      "osc1Octave": 2,
+      "osc1Pw": 0.6,
       "osc2Wave": "pulse",
-      "osc2Oct": 1,
-      "osc2Detune": 5,
+      "osc2Level": 0.75,
+      "osc2Octave": 2,
+      "osc2DetuneCents": 8,
+      "osc2Pw": 0.4,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 45,
+      "subLevel": 0.3,
+      "subOctave": 1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 340,
+      "filterEnvAmt": 260,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 38,
-      "resonance": 35,
-      "modEnvDepth": 28,
-      "overdrive": 55,
-      "distortion": 8,
-      "ampAttack": 0.15,
-      "ampDecay": 0.9,
-      "ampSustain": 0.9,
-      "ampRelease": 0.8,
-      "modAttack": 0.25,
-      "modDecay": 0.8,
-      "modSustain": 0.6,
-      "modRelease": 0.8,
-      "glide": 0.12,
-      "lfo1Rate": 4.8,
-      "lfo1Depth": 5,
-      "lfo2Rate": 0.8,
-      "lfo2Depth": 6
+      "resonance": 0.4,
+      "drive": 1.6,
+      "distortion": 0.08,
+      "ampAttack": 0.35,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.6,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0.15,
+      "vibrato": 0.28,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.42,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
+        "start": 0.1,
+        "len": 1.4,
+        "dur": 1.4,
         "note": 60,
-        "dur": 0.8
+        "prevMidi": 60
       },
       {
+        "start": 1.5,
+        "len": 1.3,
+        "dur": 1.3,
         "note": 67,
-        "dur": 0.8
+        "prevMidi": 60
       },
       {
+        "start": 2.8,
+        "len": 1.8,
+        "dur": 1.8,
         "note": 65,
-        "dur": 1.2
+        "prevMidi": 67
       }
     ]
   },
@@ -2124,41 +2525,57 @@
     "controls": "Adjust LFO rate to match service BPM for automated tempo-synced sidechain pumping.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": -6,
+      "osc1Level": 0.8,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 6,
+      "osc2Level": 0.4,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 8,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 110,
+      "subLevel": 0.95,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 210,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 32,
-      "resonance": 25,
-      "modEnvDepth": 20,
-      "overdrive": 60,
-      "distortion": 12,
-      "ampAttack": 0.005,
+      "resonance": 0.25,
+      "drive": 1.5,
+      "distortion": 0.12,
+      "ampAttack": 0.01,
       "ampDecay": 0.5,
-      "ampSustain": 0.9,
-      "ampRelease": 0.2,
-      "modAttack": 0.005,
-      "modDecay": 0.4,
-      "modSustain": 0.2,
+      "ampSustain": 0.95,
+      "ampRelease": 0.25,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
       "modRelease": 0.2,
-      "glide": 0.02,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 2.0,
-      "lfo2Depth": 24
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": true,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 2.5
+        "start": 0.1,
+        "len": 4.2,
+        "dur": 4.2,
+        "note": 36
       }
     ]
   },
@@ -2177,41 +2594,57 @@
     "controls": "Hold root note during reflective interludes; Mod Wheel speeds up S&H bubble rate.",
     "synthParams": {
       "osc1Wave": "triangle",
-      "osc1Oct": 0,
-      "osc1Detune": 0,
+      "osc1Level": 0.7,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 5,
+      "osc2Level": 0.65,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 10,
+      "osc2Pw": 0.6,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 80,
-      "noiseLevel": 10,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "subLevel": 0.8,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 260,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 380,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 35,
-      "resonance": 65,
-      "modEnvDepth": 15,
-      "overdrive": 45,
-      "distortion": 15,
-      "ampAttack": 0.05,
-      "ampDecay": 0.8,
-      "ampSustain": 0.85,
-      "ampRelease": 0.5,
-      "modAttack": 0.05,
-      "modDecay": 0.6,
-      "modSustain": 0.3,
-      "modRelease": 0.4,
-      "glide": 0.02,
-      "lfo1Rate": 4,
-      "lfo1Depth": 0,
-      "lfo2Rate": 5.5,
-      "lfo2Depth": 35
+      "resonance": 0.58,
+      "drive": 1.4,
+      "distortion": 0.15,
+      "ampAttack": 0.01,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.25,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": true,
+      "shRate": 8,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 2.6
+        "start": 0.1,
+        "len": 4.2,
+        "dur": 4.2,
+        "note": 36
       }
     ]
   },
@@ -2230,61 +2663,111 @@
     "controls": "Built-in syncopation; lock with drum tempo for an energetic anthemic groove.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": -1,
-      "osc1Detune": -4,
+      "osc1Level": 0.8,
+      "osc1Octave": 0,
+      "osc1Pw": 0.55,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 4,
+      "osc2Level": 0.4,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 6,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 95,
+      "subLevel": 0.85,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 280,
+      "filterEnvAmt": 420,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 38,
-      "resonance": 30,
-      "modEnvDepth": 35,
-      "overdrive": 85,
-      "distortion": 16,
-      "ampAttack": 0.003,
-      "ampDecay": 0.28,
-      "ampSustain": 0.1,
-      "ampRelease": 0.1,
-      "modAttack": 0.003,
-      "modDecay": 0.22,
-      "modSustain": 0.0,
-      "modRelease": 0.08,
-      "glide": 0.0,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 2,
-      "lfo2Depth": 0
+      "resonance": 0.42,
+      "drive": 1.8,
+      "distortion": 0.16,
+      "ampAttack": 0.005,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.08,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.2
+        "start": 0,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.2
+        "start": 0.35,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 48,
-        "dur": 0.2
+        "start": 0.7,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 48
       },
       {
-        "note": 36,
-        "dur": 0.2
+        "start": 1.05,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 46,
-        "dur": 0.2
+        "start": 1.4,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 46
       },
       {
-        "note": 36,
-        "dur": 0.2
+        "start": 1.75,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 2.1,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 48
+      },
+      {
+        "start": 2.45,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
+      },
+      {
+        "start": 2.8,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 41
+      },
+      {
+        "start": 3.15,
+        "len": 0.5,
+        "dur": 0.5,
+        "note": 36
       }
     ]
   },
@@ -2303,61 +2786,165 @@
     "controls": "Hold root key; arpeggiator gallops octaves automatically with driving weight.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": -7,
+      "osc1Level": 0.8,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 7,
+      "osc2Level": 0.45,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 9,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 105,
+      "subLevel": 0.9,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 300,
+      "filterEnvAmt": 400,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 40,
-      "resonance": 35,
-      "modEnvDepth": 40,
-      "overdrive": 110,
-      "distortion": 20,
-      "ampAttack": 0.002,
-      "ampDecay": 0.2,
-      "ampSustain": 0.05,
+      "resonance": 0.45,
+      "drive": 2,
+      "distortion": 0.2,
+      "ampAttack": 0.005,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
       "ampRelease": 0.08,
-      "modAttack": 0.002,
-      "modDecay": 0.18,
-      "modSustain": 0.0,
-      "modRelease": 0.08,
-      "glide": 0.0,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 2,
-      "lfo2Depth": 0
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.14
+        "start": 0,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
       },
       {
-        "note": 48,
-        "dur": 0.14
+        "start": 0.18,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
       },
       {
-        "note": 36,
-        "dur": 0.14
+        "start": 0.36,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
       },
       {
-        "note": 48,
-        "dur": 0.14
+        "start": 0.54,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
       },
       {
-        "note": 36,
-        "dur": 0.14
+        "start": 0.72,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
       },
       {
-        "note": 48,
-        "dur": 0.14
+        "start": 0.9,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
+      },
+      {
+        "start": 1.08,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
+      },
+      {
+        "start": 1.26,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
+      },
+      {
+        "start": 1.44,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
+      },
+      {
+        "start": 1.62,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
+      },
+      {
+        "start": 1.8,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
+      },
+      {
+        "start": 1.98,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
+      },
+      {
+        "start": 2.16,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
+      },
+      {
+        "start": 2.34,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
+      },
+      {
+        "start": 2.52,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
+      },
+      {
+        "start": 2.7,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
+      },
+      {
+        "start": 2.88,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 39
+      },
+      {
+        "start": 3.06,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 51
+      },
+      {
+        "start": 3.24,
+        "len": 0.5,
+        "dur": 0.5,
+        "note": 36
       }
     ]
   },
@@ -2376,41 +2963,57 @@
     "controls": "Hold key 4 bars before chorus; release key right on beat 1 for explosive impact.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": -8,
+      "osc1Level": 0.5,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 8,
+      "osc2Level": 0.4,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 0,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 115,
-      "noiseLevel": 45,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "subLevel": 0.7,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 120,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 20,
-      "resonance": 45,
-      "modEnvDepth": 60,
-      "overdrive": 60,
-      "distortion": 22,
-      "ampAttack": 0.1,
-      "ampDecay": 3.5,
-      "ampSustain": 1.0,
-      "ampRelease": 0.5,
-      "modAttack": 4.5,
-      "modDecay": 1.0,
-      "modSustain": 1.0,
-      "modRelease": 0.5,
-      "glide": 0.0,
-      "lfo1Rate": 1,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "resonance": 0.52,
+      "drive": 1.6,
+      "distortion": 0.22,
+      "ampAttack": 0.01,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.25,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.35,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": true,
+      "riserNoise": true,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 4.2
+        "start": 0.1,
+        "len": 4.8,
+        "dur": 4.8,
+        "note": 36
       }
     ]
   },
@@ -2424,66 +3027,122 @@
     "categoryLabel": "4. Rhythmic Motion",
     "badgeColor": "blue",
     "soundDescription": "Ultra-dry, woody clockwork pulse / muted marimba with zero sustain and 28ms micro-decay. Acts like a percussive analog clock.",
-    "inspiration": "Steve Reich minimalist pulse pieces, \u00d3lafur Arnalds, intimate acoustic sets.",
+    "inspiration": "Steve Reich minimalist pulse pieces, Ólafur Arnalds, intimate acoustic sets.",
     "songs": "Lord I Need You (Matt Maher), King of My Heart (Bethel), intimate acoustic intros.",
     "controls": "Play intricate 16th ostinatos; leaves maximum space for lead vocals.",
     "synthParams": {
       "osc1Wave": "triangle",
-      "osc1Oct": 0,
-      "osc1Detune": 0,
+      "osc1Level": 0.85,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 1,
-      "osc2Detune": 4,
+      "osc2Level": 0.5,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 0,
+      "osc2Pw": 0.8,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 60,
+      "subLevel": 0.6,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 380,
+      "filterEnvAmt": 460,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 45,
-      "resonance": 15,
-      "modEnvDepth": 30,
-      "overdrive": 20,
+      "resonance": 0.35,
+      "drive": 1.1,
       "distortion": 0,
-      "ampAttack": 0.001,
-      "ampDecay": 0.12,
-      "ampSustain": 0.0,
-      "ampRelease": 0.05,
-      "modAttack": 0.001,
-      "modDecay": 0.08,
-      "modSustain": 0.0,
-      "modRelease": 0.05,
-      "glide": 0.0,
-      "lfo1Rate": 1,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampAttack": 0.005,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.04,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.16
+        "start": 0.1,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.16
+        "start": 0.4,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.16
+        "start": 0.7,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 36
       },
       {
-        "note": 43,
-        "dur": 0.16
+        "start": 1,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 43
       },
       {
-        "note": 36,
-        "dur": 0.16
+        "start": 1.3,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 36
       },
       {
-        "note": 41,
-        "dur": 0.16
+        "start": 1.6,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 36
+      },
+      {
+        "start": 1.9,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 41
+      },
+      {
+        "start": 2.2,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 36
+      },
+      {
+        "start": 2.5,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 36
+      },
+      {
+        "start": 2.8,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 43
+      },
+      {
+        "start": 3.1,
+        "len": 0.12,
+        "dur": 0.12,
+        "note": 36
       }
     ]
   },
@@ -2502,49 +3161,72 @@
     "controls": "Play legato lines for sweeping whammy glide; Mod Wheel intensifies pitch tremolo.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": -12,
+      "osc1Level": 0.8,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 12,
+      "osc2Level": 0.75,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 15,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 100,
-      "noiseLevel": 10,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "subLevel": 0.85,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 260,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 38,
-      "resonance": 30,
-      "modEnvDepth": 25,
-      "overdrive": 95,
-      "distortion": 22,
+      "resonance": 0.32,
+      "drive": 1.9,
+      "distortion": 0.22,
       "ampAttack": 0.08,
-      "ampDecay": 0.8,
-      "ampSustain": 0.9,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
       "ampRelease": 0.6,
-      "modAttack": 0.12,
-      "modDecay": 0.7,
-      "modSustain": 0.5,
-      "modRelease": 0.5,
-      "glide": 0.18,
-      "lfo1Rate": 2.2,
-      "lfo1Depth": 8,
-      "lfo2Rate": 0.8,
-      "lfo2Depth": 6
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0.35,
+      "vibrato": 0.45,
+      "oscError": 4,
+      "stereoSpace": true,
+      "spaceMix": 0.32,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
+        "start": 0.1,
+        "len": 1.8,
+        "dur": 1.8,
         "note": 36,
-        "dur": 1.0
+        "prevMidi": 36
       },
       {
+        "start": 1.9,
+        "len": 1.5,
+        "dur": 1.5,
         "note": 41,
-        "dur": 1.0
+        "prevMidi": 36
       },
       {
+        "start": 3.4,
+        "len": 1.5,
+        "dur": 1.5,
         "note": 38,
-        "dur": 1.4
+        "prevMidi": 41
       }
     ]
   },
@@ -2563,41 +3245,57 @@
     "controls": "Pair with reverse reverb or tape echo pedals; slow attack allows gentle chord placement.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": 0,
-      "osc1Detune": -8,
+      "osc1Level": 0.75,
+      "osc1Octave": 1,
+      "osc1Pw": 0.75,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 8,
+      "osc2Level": 0.7,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 12,
+      "osc2Pw": 0.45,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 75,
-      "noiseLevel": 15,
-      "filterType": "lp",
-      "filterSlope": 12,
+      "subLevel": 0.9,
+      "subOctave": 0,
+      "noiseLevel": 0,
+      "baseCutoff": 320,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 220,
+      "filterSlope": "12dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 42,
-      "resonance": 25,
-      "modEnvDepth": 25,
-      "overdrive": 50,
-      "distortion": 10,
-      "ampAttack": 0.6,
-      "ampDecay": 1.4,
-      "ampSustain": 0.85,
-      "ampRelease": 1.5,
-      "modAttack": 0.8,
-      "modDecay": 1.4,
-      "modSustain": 0.6,
-      "modRelease": 1.5,
-      "glide": 0.08,
-      "lfo1Rate": 0.7,
-      "lfo1Depth": 3,
-      "lfo2Rate": 0.35,
-      "lfo2Depth": 14
+      "resonance": 0.38,
+      "drive": 1.5,
+      "distortion": 0.1,
+      "ampAttack": 0.5,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.8,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.45,
+      "spaceTime": 0.42,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
-        "note": 48,
-        "dur": 3.2
+        "start": 0.2,
+        "len": 4.5,
+        "dur": 4.5,
+        "note": 48
       }
     ]
   },
@@ -2616,61 +3314,87 @@
     "controls": "LFO1 modulates pitch for analog chorus chorusing; punchy transient drives 80s rhythm lines.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -5,
+      "osc1Level": 0.85,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 5,
+      "osc2Level": 0.8,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 16,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 80,
+      "subLevel": 0.75,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 420,
+      "filterEnvAmt": 380,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 52,
-      "resonance": 22,
-      "modEnvDepth": 30,
-      "overdrive": 65,
-      "distortion": 15,
+      "resonance": 0.44,
+      "drive": 1.6,
+      "distortion": 0.15,
       "ampAttack": 0.005,
       "ampDecay": 0.5,
-      "ampSustain": 0.8,
+      "ampSustain": 0.95,
       "ampRelease": 0.25,
-      "modAttack": 0.008,
-      "modDecay": 0.4,
-      "modSustain": 0.2,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
       "modRelease": 0.2,
-      "glide": 0.02,
-      "lfo1Rate": 3.2,
-      "lfo1Depth": 7,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.35
+        "start": 0.1,
+        "len": 0.6,
+        "dur": 0.6,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.35
+        "start": 0.8,
+        "len": 0.6,
+        "dur": 0.6,
+        "note": 36
       },
       {
-        "note": 43,
-        "dur": 0.35
+        "start": 1.5,
+        "len": 0.5,
+        "dur": 0.5,
+        "note": 43
       },
       {
-        "note": 41,
-        "dur": 0.35
+        "start": 2.1,
+        "len": 0.5,
+        "dur": 0.5,
+        "note": 41
       },
       {
-        "note": 40,
-        "dur": 0.35
+        "start": 2.7,
+        "len": 0.5,
+        "dur": 0.5,
+        "note": 40
       },
       {
-        "note": 36,
-        "dur": 0.7
+        "start": 3.3,
+        "len": 1,
+        "dur": 1,
+        "note": 36
       }
     ]
   },
@@ -2684,54 +3408,68 @@
     "categoryLabel": "5. Shoegaze & Dream-Pop",
     "badgeColor": "purple",
     "soundDescription": "Colossal high-gain fuzz wall (Deafheaven) with clean sub anchor. Overdrive pinned to 127 and distortion to 75 with analog noise, supported by a massive 210-level sine sub to shake the floor.",
-    "inspiration": "Deafheaven (Sunbather, Dream House), Alcest (\u00c9cailles de lune), Holy Fawn.",
+    "inspiration": "Deafheaven (Sunbather, Dream House), Alcest (Écailles de lune), Holy Fawn.",
     "songs": "RATTLE! (Elevation Worship), Lion (Elevation Worship), Ain't No Grave (Bethel Music).",
     "controls": "Aftertouch pushes diode distortion to 100 for sheer sonic obliteration.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": -9,
+      "osc1Level": 0.9,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 9,
+      "osc2Level": 0.85,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 11,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 130,
-      "noiseLevel": 25,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "subLevel": 1.15,
+      "subOctave": -1,
+      "noiseLevel": 0.18,
+      "baseCutoff": 360,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 46,
-      "resonance": 28,
-      "modEnvDepth": 25,
-      "overdrive": 127,
-      "distortion": 75,
-      "ampAttack": 0.008,
-      "ampDecay": 0.7,
+      "resonance": 0.32,
+      "drive": 3.8,
+      "distortion": 0.75,
+      "ampAttack": 0.01,
+      "ampDecay": 0.5,
       "ampSustain": 0.95,
-      "ampRelease": 0.35,
+      "ampRelease": 0.4,
       "modAttack": 0.01,
       "modDecay": 0.5,
-      "modSustain": 0.4,
-      "modRelease": 0.3,
-      "glide": 0.04,
-      "lfo1Rate": 1.5,
-      "lfo1Depth": 0,
-      "lfo2Rate": 0.8,
-      "lfo2Depth": 0
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.5
+        "start": 0.1,
+        "len": 2,
+        "dur": 2,
+        "note": 36
       },
       {
-        "note": 34,
-        "dur": 0.5
-      },
-      {
-        "note": 36,
-        "dur": 1.0
+        "start": 2.2,
+        "len": 2.1,
+        "dur": 2.1,
+        "note": 34
       }
     ]
   },
@@ -2750,49 +3488,63 @@
     "controls": "Velvety attack; aftertouch introduces warm filter bloom.",
     "synthParams": {
       "osc1Wave": "triangle",
-      "osc1Oct": -1,
-      "osc1Detune": -4,
+      "osc1Level": 0.85,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 4,
+      "osc2Level": 0.6,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 8,
+      "osc2Pw": 0.65,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 90,
-      "noiseLevel": 5,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "subLevel": 0.9,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 190,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 30,
-      "resonance": 18,
-      "modEnvDepth": 18,
-      "overdrive": 45,
-      "distortion": 8,
-      "ampAttack": 0.05,
-      "ampDecay": 0.8,
-      "ampSustain": 0.85,
-      "ampRelease": 0.4,
-      "modAttack": 0.06,
-      "modDecay": 0.6,
-      "modSustain": 0.2,
-      "modRelease": 0.35,
-      "glide": 0.03,
-      "lfo1Rate": 1.2,
-      "lfo1Depth": 3,
-      "lfo2Rate": 0.5,
-      "lfo2Depth": 6
+      "resonance": 0.2,
+      "drive": 1.4,
+      "distortion": 0.08,
+      "ampAttack": 0.35,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.7,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 3,
+      "stereoSpace": true,
+      "spaceMix": 0.3,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.9
+        "start": 0.2,
+        "len": 2.2,
+        "dur": 2.2,
+        "note": 36
       },
       {
-        "note": 33,
-        "dur": 0.9
-      },
-      {
-        "note": 36,
-        "dur": 1.2
+        "start": 2.5,
+        "len": 2.3,
+        "dur": 2.3,
+        "note": 33
       }
     ]
   },
@@ -2811,45 +3563,65 @@
     "controls": "Lean hard on aftertouch to tip the filter into howling self-oscillating feedback squeals.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -8,
+      "osc1Level": 0.8,
+      "osc1Octave": 1,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 1,
-      "osc2Detune": 8,
+      "osc2Level": 0.75,
+      "osc2Octave": 2,
+      "osc2DetuneCents": 14,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 30,
-      "noiseLevel": 15,
-      "filterType": "lp",
-      "filterSlope": 24,
-      "filterAcid": true,
-      "cutoff": 48,
-      "resonance": 92,
-      "modEnvDepth": 35,
-      "overdrive": 90,
-      "distortion": 35,
-      "ampAttack": 0.08,
-      "ampDecay": 1.0,
-      "ampSustain": 0.9,
-      "ampRelease": 0.7,
-      "modAttack": 0.15,
-      "modDecay": 0.8,
-      "modSustain": 0.6,
-      "modRelease": 0.6,
-      "glide": 0.06,
-      "lfo1Rate": 4.5,
-      "lfo1Depth": 8,
-      "lfo2Rate": 1.2,
-      "lfo2Depth": 12
+      "subLevel": 0.4,
+      "subOctave": 0,
+      "noiseLevel": 0,
+      "baseCutoff": 480,
+      "filterEnvAmt": 0,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
+      "filterAcid": false,
+      "resonance": 0.85,
+      "drive": 2.4,
+      "distortion": 0.35,
+      "ampAttack": 0.2,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.6,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0.25,
+      "vibrato": 0.35,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.4,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": true,
+      "swellCutoffBoost": 500,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
+        "start": 0.1,
+        "len": 2.2,
+        "dur": 2.2,
         "note": 48,
-        "dur": 1.5
+        "prevMidi": 48
       },
       {
+        "start": 2.4,
+        "len": 2.4,
+        "dur": 2.4,
         "note": 55,
-        "dur": 1.8
+        "prevMidi": 48
       }
     ]
   },
@@ -2868,61 +3640,93 @@
     "controls": "Dig into keys with high velocity to trigger vocal 'quack' filter opening.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": -1,
-      "osc1Detune": 0,
+      "osc1Level": 0.85,
+      "osc1Octave": 0,
+      "osc1Pw": 0.7,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 3,
+      "osc2Level": 0.7,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 8,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 90,
+      "subLevel": 0.95,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 220,
+      "filterEnvAmt": 750,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 24,
-      "resonance": 72,
-      "modEnvDepth": 55,
-      "overdrive": 35,
-      "distortion": 6,
-      "ampAttack": 0.003,
-      "ampDecay": 0.35,
-      "ampSustain": 0.3,
-      "ampRelease": 0.12,
-      "modAttack": 0.005,
-      "modDecay": 0.22,
-      "modSustain": 0.0,
-      "modRelease": 0.1,
-      "glide": 0.0,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "resonance": 0.65,
+      "drive": 1.35,
+      "distortion": 0.06,
+      "ampAttack": 0.008,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.22,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 28,
-        "dur": 0.18
+        "start": 0.1,
+        "len": 0.45,
+        "dur": 0.45,
+        "note": 28
       },
       {
-        "note": 31,
-        "dur": 0.18
+        "start": 0.65,
+        "len": 0.35,
+        "dur": 0.35,
+        "note": 31
       },
       {
-        "note": 33,
-        "dur": 0.25
+        "start": 1.1,
+        "len": 0.5,
+        "dur": 0.5,
+        "note": 33
       },
       {
-        "note": 28,
-        "dur": 0.18
+        "start": 1.7,
+        "len": 0.35,
+        "dur": 0.35,
+        "note": 28
       },
       {
-        "note": 38,
-        "dur": 0.18
+        "start": 2.15,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 38
       },
       {
-        "note": 40,
-        "dur": 0.35
+        "start": 2.65,
+        "len": 0.6,
+        "dur": 0.6,
+        "note": 40
+      },
+      {
+        "start": 3.35,
+        "len": 0.8,
+        "dur": 0.8,
+        "note": 28
       }
     ]
   },
@@ -2941,69 +3745,99 @@
     "controls": "Play rapid pentatonic chops and octaves; tight sub never muddies fast runs.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": -4,
+      "osc1Level": 0.8,
+      "osc1Octave": -1,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 4,
+      "osc2Level": 0.65,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 6,
+      "osc2Pw": 0.6,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 110,
+      "subLevel": 1.2,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 380,
+      "filterEnvAmt": 340,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 38,
-      "resonance": 28,
-      "modEnvDepth": 35,
-      "overdrive": 45,
-      "distortion": 12,
+      "resonance": 0.42,
+      "drive": 1.45,
+      "distortion": 0.12,
       "ampAttack": 0.002,
-      "ampDecay": 0.32,
-      "ampSustain": 0.4,
-      "ampRelease": 0.12,
-      "modAttack": 0.003,
-      "modDecay": 0.2,
-      "modSustain": 0.05,
-      "modRelease": 0.1,
-      "glide": 0.015,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.18,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 34,
-        "dur": 0.15
+        "start": 0.1,
+        "len": 0.25,
+        "dur": 0.25,
+        "note": 34
       },
       {
-        "note": 36,
-        "dur": 0.15
+        "start": 0.4,
+        "len": 0.25,
+        "dur": 0.25,
+        "note": 36
       },
       {
-        "note": 39,
-        "dur": 0.15
+        "start": 0.7,
+        "len": 0.25,
+        "dur": 0.25,
+        "note": 39
       },
       {
-        "note": 41,
-        "dur": 0.15
+        "start": 1,
+        "len": 0.25,
+        "dur": 0.25,
+        "note": 41
       },
       {
-        "note": 43,
-        "dur": 0.15
+        "start": 1.3,
+        "len": 0.35,
+        "dur": 0.35,
+        "note": 43
       },
       {
-        "note": 48,
-        "dur": 0.2
+        "start": 1.75,
+        "len": 0.3,
+        "dur": 0.3,
+        "note": 48
       },
       {
-        "note": 46,
-        "dur": 0.15
+        "start": 2.15,
+        "len": 0.3,
+        "dur": 0.3,
+        "note": 46
       },
       {
-        "note": 36,
-        "dur": 0.4
+        "start": 2.55,
+        "len": 0.7,
+        "dur": 0.7,
+        "note": 36
       }
     ]
   },
@@ -3022,57 +3856,86 @@
     "controls": "Mod Wheel opens vocal vowel formant ('ooo' to 'aaa'); pitch bend wheel adds vocal inflections.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": 0,
-      "osc1Detune": 0,
+      "osc1Level": 0.85,
+      "osc1Octave": 0,
+      "osc1Pw": 0.82,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 4,
+      "osc2Level": 0.75,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 12,
+      "osc2Pw": 0.75,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 50,
+      "subLevel": 0.6,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "bp",
-      "filterSlope": 24,
+      "baseCutoff": 480,
+      "filterEnvAmt": 450,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "bp",
       "filterAcid": false,
-      "cutoff": 45,
-      "resonance": 60,
-      "modEnvDepth": 38,
-      "overdrive": 55,
-      "distortion": 18,
-      "ampAttack": 0.01,
+      "resonance": 0.72,
+      "drive": 1.6,
+      "distortion": 0.18,
+      "ampAttack": 0.015,
       "ampDecay": 0.5,
-      "ampSustain": 0.8,
-      "ampRelease": 0.2,
-      "modAttack": 0.02,
-      "modDecay": 0.4,
-      "modSustain": 0.3,
+      "ampSustain": 0.95,
+      "ampRelease": 0.3,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
       "modRelease": 0.2,
-      "glide": 0.04,
-      "lfo1Rate": 4.5,
-      "lfo1Depth": 4,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "portamento": 0.18,
+      "vibrato": 0.25,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.35,
+      "spaceTime": 0.3,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5
     },
     "demoRiff": [
       {
+        "start": 0.1,
+        "len": 0.8,
+        "dur": 0.8,
         "note": 41,
-        "dur": 0.35
+        "prevMidi": 41
       },
       {
+        "start": 1,
+        "len": 0.6,
+        "dur": 0.6,
         "note": 44,
-        "dur": 0.35
+        "prevMidi": 41
       },
       {
+        "start": 1.7,
+        "len": 0.7,
+        "dur": 0.7,
         "note": 46,
-        "dur": 0.35
+        "prevMidi": 44
       },
       {
+        "start": 2.5,
+        "len": 1.1,
+        "dur": 1.1,
         "note": 48,
-        "dur": 0.5
+        "prevMidi": 46
       },
       {
+        "start": 3.7,
+        "len": 0.9,
+        "dur": 0.9,
         "note": 46,
-        "dur": 0.6
+        "prevMidi": 48
       }
     ]
   },
@@ -3091,65 +3954,93 @@
     "controls": "Classic mini funk bounce; staccato key hits emphasize snappy filter decay.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": -1,
-      "osc1Detune": 0,
+      "osc1Level": 0.85,
+      "osc1Octave": -1,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": -1,
-      "osc2Detune": 4,
+      "osc2Level": 0.75,
+      "osc2Octave": -1,
+      "osc2DetuneCents": 7,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 100,
+      "subLevel": 1.1,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 240,
+      "filterEnvAmt": 420,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 32,
-      "resonance": 48,
-      "modEnvDepth": 42,
-      "overdrive": 30,
-      "distortion": 5,
-      "ampAttack": 0.003,
-      "ampDecay": 0.38,
-      "ampSustain": 0.25,
-      "ampRelease": 0.12,
-      "modAttack": 0.004,
-      "modDecay": 0.25,
-      "modSustain": 0.05,
-      "modRelease": 0.1,
-      "glide": 0.015,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "resonance": 0.52,
+      "drive": 1.3,
+      "distortion": 0.05,
+      "ampAttack": 0.005,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.22,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 39,
-        "dur": 0.2
+        "start": 0.1,
+        "len": 0.45,
+        "dur": 0.45,
+        "note": 39
       },
       {
-        "note": 43,
-        "dur": 0.2
+        "start": 0.65,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 43
       },
       {
-        "note": 44,
-        "dur": 0.2
+        "start": 1.15,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 44
       },
       {
-        "note": 46,
-        "dur": 0.25
+        "start": 1.65,
+        "len": 0.5,
+        "dur": 0.5,
+        "note": 46
       },
       {
-        "note": 39,
-        "dur": 0.2
+        "start": 2.25,
+        "len": 0.35,
+        "dur": 0.35,
+        "note": 39
       },
       {
-        "note": 41,
-        "dur": 0.2
+        "start": 2.7,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 41
       },
       {
-        "note": 39,
-        "dur": 0.4
+        "start": 3.2,
+        "len": 0.9,
+        "dur": 0.9,
+        "note": 39
       }
     ]
   },
@@ -3168,69 +4059,99 @@
     "controls": "ACID filter mode engages non-linear diode ladder; aftertouch screams resonant squelch.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": 0,
+      "osc1Level": 0.9,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 3,
+      "osc2Level": 0.6,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 9,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 80,
+      "subLevel": 0.9,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
-      "filterAcid": true,
-      "cutoff": 34,
-      "resonance": 78,
-      "modEnvDepth": 55,
-      "overdrive": 65,
-      "distortion": 22,
-      "ampAttack": 0.003,
-      "ampDecay": 0.3,
-      "ampSustain": 0.1,
-      "ampRelease": 0.1,
-      "modAttack": 0.003,
-      "modDecay": 0.22,
-      "modSustain": 0.0,
-      "modRelease": 0.08,
-      "glide": 0.02,
-      "lfo1Rate": 3,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "baseCutoff": 300,
+      "filterEnvAmt": 650,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
+      "filterAcid": false,
+      "resonance": 0.78,
+      "drive": 1.8,
+      "distortion": 0.22,
+      "ampAttack": 0.004,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.18,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4
     },
     "demoRiff": [
       {
-        "note": 38,
-        "dur": 0.15
+        "start": 0.1,
+        "len": 0.22,
+        "dur": 0.22,
+        "note": 38
       },
       {
-        "note": 38,
-        "dur": 0.15
+        "start": 0.38,
+        "len": 0.22,
+        "dur": 0.22,
+        "note": 38
       },
       {
-        "note": 41,
-        "dur": 0.15
+        "start": 0.66,
+        "len": 0.3,
+        "dur": 0.3,
+        "note": 41
       },
       {
-        "note": 43,
-        "dur": 0.15
+        "start": 1.04,
+        "len": 0.25,
+        "dur": 0.25,
+        "note": 43
       },
       {
-        "note": 48,
-        "dur": 0.2
+        "start": 1.36,
+        "len": 0.35,
+        "dur": 0.35,
+        "note": 48
       },
       {
-        "note": 38,
-        "dur": 0.15
+        "start": 1.78,
+        "len": 0.25,
+        "dur": 0.25,
+        "note": 38
       },
       {
-        "note": 46,
-        "dur": 0.15
+        "start": 2.1,
+        "len": 0.3,
+        "dur": 0.3,
+        "note": 46
       },
       {
-        "note": 38,
-        "dur": 0.3
+        "start": 2.48,
+        "len": 0.8,
+        "dur": 0.8,
+        "note": 38
       }
     ]
   },
@@ -3249,69 +4170,123 @@
     "controls": "Tight punchy 16th decay; locks with four-on-the-floor kick drum worship tracks.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": -5,
+      "osc1Level": 0.85,
+      "osc1Octave": -1,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 5,
+      "osc2Level": 0.7,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 6,
+      "osc2Pw": 0.65,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 100,
+      "subLevel": 1,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 320,
+      "filterEnvAmt": 300,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 36,
-      "resonance": 30,
-      "modEnvDepth": 38,
-      "overdrive": 80,
-      "distortion": 18,
-      "ampAttack": 0.003,
-      "ampDecay": 0.26,
-      "ampSustain": 0.2,
-      "ampRelease": 0.1,
-      "modAttack": 0.003,
-      "modDecay": 0.18,
-      "modSustain": 0.0,
-      "modRelease": 0.08,
-      "glide": 0.01,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "resonance": 0.38,
+      "drive": 2,
+      "distortion": 0.18,
+      "ampAttack": 0.005,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.16,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.2
     },
     "demoRiff": [
       {
-        "note": 33,
-        "dur": 0.15
+        "start": 0.1,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 33
       },
       {
-        "note": 45,
-        "dur": 0.15
+        "start": 0.35,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 45
       },
       {
-        "note": 33,
-        "dur": 0.15
+        "start": 0.6,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 33
       },
       {
-        "note": 45,
-        "dur": 0.15
+        "start": 0.85,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 45
       },
       {
-        "note": 36,
-        "dur": 0.15
+        "start": 1.1,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 48,
-        "dur": 0.15
+        "start": 1.35,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 48
       },
       {
-        "note": 38,
-        "dur": 0.15
+        "start": 1.6,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 38
       },
       {
-        "note": 50,
-        "dur": 0.2
+        "start": 1.85,
+        "len": 0.25,
+        "dur": 0.25,
+        "note": 50
+      },
+      {
+        "start": 2.2,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 33
+      },
+      {
+        "start": 2.45,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 45
+      },
+      {
+        "start": 2.7,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 33
+      },
+      {
+        "start": 2.95,
+        "len": 0.7,
+        "dur": 0.7,
+        "note": 45
       }
     ]
   },
@@ -3330,65 +4305,147 @@
     "controls": "Channel Aftertouch opens filter cutoff (+85) for an explosive lift going into big choruses.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -4,
+      "osc1Level": 0.85,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 1,
-      "osc2Detune": 4,
+      "osc2Level": 0.75,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 8,
+      "osc2Pw": 0.7,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 70,
+      "subLevel": 0.7,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 440,
+      "filterEnvAmt": 500,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 44,
-      "resonance": 48,
-      "modEnvDepth": 48,
-      "overdrive": 45,
-      "distortion": 12,
+      "resonance": 0.48,
+      "drive": 1.45,
+      "distortion": 0.12,
       "ampAttack": 0.003,
-      "ampDecay": 0.35,
-      "ampSustain": 0.25,
-      "ampRelease": 0.15,
-      "modAttack": 0.003,
-      "modDecay": 0.25,
-      "modSustain": 0.05,
-      "modRelease": 0.12,
-      "glide": 0.01,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.22,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.35,
+      "spaceTime": 0.25,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.8
     },
     "demoRiff": [
       {
-        "note": 48,
-        "dur": 0.15
+        "start": 0.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 48
       },
       {
-        "note": 52,
-        "dur": 0.15
+        "start": 0.3,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 52
       },
       {
-        "note": 55,
-        "dur": 0.15
+        "start": 0.5,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 55
       },
       {
-        "note": 60,
-        "dur": 0.15
+        "start": 0.7,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 60
       },
       {
-        "note": 55,
-        "dur": 0.15
+        "start": 0.9,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 55
       },
       {
-        "note": 52,
-        "dur": 0.15
+        "start": 1.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 52
       },
       {
-        "note": 48,
-        "dur": 0.3
+        "start": 1.3,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 48
+      },
+      {
+        "start": 1.5,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 52
+      },
+      {
+        "start": 1.7,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 46
+      },
+      {
+        "start": 1.9,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 50
+      },
+      {
+        "start": 2.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 53
+      },
+      {
+        "start": 2.3,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 58
+      },
+      {
+        "start": 2.5,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 53
+      },
+      {
+        "start": 2.7,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 50
+      },
+      {
+        "start": 2.9,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 46
+      },
+      {
+        "start": 3.1,
+        "len": 0.7,
+        "dur": 0.7,
+        "note": 48
       }
     ]
   },
@@ -3407,65 +4464,123 @@
     "controls": "Mod Wheel sweeps 12dB filter cutoff and resonance for gentle expressive builds.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": 0,
-      "osc1Detune": -5,
+      "osc1Level": 0.8,
+      "osc1Octave": 0,
+      "osc1Pw": 0.45,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 5,
+      "osc2Level": 0.75,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 10,
+      "osc2Pw": 0.75,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 60,
+      "subLevel": 0.6,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 12,
+      "baseCutoff": 380,
+      "filterEnvAmt": 420,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 38,
-      "resonance": 32,
-      "modEnvDepth": 40,
-      "overdrive": 25,
-      "distortion": 5,
+      "resonance": 0.32,
+      "drive": 1.25,
+      "distortion": 0.05,
       "ampAttack": 0.005,
-      "ampDecay": 0.42,
-      "ampSustain": 0.25,
-      "ampRelease": 0.2,
-      "modAttack": 0.005,
-      "modDecay": 0.3,
-      "modSustain": 0.1,
-      "modRelease": 0.18,
-      "glide": 0.01,
-      "lfo1Rate": 1.5,
-      "lfo1Depth": 2,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.3,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.3,
+      "spaceTime": 0.28,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.2
+        "start": 0.1,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 43,
-        "dur": 0.2
+        "start": 0.35,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 43
       },
       {
-        "note": 48,
-        "dur": 0.2
+        "start": 0.6,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 48
       },
       {
-        "note": 55,
-        "dur": 0.2
+        "start": 0.85,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 55
       },
       {
-        "note": 36,
-        "dur": 0.2
+        "start": 1.1,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 36
       },
       {
-        "note": 43,
-        "dur": 0.2
+        "start": 1.35,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 43
       },
       {
-        "note": 48,
-        "dur": 0.4
+        "start": 1.6,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 48
+      },
+      {
+        "start": 1.85,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 55
+      },
+      {
+        "start": 2.1,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 38
+      },
+      {
+        "start": 2.35,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 45
+      },
+      {
+        "start": 2.6,
+        "len": 0.2,
+        "dur": 0.2,
+        "note": 50
+      },
+      {
+        "start": 2.85,
+        "len": 0.7,
+        "dur": 0.7,
+        "note": 36
       }
     ]
   },
@@ -3484,69 +4599,147 @@
     "controls": "Mod Wheel controls screaming resonance peak; pairs with stereo delay and shimmer reverb.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 1,
-      "osc1Detune": -7,
+      "osc1Level": 0.9,
+      "osc1Octave": 1,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 1,
-      "osc2Detune": 7,
+      "osc2Level": 0.85,
+      "osc2Octave": 1,
+      "osc2DetuneCents": 14,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 50,
-      "noiseLevel": 20,
-      "filterType": "lp",
-      "filterSlope": 24,
-      "filterAcid": true,
-      "cutoff": 52,
-      "resonance": 92,
-      "modEnvDepth": 30,
-      "overdrive": 95,
-      "distortion": 35,
+      "subLevel": 0.5,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 520,
+      "filterEnvAmt": 350,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
+      "filterAcid": false,
+      "resonance": 0.92,
+      "drive": 1.95,
+      "distortion": 0.35,
       "ampAttack": 0.002,
-      "ampDecay": 0.25,
-      "ampSustain": 0.4,
-      "ampRelease": 0.3,
-      "modAttack": 0.005,
-      "modDecay": 0.2,
-      "modSustain": 0.1,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.45,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
       "modRelease": 0.2,
-      "glide": 0.01,
-      "lfo1Rate": 4,
-      "lfo1Depth": 3,
-      "lfo2Rate": 2,
-      "lfo2Depth": 15
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.55,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.8
     },
     "demoRiff": [
       {
-        "note": 55,
-        "dur": 0.08
+        "start": 0.05,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 55
       },
       {
-        "note": 58,
-        "dur": 0.08
+        "start": 0.15,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 58
       },
       {
-        "note": 62,
-        "dur": 0.08
+        "start": 0.25,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 62
       },
       {
-        "note": 67,
-        "dur": 0.08
+        "start": 0.35,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 67
       },
       {
-        "note": 58,
-        "dur": 0.08
+        "start": 0.45,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 58
       },
       {
-        "note": 62,
-        "dur": 0.08
+        "start": 0.55,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 62
       },
       {
-        "note": 67,
-        "dur": 0.08
+        "start": 0.65,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 67
       },
       {
-        "note": 70,
-        "dur": 0.25
+        "start": 0.75,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 70
+      },
+      {
+        "start": 0.85,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 55
+      },
+      {
+        "start": 0.95,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 58
+      },
+      {
+        "start": 1.05,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 62
+      },
+      {
+        "start": 1.15,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 67
+      },
+      {
+        "start": 1.25,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 70
+      },
+      {
+        "start": 1.35,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 74
+      },
+      {
+        "start": 1.45,
+        "len": 0.09,
+        "dur": 0.09,
+        "note": 67
+      },
+      {
+        "start": 1.55,
+        "len": 0.8,
+        "dur": 0.8,
+        "note": 55
       }
     ]
   },
@@ -3565,65 +4758,135 @@
     "controls": "Latch the arpeggiator and sweep filter cutoff live with your left hand for huge drops.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": -4,
+      "osc1Level": 0.9,
+      "osc1Octave": -1,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 4,
+      "osc2Level": 0.8,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 9,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 110,
+      "subLevel": 1.1,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 360,
+      "filterEnvAmt": 580,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 36,
-      "resonance": 45,
-      "modEnvDepth": 55,
-      "overdrive": 90,
-      "distortion": 20,
+      "resonance": 0.45,
+      "drive": 1.9,
+      "distortion": 0.2,
       "ampAttack": 0.003,
-      "ampDecay": 0.32,
-      "ampSustain": 0.3,
-      "ampRelease": 0.15,
-      "modAttack": 0.003,
-      "modDecay": 0.22,
-      "modSustain": 0.05,
-      "modRelease": 0.12,
-      "glide": 0.01,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.2,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.15
+        "start": 0.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.15
+        "start": 0.3,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 36
       },
       {
-        "note": 48,
-        "dur": 0.15
+        "start": 0.5,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 48
       },
       {
-        "note": 36,
-        "dur": 0.15
+        "start": 0.7,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 36
       },
       {
-        "note": 39,
-        "dur": 0.15
+        "start": 0.9,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 39
       },
       {
-        "note": 39,
-        "dur": 0.15
+        "start": 1.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 39
       },
       {
-        "note": 51,
-        "dur": 0.25
+        "start": 1.3,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 51
+      },
+      {
+        "start": 1.5,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 39
+      },
+      {
+        "start": 1.7,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 41
+      },
+      {
+        "start": 1.9,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 41
+      },
+      {
+        "start": 2.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 53
+      },
+      {
+        "start": 2.3,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 41
+      },
+      {
+        "start": 2.5,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 36
+      },
+      {
+        "start": 2.7,
+        "len": 0.7,
+        "dur": 0.7,
+        "note": 48
       }
     ]
   },
@@ -3642,61 +4905,99 @@
     "controls": "Play soft 3-note chords with high reverb to let the random notes shimmer effortlessly.",
     "synthParams": {
       "osc1Wave": "triangle",
-      "osc1Oct": 1,
-      "osc1Detune": -2,
+      "osc1Level": 0.85,
+      "osc1Octave": 1,
+      "osc1Pw": 0.5,
       "osc2Wave": "sine",
-      "osc2Oct": 2,
-      "osc2Detune": 2,
+      "osc2Level": 0.75,
+      "osc2Octave": 2,
+      "osc2DetuneCents": 5,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 40,
-      "noiseLevel": 10,
-      "filterType": "lp",
-      "filterSlope": 12,
+      "subLevel": 0.4,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 420,
+      "filterEnvAmt": 280,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 42,
-      "resonance": 28,
-      "modEnvDepth": 25,
-      "overdrive": 10,
+      "resonance": 0.28,
+      "drive": 1.1,
       "distortion": 0,
       "ampAttack": 0.02,
-      "ampDecay": 0.6,
-      "ampSustain": 0.4,
-      "ampRelease": 0.6,
-      "modAttack": 0.02,
-      "modDecay": 0.4,
-      "modSustain": 0.1,
-      "modRelease": 0.4,
-      "glide": 0.03,
-      "lfo1Rate": 1.2,
-      "lfo1Depth": 2,
-      "lfo2Rate": 0.8,
-      "lfo2Depth": 5
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.75,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.6,
+      "spaceTime": 0.4,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5.2
     },
     "demoRiff": [
       {
-        "note": 60,
-        "dur": 0.3
+        "start": 0.1,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 60
       },
       {
-        "note": 67,
-        "dur": 0.3
+        "start": 0.6,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 67
       },
       {
-        "note": 71,
-        "dur": 0.3
+        "start": 1.1,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 71
       },
       {
-        "note": 64,
-        "dur": 0.3
+        "start": 1.5,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 64
       },
       {
-        "note": 72,
-        "dur": 0.3
+        "start": 2,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 72
       },
       {
-        "note": 69,
-        "dur": 0.4
+        "start": 2.5,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 69
+      },
+      {
+        "start": 3,
+        "len": 0.4,
+        "dur": 0.4,
+        "note": 67
+      },
+      {
+        "start": 3.5,
+        "len": 1.2,
+        "dur": 1.2,
+        "note": 60
       }
     ]
   },
@@ -3715,65 +5016,123 @@
     "controls": "Channel Aftertouch dynamically blows open filter cutoff for intense live builds.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -4,
+      "osc1Level": 0.95,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 4,
+      "osc2Level": 0.6,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 10,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 90,
+      "subLevel": 0.9,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
-      "filterAcid": true,
-      "cutoff": 28,
-      "resonance": 105,
-      "modEnvDepth": 65,
-      "overdrive": 75,
-      "distortion": 25,
+      "baseCutoff": 280,
+      "filterEnvAmt": 720,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
+      "filterAcid": false,
+      "resonance": 0.88,
+      "drive": 1.75,
+      "distortion": 0.25,
       "ampAttack": 0.003,
-      "ampDecay": 0.28,
-      "ampSustain": 0.2,
-      "ampRelease": 0.12,
-      "modAttack": 0.003,
-      "modDecay": 0.2,
-      "modSustain": 0.0,
-      "modRelease": 0.1,
-      "glide": 0.02,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.18,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.2
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.15
+        "start": 0.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.15
+        "start": 0.3,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 36
       },
       {
-        "note": 48,
-        "dur": 0.15
+        "start": 0.5,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 48
       },
       {
-        "note": 39,
-        "dur": 0.15
+        "start": 0.7,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 39
       },
       {
-        "note": 41,
-        "dur": 0.15
+        "start": 0.9,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 41
       },
       {
-        "note": 42,
-        "dur": 0.15
+        "start": 1.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 42
       },
       {
-        "note": 43,
-        "dur": 0.3
+        "start": 1.3,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 43
+      },
+      {
+        "start": 1.5,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 36
+      },
+      {
+        "start": 1.7,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 48
+      },
+      {
+        "start": 1.9,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 46
+      },
+      {
+        "start": 2.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 43
+      },
+      {
+        "start": 2.3,
+        "len": 0.7,
+        "dur": 0.7,
+        "note": 36
       }
     ]
   },
@@ -3792,61 +5151,99 @@
     "controls": "Match your tempo to the master click track to lock rhythmically with delay pedals.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -4,
+      "osc1Level": 0.85,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 4,
+      "osc2Level": 0.75,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 8,
+      "osc2Pw": 0.6,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 95,
+      "subLevel": 0.95,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 400,
+      "filterEnvAmt": 460,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 40,
-      "resonance": 42,
-      "modEnvDepth": 45,
-      "overdrive": 55,
-      "distortion": 15,
+      "resonance": 0.42,
+      "drive": 1.55,
+      "distortion": 0.15,
       "ampAttack": 0.003,
-      "ampDecay": 0.32,
-      "ampSustain": 0.25,
-      "ampRelease": 0.14,
-      "modAttack": 0.003,
-      "modDecay": 0.22,
-      "modSustain": 0.05,
-      "modRelease": 0.1,
-      "glide": 0.01,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.2,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.45,
+      "spaceTime": 0.375,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 41,
-        "dur": 0.22
+        "start": 0.1,
+        "len": 0.22,
+        "dur": 0.22,
+        "note": 41
       },
       {
-        "note": 41,
-        "dur": 0.22
+        "start": 0.475,
+        "len": 0.22,
+        "dur": 0.22,
+        "note": 41
       },
       {
-        "note": 48,
-        "dur": 0.22
+        "start": 0.85,
+        "len": 0.22,
+        "dur": 0.22,
+        "note": 48
       },
       {
-        "note": 41,
-        "dur": 0.22
+        "start": 1.225,
+        "len": 0.22,
+        "dur": 0.22,
+        "note": 41
       },
       {
-        "note": 44,
-        "dur": 0.22
+        "start": 1.6,
+        "len": 0.22,
+        "dur": 0.22,
+        "note": 44
       },
       {
-        "note": 46,
-        "dur": 0.35
+        "start": 1.975,
+        "len": 0.22,
+        "dur": 0.22,
+        "note": 46
+      },
+      {
+        "start": 2.35,
+        "len": 0.22,
+        "dur": 0.22,
+        "note": 48
+      },
+      {
+        "start": 2.725,
+        "len": 0.8,
+        "dur": 0.8,
+        "note": 41
       }
     ]
   },
@@ -3865,61 +5262,123 @@
     "controls": "Fast chromatic key changes lock tightly without mud; aftertouch adds upper harmonic snap.",
     "synthParams": {
       "osc1Wave": "pulse",
-      "osc1Oct": -1,
-      "osc1Detune": 0,
+      "osc1Level": 0.85,
+      "osc1Octave": -1,
+      "osc1Pw": 0.55,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 5,
+      "osc2Level": 0.75,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 7,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 115,
+      "subLevel": 1.2,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 350,
+      "filterEnvAmt": 520,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 35,
-      "resonance": 58,
-      "modEnvDepth": 50,
-      "overdrive": 50,
-      "distortion": 12,
+      "resonance": 0.58,
+      "drive": 1.5,
+      "distortion": 0.12,
       "ampAttack": 0.002,
-      "ampDecay": 0.25,
-      "ampSustain": 0.2,
-      "ampRelease": 0.1,
-      "modAttack": 0.002,
-      "modDecay": 0.18,
-      "modSustain": 0.0,
-      "modRelease": 0.08,
-      "glide": 0.01,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.16,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.2
     },
     "demoRiff": [
       {
-        "note": 38,
-        "dur": 0.14
+        "start": 0.1,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 38
       },
       {
-        "note": 41,
-        "dur": 0.14
+        "start": 0.28,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 41
       },
       {
-        "note": 42,
-        "dur": 0.14
+        "start": 0.46,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 42
       },
       {
-        "note": 43,
-        "dur": 0.14
+        "start": 0.64,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 43
       },
       {
-        "note": 45,
-        "dur": 0.14
+        "start": 0.82,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 45
       },
       {
-        "note": 48,
-        "dur": 0.25
+        "start": 1,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
+      },
+      {
+        "start": 1.18,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 50
+      },
+      {
+        "start": 1.36,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
+      },
+      {
+        "start": 1.54,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 45
+      },
+      {
+        "start": 1.72,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 43
+      },
+      {
+        "start": 1.9,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 41
+      },
+      {
+        "start": 2.08,
+        "len": 0.7,
+        "dur": 0.7,
+        "note": 38
       }
     ]
   },
@@ -3938,65 +5397,123 @@
     "controls": "Start very softly on keys, then lean into aftertouch to unleash the full fuzz roar.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": 0,
-      "osc1Detune": -7,
+      "osc1Level": 0.9,
+      "osc1Octave": 0,
+      "osc1Pw": 0.5,
       "osc2Wave": "saw",
-      "osc2Oct": 0,
-      "osc2Detune": 7,
+      "osc2Level": 0.85,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 15,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 95,
-      "noiseLevel": 15,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "subLevel": 0.95,
+      "subOctave": -1,
+      "noiseLevel": 0,
+      "baseCutoff": 320,
+      "filterEnvAmt": 380,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 32,
-      "resonance": 65,
-      "modEnvDepth": 38,
-      "overdrive": 110,
-      "distortion": 40,
-      "ampAttack": 0.01,
-      "ampDecay": 0.4,
-      "ampSustain": 0.5,
-      "ampRelease": 0.3,
+      "resonance": 0.65,
+      "drive": 2.1,
+      "distortion": 0.4,
+      "ampAttack": 0.015,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.45,
       "modAttack": 0.01,
-      "modDecay": 0.3,
-      "modSustain": 0.15,
+      "modDecay": 0.5,
+      "modSustain": 0,
       "modRelease": 0.2,
-      "glide": 0.02,
-      "lfo1Rate": 2.5,
-      "lfo1Depth": 3,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.5,
+      "spaceTime": 0.32,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 5.2
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.15
+        "start": 0.1,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
       },
       {
-        "note": 43,
-        "dur": 0.15
+        "start": 0.28,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 43
       },
       {
-        "note": 48,
-        "dur": 0.15
+        "start": 0.46,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
       },
       {
-        "note": 55,
-        "dur": 0.15
+        "start": 0.64,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 55
       },
       {
-        "note": 36,
-        "dur": 0.15
+        "start": 0.82,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
       },
       {
-        "note": 43,
-        "dur": 0.15
+        "start": 1,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 43
       },
       {
-        "note": 48,
-        "dur": 0.35
+        "start": 1.18,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
+      },
+      {
+        "start": 1.36,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 55
+      },
+      {
+        "start": 1.54,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 36
+      },
+      {
+        "start": 1.72,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 43
+      },
+      {
+        "start": 1.9,
+        "len": 0.15,
+        "dur": 0.15,
+        "note": 48
+      },
+      {
+        "start": 2.08,
+        "len": 1.4,
+        "dur": 1.4,
+        "note": 55
       }
     ]
   },
@@ -4015,61 +5532,99 @@
     "controls": "Keep filter cutoff low so the sub-bass drives the rhythm smoothly without mud.",
     "synthParams": {
       "osc1Wave": "triangle",
-      "osc1Oct": -1,
-      "osc1Detune": -2,
+      "osc1Level": 0.8,
+      "osc1Octave": -1,
+      "osc1Pw": 0.5,
       "osc2Wave": "triangle",
-      "osc2Oct": -1,
-      "osc2Detune": 2,
+      "osc2Level": 0.6,
+      "osc2Octave": -1,
+      "osc2DetuneCents": 4,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -2,
-      "subLevel": 127,
+      "subLevel": 1.3,
+      "subOctave": -2,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
+      "baseCutoff": 280,
+      "filterEnvAmt": 340,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 28,
-      "resonance": 25,
-      "modEnvDepth": 32,
-      "overdrive": 35,
-      "distortion": 8,
+      "resonance": 0.25,
+      "drive": 1.35,
+      "distortion": 0.08,
       "ampAttack": 0.005,
-      "ampDecay": 0.35,
-      "ampSustain": 0.35,
-      "ampRelease": 0.15,
-      "modAttack": 0.005,
-      "modDecay": 0.22,
-      "modSustain": 0.05,
-      "modRelease": 0.1,
-      "glide": 0.015,
-      "lfo1Rate": 1.5,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.22,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.5
     },
     "demoRiff": [
       {
-        "note": 36,
-        "dur": 0.24
+        "start": 0.1,
+        "len": 0.24,
+        "dur": 0.24,
+        "note": 36
       },
       {
-        "note": 43,
-        "dur": 0.24
+        "start": 0.4,
+        "len": 0.24,
+        "dur": 0.24,
+        "note": 43
       },
       {
-        "note": 46,
-        "dur": 0.24
+        "start": 0.7,
+        "len": 0.24,
+        "dur": 0.24,
+        "note": 46
       },
       {
-        "note": 36,
-        "dur": 0.24
+        "start": 1,
+        "len": 0.24,
+        "dur": 0.24,
+        "note": 36
       },
       {
-        "note": 43,
-        "dur": 0.24
+        "start": 1.3,
+        "len": 0.24,
+        "dur": 0.24,
+        "note": 43
       },
       {
-        "note": 46,
-        "dur": 0.4
+        "start": 1.6,
+        "len": 0.24,
+        "dur": 0.24,
+        "note": 46
+      },
+      {
+        "start": 1.9,
+        "len": 0.24,
+        "dur": 0.24,
+        "note": 36
+      },
+      {
+        "start": 2.2,
+        "len": 0.8,
+        "dur": 0.8,
+        "note": 43
       }
     ]
   },
@@ -4088,61 +5643,99 @@
     "controls": "Mod Wheel sweeps Band-Pass filter to highlight changing resonant bell overtones.",
     "synthParams": {
       "osc1Wave": "triangle",
-      "osc1Oct": 1,
-      "osc1Detune": 0,
+      "osc1Level": 0.75,
+      "osc1Octave": 1,
+      "osc1Pw": 0.5,
       "osc2Wave": "triangle",
-      "osc2Oct": 2,
-      "osc2Detune": 5,
+      "osc2Level": 0.75,
+      "osc2Octave": 2,
+      "osc2DetuneCents": 12,
+      "osc2Pw": 0.5,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 45,
+      "subLevel": 0.45,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "bp",
-      "filterSlope": 24,
+      "baseCutoff": 500,
+      "filterEnvAmt": 420,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
       "filterAcid": false,
-      "cutoff": 50,
-      "resonance": 60,
-      "modEnvDepth": 40,
-      "overdrive": 20,
-      "distortion": 5,
+      "resonance": 0.6,
+      "drive": 1.2,
+      "distortion": 0.05,
       "ampAttack": 0.003,
-      "ampDecay": 0.45,
-      "ampSustain": 0.15,
-      "ampRelease": 0.3,
-      "modAttack": 0.003,
-      "modDecay": 0.3,
-      "modSustain": 0.05,
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.45,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
       "modRelease": 0.2,
-      "glide": 0.01,
-      "lfo1Rate": 2,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": true,
+      "spaceMix": 0.4,
+      "spaceTime": 0.3,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.8
     },
     "demoRiff": [
       {
-        "note": 62,
-        "dur": 0.18
+        "start": 0.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 62
       },
       {
-        "note": 65,
-        "dur": 0.18
+        "start": 0.32,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 65
       },
       {
-        "note": 69,
-        "dur": 0.18
+        "start": 0.54,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 69
       },
       {
-        "note": 72,
-        "dur": 0.18
+        "start": 0.76,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 72
       },
       {
-        "note": 69,
-        "dur": 0.18
+        "start": 0.98,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 69
       },
       {
-        "note": 65,
-        "dur": 0.3
+        "start": 1.2,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 65
+      },
+      {
+        "start": 1.42,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 62
+      },
+      {
+        "start": 1.64,
+        "len": 0.8,
+        "dur": 0.8,
+        "note": 69
       }
     ]
   },
@@ -4161,70 +5754,128 @@
     "controls": "Aftertouch pushes both resonance and filter frequency for blistering climax rises.",
     "synthParams": {
       "osc1Wave": "saw",
-      "osc1Oct": -1,
-      "osc1Detune": -5,
+      "osc1Level": 0.9,
+      "osc1Octave": -1,
+      "osc1Pw": 0.5,
       "osc2Wave": "pulse",
-      "osc2Oct": 0,
-      "osc2Detune": 5,
+      "osc2Level": 0.8,
+      "osc2Octave": 0,
+      "osc2DetuneCents": 11,
+      "osc2Pw": 0.8,
       "subWave": "sine",
-      "subOct": -1,
-      "subLevel": 105,
+      "subLevel": 1.1,
+      "subOctave": -1,
       "noiseLevel": 0,
-      "filterType": "lp",
-      "filterSlope": 24,
-      "filterAcid": true,
-      "cutoff": 34,
-      "resonance": 82,
-      "modEnvDepth": 55,
-      "overdrive": 120,
-      "distortion": 35,
+      "baseCutoff": 340,
+      "filterEnvAmt": 550,
+      "filterLfoAmt": 0,
+      "filterSlope": "24dB",
+      "filterShape": "lp",
+      "filterAcid": false,
+      "resonance": 0.82,
+      "drive": 2.2,
+      "distortion": 0.35,
       "ampAttack": 0.003,
-      "ampDecay": 0.28,
-      "ampSustain": 0.25,
-      "ampRelease": 0.12,
-      "modAttack": 0.003,
-      "modDecay": 0.2,
-      "modSustain": 0.05,
-      "modRelease": 0.1,
-      "glide": 0.015,
-      "lfo1Rate": 2.5,
-      "lfo1Depth": 0,
-      "lfo2Rate": 1,
-      "lfo2Depth": 0
+      "ampDecay": 0.5,
+      "ampSustain": 0.95,
+      "ampRelease": 0.18,
+      "modAttack": 0.01,
+      "modDecay": 0.5,
+      "modSustain": 0,
+      "modRelease": 0.2,
+      "portamento": 0,
+      "vibrato": 0,
+      "oscError": 0,
+      "stereoSpace": false,
+      "spaceMix": 0.25,
+      "spaceTime": 0.35,
+      "spaceFeedback": 0.45,
+      "swell": false,
+      "swellCutoffBoost": 0,
+      "riser": false,
+      "riserNoise": false,
+      "sidechainPump": false,
+      "isSampleAndHold": false,
+      "shRate": 6,
+      "duration": 4.2
     },
     "demoRiff": [
       {
-        "note": 33,
-        "dur": 0.16
+        "start": 0.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 33
       },
       {
-        "note": 33,
-        "dur": 0.16
+        "start": 0.3,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 33
       },
       {
-        "note": 45,
-        "dur": 0.16
+        "start": 0.5,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 45
       },
       {
-        "note": 33,
-        "dur": 0.16
+        "start": 0.7,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 33
       },
       {
-        "note": 36,
-        "dur": 0.16
+        "start": 0.9,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 36
       },
       {
-        "note": 36,
-        "dur": 0.16
+        "start": 1.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 36
       },
       {
-        "note": 48,
-        "dur": 0.25
+        "start": 1.3,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 48
+      },
+      {
+        "start": 1.5,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 36
+      },
+      {
+        "start": 1.7,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 38
+      },
+      {
+        "start": 1.9,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 50
+      },
+      {
+        "start": 2.1,
+        "len": 0.18,
+        "dur": 0.18,
+        "note": 33
+      },
+      {
+        "start": 2.3,
+        "len": 0.7,
+        "dur": 0.7,
+        "note": 45
       }
     ]
   }
 ];
-    const worshipSongsData = [
+const worshipSongsData = [
   {
     "title": "Graves Into Gardens",
     "artist": "Elevation Worship",
@@ -4756,22 +6407,364 @@
 ];
     let activeRecommendedSong = null;
 
-    // --- Web Audio Synthesizer Engine ---
-    let audioCtx = null;
-    let currentOsc1 = null;
-    let currentOsc2 = null;
-    let currentSub = null;
-    let currentNoise = null;
-    let masterGain = null;
-    let filterNode = null;
-    let filterNode2 = null;
-    let preDriveNode = null;
-    let postDistNode = null;
-    let vcaGain = null;
+    // --- Authentic Hardware-Modeled Bass Station II Synthesizer Engine ---
+    function polyBlep(t, dt) {
+      if (t < dt) {
+        let x = t / dt;
+        return x + x - x * x - 1.0;
+      } else if (t > 1.0 - dt) {
+        let x = (t - 1.0) / dt;
+        return x * x + x + x + 1.0;
+      }
+      return 0.0;
+    }
 
-    let activeNotes = new Map();
+    function oscSample(waveType, phase, dt, pw = 0.5) {
+      switch (waveType) {
+        case 'sine':
+          return Math.sin(2 * Math.PI * phase);
+        case 'triangle': {
+          let saw = 2 * phase - 1.0;
+          return 2 * Math.abs(saw) - 1.0;
+        }
+        case 'saw': {
+          let raw = 2.0 * phase - 1.0;
+          return raw - polyBlep(phase, dt);
+        }
+        case 'pulse': {
+          let raw = phase < pw ? 1.0 : -1.0;
+          let blep1 = polyBlep(phase, dt);
+          let p2 = (phase + 1.0 - pw) % 1.0;
+          let blep2 = polyBlep(p2, dt);
+          return raw + blep1 - blep2;
+        }
+        default:
+          return 0;
+      }
+    }
+
+    class ResonantFilter {
+      constructor(type = 'lp', poles = 4) {
+        this.type = type;
+        this.poles = poles;
+        this.s1 = this.s2 = this.s3 = this.s4 = 0;
+      }
+
+      reset() {
+        this.s1 = this.s2 = this.s3 = this.s4 = 0;
+      }
+
+      process(input, cutoffHz, resRatio, drive = 1.0, sr = 44100) {
+        let fc = Math.max(20, Math.min(sr * 0.45, cutoffHz));
+        let g = Math.tan(Math.PI * fc / sr);
+        let r = Math.max(0.1, Math.min(3.8, resRatio * 3.8));
+
+        let inDriven = Math.tanh(input * drive);
+        let feedback = this.s4 * r;
+        let u = inDriven - feedback;
+
+        let v1 = (u - this.s1) * g / (1 + g);
+        let y1 = v1 + this.s1;
+        this.s1 = y1 + v1;
+
+        let v2 = (y1 - this.s2) * g / (1 + g);
+        let y2 = v2 + this.s2;
+        this.s2 = y2 + v2;
+
+        if (this.poles === 2) {
+          if (this.type === 'bp') return y1 - y2;
+          if (this.type === 'hp') return u - y1 * 2;
+          return y2;
+        }
+
+        let v3 = (y2 - this.s3) * g / (1 + g);
+        let y3 = v3 + this.s3;
+        this.s3 = y3 + v3;
+
+        let v4 = (y3 - this.s4) * g / (1 + g);
+        let y4 = v4 + this.s4;
+        this.s4 = y4 + v4;
+
+        if (this.type === 'bp') return (y2 - y4) * 2.0;
+        if (this.type === 'hp') return u - (y1 + y2 + y3 + y4) * 0.5;
+        return y4;
+      }
+    }
+
+    class BassStationEngine {
+      constructor(audioContext) {
+        this.ctx = audioContext;
+        this.sampleRate = audioContext.sampleRate || 44100;
+
+        this.filterL = new ResonantFilter('lp', 4);
+        this.filterR = new ResonantFilter('lp', 4);
+
+        this.maxDelay = Math.floor(this.sampleRate * 1.5);
+        this.bufL = new Float32Array(this.maxDelay);
+        this.bufR = new Float32Array(this.maxDelay);
+        this.writeIdxL = 0;
+        this.writeIdxR = 0;
+
+        this.phase1 = 0;
+        this.phase2 = 0;
+        this.phaseSub = 0;
+        this.lfo1Phase = 0;
+        this.lfo2Phase = 0;
+        this.shVal = 0;
+        this.shLastStep = -1;
+
+        this.heldNotes = new Map(); // midi -> { time, vel }
+        this.currentMidi = 36;
+        this.targetMidi = 36;
+        this.pitchGlide = 1.0;
+        this.activeVelocity = 100;
+        this.isGateOn = false;
+        this.noteAge = 0;
+        this.ampEnvVal = 0;
+        this.envPhase = 'idle';
+
+        this.pitchBendSemitones = 0;
+        this.modWheelDepth = 0;
+        this.aftertouchDepth = 0;
+        this.globalStereoSpace = true;
+        this.masterVolume = 0.75;
+
+        // Active patch params initialized to Refinery Special
+        this.params = {
+          osc1Wave: 'saw', osc1Level: 0.8, osc1Octave: 0, osc1Pw: 0.5,
+          osc2Wave: 'saw', osc2Level: 0.35, osc2Octave: 1, osc2DetuneCents: 10, osc2Pw: 0.5,
+          subWave: 'sine', subLevel: 0.9, subOctave: -1,
+          noiseLevel: 0,
+          baseCutoff: 230, filterEnvAmt: 260, filterLfoAmt: 0,
+          filterSlope: '24dB', filterShape: 'lp', filterAcid: false,
+          resonance: 0.35, drive: 2.2, distortion: 0.18,
+          ampAttack: 0.01, ampRelease: 0.35,
+          portamento: 0.03, vibrato: 0, oscError: 0,
+          stereoSpace: false, spaceMix: 0.25, spaceTime: 0.35, spaceFeedback: 0.45,
+          swell: false, swellCutoffBoost: 0, riser: false, riserNoise: false,
+          sidechainPump: false, isSampleAndHold: false, shRate: 6.0
+        };
+
+        this.processor = this.ctx.createScriptProcessor(1024, 0, 2);
+        this.processor.onaudioprocess = (e) => this.processBlock(e);
+        this.processor.connect(this.ctx.destination);
+      }
+
+      setPatch(params) {
+        this.params = Object.assign({}, this.params, params);
+        const poles = this.params.filterSlope === '12dB' ? 2 : 4;
+        this.filterL = new ResonantFilter(this.params.filterShape || 'lp', poles);
+        this.filterR = new ResonantFilter(this.params.filterShape || 'lp', poles);
+      }
+
+      noteOn(midi, velocity = 100) {
+        this.heldNotes.set(midi, { velocity, time: Date.now() });
+        this.activeVelocity = velocity;
+
+        if (this.isGateOn && (this.params.portamento > 0)) {
+          // Legato glide transition
+          this.targetMidi = midi;
+          this.pitchGlide = 0.0;
+        } else {
+          this.currentMidi = midi;
+          this.targetMidi = midi;
+          this.pitchGlide = 1.0;
+          this.isGateOn = true;
+          this.noteAge = 0;
+          this.envPhase = 'attack';
+        }
+      }
+
+      noteOff(midi) {
+        this.heldNotes.delete(midi);
+
+        if (this.heldNotes.size > 0) {
+          // Return to latest held note
+          let latestMidi = midi;
+          let latestTime = 0;
+          for (const [m, info] of this.heldNotes.entries()) {
+            if (info.time >= latestTime) {
+              latestTime = info.time;
+              latestMidi = m;
+              this.activeVelocity = info.velocity;
+            }
+          }
+          if (this.params.portamento > 0) {
+            this.targetMidi = latestMidi;
+            this.pitchGlide = 0.0;
+          } else {
+            this.currentMidi = latestMidi;
+            this.targetMidi = latestMidi;
+            this.pitchGlide = 1.0;
+          }
+        } else {
+          this.isGateOn = false;
+          this.envPhase = 'release';
+        }
+      }
+
+      panic() {
+        this.heldNotes.clear();
+        this.isGateOn = false;
+        this.ampEnvVal = 0;
+        this.envPhase = 'idle';
+        this.filterL.reset();
+        this.filterR.reset();
+      }
+
+      processBlock(e) {
+        const outL = e.outputBuffer.getChannelData(0);
+        const outR = e.outputBuffer.getChannelData(1);
+        const len = outL.length;
+        const sr = this.sampleRate;
+        const p = this.params;
+
+        const dtGlide = p.portamento ? (1.0 / (Math.max(0.01, p.portamento) * sr)) : 1.0;
+        const attackRate = 1.0 / (Math.max(0.003, p.ampAttack || 0.01) * sr);
+        const releaseRate = 1.0 / (Math.max(0.02, p.ampRelease || 0.25) * sr);
+
+        const spaceActive = (this.globalStereoSpace && p.stereoSpace);
+        const delaySamplesL = Math.floor((p.spaceTime || 0.35) * sr);
+        const delaySamplesR = Math.floor(((p.spaceTime || 0.35) * 1.33) * sr);
+        const spaceMix = spaceActive ? (p.spaceMix || 0.28) : 0;
+        const feedback = p.spaceFeedback || 0.45;
+
+        for (let i = 0; i < len; i++) {
+          this.noteAge += 1 / sr;
+
+          // Glide processing
+          if (this.pitchGlide < 1.0) {
+            this.pitchGlide = Math.min(1.0, this.pitchGlide + dtGlide);
+          }
+          const effectiveMidi = this.currentMidi + (this.targetMidi - this.currentMidi) * (1 - Math.pow(1 - this.pitchGlide, 2));
+          const bentMidi = effectiveMidi + this.pitchBendSemitones;
+
+          // Envelope processing
+          if (this.isGateOn) {
+            if (this.envPhase === 'attack') {
+              this.ampEnvVal = Math.min(1.0, this.ampEnvVal + attackRate);
+              if (this.ampEnvVal >= 1.0) this.envPhase = 'sustain';
+            }
+          } else {
+            if (this.ampEnvVal > 0) {
+              this.ampEnvVal = Math.max(0, this.ampEnvVal - releaseRate);
+              if (this.ampEnvVal === 0) this.envPhase = 'idle';
+            }
+          }
+
+          let currentAmp = this.ampEnvVal;
+
+          // Sidechain pump envelope
+          if (p.sidechainPump) {
+            let beat = (this.noteAge % 0.5) / 0.5;
+            let pumpCurve = Math.pow(beat, 2.5);
+            currentAmp *= (0.15 + 0.85 * pumpCurve);
+          }
+
+          // LFO & Sample-and-Hold
+          let lfo1Rate = p.lfo1Rate || 3.0;
+          let lfo2Rate = p.lfo2Rate || 0.2;
+          this.lfo1Phase = (this.lfo1Phase + lfo1Rate / sr) % 1.0;
+          this.lfo2Phase = (this.lfo2Phase + lfo2Rate / sr) % 1.0;
+
+          if (p.isSampleAndHold) {
+            let currentStep = Math.floor(this.noteAge * (p.shRate || 6.0));
+            if (currentStep !== this.shLastStep) {
+              this.shVal = Math.random() * 2 - 1;
+              this.shLastStep = currentStep;
+            }
+          }
+
+          let lfo1 = p.isSampleAndHold ? this.shVal : Math.sin(2 * Math.PI * this.lfo1Phase);
+          let lfo2 = Math.sin(2 * Math.PI * this.lfo2Phase);
+
+          // Audio generation
+          let dryL = 0;
+          let dryR = 0;
+
+          if (currentAmp > 0.0001) {
+            let pitchDrift = (p.oscError || 0) * 0.08 * (Math.sin(this.noteAge * 1.7) + Math.cos(this.noteAge * 2.3));
+            let vibrato = (p.vibrato || 0) * lfo1 * 0.4;
+
+            let freq1 = 440 * Math.pow(2, (bentMidi + (p.osc1Octave || 0) * 12 + pitchDrift + vibrato - 69) / 12);
+            let detune2Cents = (p.osc2DetuneCents || 0) + pitchDrift * 1.2;
+            let freq2 = 440 * Math.pow(2, (bentMidi + (p.osc2Octave || 0) * 12 + detune2Cents / 100 + vibrato - 69) / 12);
+            let freqSub = 440 * Math.pow(2, (bentMidi + (p.subOctave || -1) * 12 + vibrato - 69) / 12);
+
+            let dt1 = freq1 / sr;
+            let dt2 = freq2 / sr;
+            let dtSub = freqSub / sr;
+
+            this.phase1 = (this.phase1 + dt1) % 1.0;
+            this.phase2 = (this.phase2 + dt2) % 1.0;
+            this.phaseSub = (this.phaseSub + dtSub) % 1.0;
+
+            let s1 = oscSample(p.osc1Wave || 'saw', this.phase1, dt1, p.osc1Pw || 0.5) * (p.osc1Level !== undefined ? p.osc1Level : 0.8);
+            let s2 = oscSample(p.osc2Wave || 'saw', this.phase2, dt2, p.osc2Pw || 0.5) * (p.osc2Level !== undefined ? p.osc2Level : 0.5);
+            let sSub = oscSample(p.subWave || 'sine', this.phaseSub, dtSub) * (p.subLevel !== undefined ? p.subLevel : 0.9);
+            let sNoise = (p.noiseLevel || 0) * (Math.random() * 2 - 1);
+
+            if (p.riserNoise) {
+              sNoise = Math.min(1.0, this.noteAge / (p.duration || 4.5)) * 0.8 * (Math.random() * 2 - 1);
+            }
+
+            let mix = (s1 + s2 + sSub + sNoise) * currentAmp;
+
+            let cutoff = (p.baseCutoff || 250) + this.modWheelDepth * 350 + this.aftertouchDepth * 400;
+            let filterEnvAmt = p.filterEnvAmt || 0;
+            let filterLfoAmt = p.filterLfoAmt || 0;
+            let dynamicCutoff = cutoff + filterEnvAmt * currentAmp + filterLfoAmt * (p.isSampleAndHold ? this.shVal : lfo2);
+
+            if (p.swell) {
+              dynamicCutoff += Math.min(1.0, this.noteAge / 3.0) * (p.swellCutoffBoost || 400);
+            }
+            if (p.riser) {
+              dynamicCutoff += Math.pow(Math.min(1.0, this.noteAge / (p.duration || 4.5)), 1.8) * 1600;
+            }
+
+            let res = p.filterAcid ? Math.min(0.95, (p.resonance || 0.25) * 1.15) : (p.resonance || 0.25);
+            let drv = p.drive || 1.0;
+
+            let filteredL = this.filterL.process(mix, dynamicCutoff, res, drv, sr);
+            let filteredR = this.filterR.process(mix, dynamicCutoff * 1.015, res, drv, sr);
+
+            if (p.distortion) {
+              let distMult = 1 + p.distortion * 2.5;
+              filteredL = Math.tanh(filteredL * distMult);
+              filteredR = Math.tanh(filteredR * distMult);
+            }
+
+            dryL = filteredL * 0.85;
+            dryR = filteredR * 0.85;
+          }
+
+          // Delay buffer for Stereo Space
+          if (spaceActive && spaceMix > 0) {
+            let readIdxL = (this.writeIdxL - delaySamplesL + this.maxDelay) % this.maxDelay;
+            let readIdxR = (this.writeIdxR - delaySamplesR + this.maxDelay) % this.maxDelay;
+            let readL = this.bufL[readIdxL];
+            let readR = this.bufR[readIdxR];
+
+            this.bufL[this.writeIdxL] = dryL + readL * feedback;
+            this.bufR[this.writeIdxR] = dryR + readR * feedback;
+            this.writeIdxL = (this.writeIdxL + 1) % this.maxDelay;
+            this.writeIdxR = (this.writeIdxR + 1) % this.maxDelay;
+
+            outL[i] = (dryL * (1 - spaceMix) + readL * spaceMix) * this.masterVolume;
+            outR[i] = (dryR * (1 - spaceMix) + readR * spaceMix) * this.masterVolume;
+          } else {
+            outL[i] = dryL * this.masterVolume;
+            outR[i] = dryR * this.masterVolume;
+          }
+        }
+      }
+    }
+
+    let audioCtx = null;
+    let synthEngine = null;
     let currentPatchIndex = 1; // Default to Refinery Special (Slot 001)
     let octaveOffset = 0; // -2 to +2
+    let activeAuditionTimers = [];
 
     let currentAudioPlayer = null;
     let currentPlayingWavId = null;
@@ -4779,7 +6772,8 @@
     function getAudioContext() {
       if (!audioCtx) {
         audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        setupAudioGraph();
+        synthEngine = new BassStationEngine(audioCtx);
+        synthEngine.setPatch(patchData[currentPatchIndex].synthParams);
       }
       if (audioCtx.state === 'suspended') {
         audioCtx.resume();
@@ -4787,192 +6781,29 @@
       return audioCtx;
     }
 
-    function makeDriveCurve(amount) {
-      const k = amount * 0.5;
-      const n_samples = 44100;
-      const curve = new Float32Array(n_samples);
-      const deg = Math.PI / 180;
-      for (let i = 0; i < n_samples; ++i) {
-        let x = (i * 2) / n_samples - 1;
-        curve[i] = ((3 + k) * x * 20 * deg) / (Math.PI + k * Math.abs(x));
-      }
-      return curve;
-    }
-
-    function makeDiodeCurve(amount) {
-      const k = amount * 0.8;
-      const n_samples = 44100;
-      const curve = new Float32Array(n_samples);
-      for (let i = 0; i < n_samples; ++i) {
-        let x = (i * 2) / n_samples - 1;
-        curve[i] = Math.tanh(x * (1 + k * 0.15));
-      }
-      return curve;
-    }
-
-    function setupAudioGraph() {
-      preDriveNode = audioCtx.createWaveShaper();
-      preDriveNode.curve = makeDriveCurve(127);
-      preDriveNode.oversample = '4x';
-
-      filterNode = audioCtx.createBiquadFilter();
-      filterNode.type = 'lowpass';
-      filterNode.frequency.value = 400;
-      filterNode.Q.value = 4;
-
-      filterNode2 = audioCtx.createBiquadFilter();
-      filterNode2.type = 'lowpass';
-      filterNode2.frequency.value = 400;
-      filterNode2.Q.value = 4;
-
-      postDistNode = audioCtx.createWaveShaper();
-      postDistNode.curve = makeDiodeCurve(18);
-      postDistNode.oversample = '4x';
-
-      vcaGain = audioCtx.createGain();
-      vcaGain.gain.value = 0;
-
-      masterGain = audioCtx.createGain();
-      masterGain.gain.value = parseFloat(document.getElementById('master-volume').value) || 0.75;
-
-      preDriveNode.connect(filterNode);
-      filterNode.connect(filterNode2);
-      filterNode2.connect(postDistNode);
-      postDistNode.connect(vcaGain);
-      vcaGain.connect(masterGain);
-      masterGain.connect(audioCtx.destination);
-    }
-
     function midiToFreq(midi) {
       return 440 * Math.pow(2, (midi - 69) / 12);
     }
 
     function noteOn(midiNote, velocity = 100) {
-      const ctx = getAudioContext();
-      const now = ctx.currentTime;
-      const p = patchData[currentPatchIndex].synthParams;
-
-      activeNotes.set(midiNote, { time: now, velocity });
+      getAudioContext();
+      if (synthEngine) synthEngine.noteOn(midiNote, velocity);
       highlightKeyboardKey(midiNote, true);
-
-      if (currentOsc1) { try { currentOsc1.stop(now); } catch(e){} }
-      if (currentOsc2) { try { currentOsc2.stop(now); } catch(e){} }
-      if (currentSub) { try { currentSub.stop(now); } catch(e){} }
-
-      const osc1OctVal = parseInt(document.getElementById('osc1-oct').value) || 0;
-      const osc2DetuneVal = parseFloat(document.getElementById('osc2-detune').value) || 0;
-      const subOctVal = -1;
-
-      const baseFreq = midiToFreq(midiNote);
-      const osc1Freq = baseFreq * Math.pow(2, osc1OctVal);
-      const osc2Freq = baseFreq * Math.pow(2, osc2DetuneVal / 1200);
-      const subFreq = baseFreq * Math.pow(2, subOctVal);
-
-      currentOsc1 = ctx.createOscillator();
-      currentOsc1.type = document.getElementById('osc1-wave').value;
-      currentOsc1.frequency.setValueAtTime(osc1Freq, now);
-
-      currentOsc2 = ctx.createOscillator();
-      currentOsc2.type = document.getElementById('osc2-wave').value;
-      currentOsc2.frequency.setValueAtTime(osc2Freq, now);
-
-      currentSub = ctx.createOscillator();
-      currentSub.type = document.getElementById('sub-wave').value;
-      currentSub.frequency.setValueAtTime(subFreq, now);
-
-      const subLevelVal = (parseFloat(document.getElementById('sub-level').value) / 127) * 0.8;
-      const subGain = ctx.createGain();
-      subGain.gain.setValueAtTime(subLevelVal, now);
-      currentSub.connect(subGain);
-
-      currentOsc1.connect(preDriveNode);
-      currentOsc2.connect(preDriveNode);
-      subGain.connect(preDriveNode);
-
-      const baseCutoffRaw = parseFloat(document.getElementById('filter-cutoff').value);
-      const cutoffHz = 30 + Math.pow(baseCutoffRaw / 127, 2.5) * 16000;
-      const resRaw = parseFloat(document.getElementById('filter-resonance').value);
-      const qVal = 0.5 + (resRaw / 127) * 18;
-
-      filterNode.type = document.getElementById('filter-type').value === 'bp' ? 'bandpass' :
-                        (document.getElementById('filter-type').value === 'hp' ? 'highpass' : 'lowpass');
-      filterNode2.type = filterNode.type;
-
-      filterNode.Q.setValueAtTime(qVal, now);
-      filterNode2.Q.setValueAtTime(qVal, now);
-
-      const modDepthRaw = parseFloat(document.getElementById('filter-mod-depth').value);
-      const modAttack = parseFloat(document.getElementById('mod-attack').value);
-      const modDecay = parseFloat(document.getElementById('mod-decay').value);
-      const modSustain = parseFloat(document.getElementById('mod-sustain').value);
-
-      const modTargetFreq = Math.max(40, Math.min(18000, cutoffHz + (modDepthRaw * 65) * (velocity / 100)));
-
-      filterNode.frequency.cancelScheduledValues(now);
-      filterNode2.frequency.cancelScheduledValues(now);
-      filterNode.frequency.setValueAtTime(cutoffHz, now);
-      filterNode2.frequency.setValueAtTime(cutoffHz, now);
-      filterNode.frequency.linearRampToValueAtTime(modTargetFreq, now + modAttack);
-      filterNode2.frequency.linearRampToValueAtTime(modTargetFreq, now + modAttack);
-      filterNode.frequency.exponentialRampToValueAtTime(Math.max(40, cutoffHz + (modTargetFreq - cutoffHz) * modSustain), now + modAttack + modDecay);
-      filterNode2.frequency.exponentialRampToValueAtTime(Math.max(40, cutoffHz + (modTargetFreq - cutoffHz) * modSustain), now + modAttack + modDecay);
-
-      const ampAttack = parseFloat(document.getElementById('amp-attack').value);
-      const ampDecay = parseFloat(document.getElementById('amp-decay').value);
-      const ampSustain = parseFloat(document.getElementById('amp-sustain').value);
-      const velFactor = (velocity / 127) * 0.9 + 0.1;
-
-      vcaGain.gain.cancelScheduledValues(now);
-      vcaGain.gain.setValueAtTime(0.001, now);
-      vcaGain.gain.linearRampToValueAtTime(velFactor, now + ampAttack);
-      vcaGain.gain.exponentialRampToValueAtTime(Math.max(0.001, velFactor * ampSustain), now + ampAttack + ampDecay);
-
-      currentOsc1.start(now);
-      currentOsc2.start(now);
-      currentSub.start(now);
     }
 
     function noteOff(midiNote) {
-      if (!activeNotes.has(midiNote)) return;
-      activeNotes.delete(midiNote);
+      if (synthEngine) synthEngine.noteOff(midiNote);
       highlightKeyboardKey(midiNote, false);
-
-      if (activeNotes.size === 0) {
-        const ctx = getAudioContext();
-        const now = ctx.currentTime;
-        const ampRelease = parseFloat(document.getElementById('amp-release').value);
-
-        if (vcaGain) {
-          vcaGain.gain.cancelScheduledValues(now);
-          vcaGain.gain.setValueAtTime(vcaGain.gain.value, now);
-          vcaGain.gain.exponentialRampToValueAtTime(0.0001, now + ampRelease);
-        }
-
-        setTimeout(() => {
-          if (activeNotes.size === 0) {
-            try { if (currentOsc1) currentOsc1.stop(); } catch(e){}
-            try { if (currentOsc2) currentOsc2.stop(); } catch(e){}
-            try { if (currentSub) currentSub.stop(); } catch(e){}
-          }
-        }, ampRelease * 1000 + 50);
-      }
     }
 
     function panicAllNotes() {
-      activeNotes.clear();
+      activeAuditionTimers.forEach(t => clearTimeout(t));
+      activeAuditionTimers = [];
+      if (synthEngine) synthEngine.panic();
       document.querySelectorAll('.white-key, .black-key').forEach(k => k.classList.remove('active'));
-      if (vcaGain && audioCtx) {
-        vcaGain.gain.cancelScheduledValues(audioCtx.currentTime);
-        vcaGain.gain.setValueAtTime(0, audioCtx.currentTime);
-      }
-      try { if (currentOsc1) currentOsc1.stop(); } catch(e){}
-      try { if (currentOsc2) currentOsc2.stop(); } catch(e){}
-      try { if (currentSub) currentSub.stop(); } catch(e){}
     }
 
-    function loadPatchIntoSynth(index, autoAudition = true) {
-      currentPatchIndex = index;
-      const p = patchData[index];
+    function updateChassisUI(p) {
       const params = p.synthParams;
 
       document.getElementById('lcd-slot').textContent = '[ P' + p.slot + ' ]';
@@ -4980,55 +6811,96 @@
       document.getElementById('lcd-name').textContent = p.name.toUpperCase();
       document.getElementById('lcd-param').textContent = p.soundDescription;
 
-      document.getElementById('osc1-wave').value = params.osc1Wave;
-      document.getElementById('osc1-oct').value = params.osc1Oct;
-      document.getElementById('osc2-wave').value = params.osc2Wave;
-      document.getElementById('osc2-detune').value = params.osc2Detune;
-      document.getElementById('sub-wave').value = params.subWave;
-      document.getElementById('sub-level').value = params.subLevel;
-      document.getElementById('noise-level').value = params.noiseLevel;
+      const osc1WaveEl = document.getElementById('osc1-wave');
+      if (osc1WaveEl) osc1WaveEl.value = params.osc1Wave;
+      const osc1OctEl = document.getElementById('osc1-oct');
+      if (osc1OctEl) osc1OctEl.value = params.osc1Octave;
 
-      document.getElementById('filter-type').value = params.filterType;
-      document.getElementById('filter-slope').value = params.filterSlope;
-      document.getElementById('filter-acid').checked = params.filterAcid;
-      document.getElementById('filter-cutoff').value = params.cutoff;
-      document.getElementById('cutoff-val').textContent = params.cutoff;
-      document.getElementById('filter-resonance').value = params.resonance;
-      document.getElementById('res-val').textContent = params.resonance;
-      document.getElementById('filter-mod-depth').value = params.modEnvDepth;
-      document.getElementById('mod-depth-val').textContent = params.modEnvDepth;
+      const osc2WaveEl = document.getElementById('osc2-wave');
+      if (osc2WaveEl) osc2WaveEl.value = params.osc2Wave;
+      const osc2OctEl = document.getElementById('osc2-oct');
+      if (osc2OctEl) osc2OctEl.value = params.osc2Octave;
+      const osc2DetuneEl = document.getElementById('osc2-detune');
+      if (osc2DetuneEl) osc2DetuneEl.value = params.osc2DetuneCents;
 
-      document.getElementById('synth-overdrive').value = params.overdrive;
-      document.getElementById('drive-val').textContent = params.overdrive;
-      document.getElementById('synth-distortion').value = params.distortion;
-      document.getElementById('dist-val').textContent = params.distortion;
+      const subWaveEl = document.getElementById('sub-wave');
+      if (subWaveEl) subWaveEl.value = params.subWave;
+      const subLevelEl = document.getElementById('sub-level');
+      if (subLevelEl) subLevelEl.value = Math.round(params.subLevel * 100);
+      const noiseLevelEl = document.getElementById('noise-level');
+      if (noiseLevelEl) noiseLevelEl.value = Math.round(params.noiseLevel * 100);
 
-      document.getElementById('amp-attack').value = params.ampAttack;
-      document.getElementById('amp-decay').value = params.ampDecay;
-      document.getElementById('amp-sustain').value = params.ampSustain;
-      document.getElementById('amp-release').value = params.ampRelease;
+      const filterTypeEl = document.getElementById('filter-type');
+      if (filterTypeEl) filterTypeEl.value = params.filterShape;
+      const filterSlopeEl = document.getElementById('filter-slope');
+      if (filterSlopeEl) filterSlopeEl.value = (params.filterSlope === '12dB' ? '12' : '24');
+      const filterAcidEl = document.getElementById('filter-acid');
+      if (filterAcidEl) filterAcidEl.checked = !!params.filterAcid;
 
-      document.getElementById('mod-attack').value = params.modAttack;
-      document.getElementById('mod-decay').value = params.modDecay;
-      document.getElementById('mod-sustain').value = params.modSustain;
-      document.getElementById('mod-release').value = params.modRelease;
+      const filterCutoffEl = document.getElementById('filter-cutoff');
+      if (filterCutoffEl) filterCutoffEl.value = Math.min(127, Math.max(0, Math.round((params.baseCutoff / 800) * 127)));
+      const cutoffValEl = document.getElementById('cutoff-val');
+      if (cutoffValEl) cutoffValEl.textContent = Math.round(params.baseCutoff) + ' Hz';
 
-      document.getElementById('glide-time').value = params.glide;
+      const filterResEl = document.getElementById('filter-resonance');
+      if (filterResEl) filterResEl.value = Math.round(params.resonance * 127);
+      const resValEl = document.getElementById('res-val');
+      if (resValEl) resValEl.textContent = Math.round(params.resonance * 100) + '%';
 
-      if (preDriveNode) preDriveNode.curve = makeDriveCurve(params.overdrive);
-      if (postDistNode) postDistNode.curve = makeDiodeCurve(params.distortion);
+      const filterModEl = document.getElementById('filter-mod-depth');
+      if (filterModEl) filterModEl.value = Math.round((params.filterEnvAmt / 800) * 63);
+      const modDepthValEl = document.getElementById('mod-depth-val');
+      if (modDepthValEl) modDepthValEl.textContent = '+' + Math.round(params.filterEnvAmt) + ' Hz';
 
-      if (autoAudition && p.demoRiff) {
+      const driveEl = document.getElementById('synth-overdrive');
+      if (driveEl) driveEl.value = Math.round(((params.drive - 1.0) / 3.0) * 127);
+      const driveValEl = document.getElementById('drive-val');
+      if (driveValEl) driveValEl.textContent = (params.drive || 1.0).toFixed(1) + 'x';
+
+      const distEl = document.getElementById('synth-distortion');
+      if (distEl) distEl.value = Math.round(params.distortion * 127);
+      const distValEl = document.getElementById('dist-val');
+      if (distValEl) distValEl.textContent = Math.round(params.distortion * 100) + '%';
+
+      const ampAttackEl = document.getElementById('amp-attack');
+      if (ampAttackEl) ampAttackEl.value = params.ampAttack;
+      const ampReleaseEl = document.getElementById('amp-release');
+      if (ampReleaseEl) ampReleaseEl.value = params.ampRelease;
+
+      const glideEl = document.getElementById('glide-time');
+      if (glideEl) glideEl.value = params.portamento;
+
+      const spaceToggle = document.getElementById('stereo-space-toggle');
+      if (spaceToggle) spaceToggle.checked = !!params.stereoSpace;
+      const spaceLabel = document.getElementById('stereo-space-label');
+      if (spaceLabel) spaceLabel.textContent = params.stereoSpace ? 'ON' : 'OFF';
+    }
+
+    function loadPatchIntoSynth(index, autoAudition = true) {
+      getAudioContext();
+      currentPatchIndex = index;
+      const p = patchData[index];
+      if (synthEngine) {
+        synthEngine.setPatch(p.synthParams);
+      }
+      updateChassisUI(p);
+
+      if (autoAudition && p.demoRiff && p.demoRiff.length > 0) {
         panicAllNotes();
-        let timeOffset = 0;
         p.demoRiff.forEach(step => {
-          setTimeout(() => {
-            noteOn(step.note + (octaveOffset * 12), 105);
-            setTimeout(() => {
-              noteOff(step.note + (octaveOffset * 12));
-            }, (step.dur * 0.85) * 1000);
-          }, timeOffset * 1000);
-          timeOffset += step.dur;
+          const startMs = (step.start !== undefined ? step.start : 0) * 1000;
+          const lenMs = (step.len !== undefined ? step.len : (step.dur || 0.4)) * 1000;
+          const note = step.note + (octaveOffset * 12);
+
+          const t1 = setTimeout(() => {
+            noteOn(note, 105);
+            const t2 = setTimeout(() => {
+              noteOff(note);
+            }, Math.max(50, lenMs * 0.95));
+            activeAuditionTimers.push(t2);
+          }, startMs);
+
+          activeAuditionTimers.push(t1);
         });
       }
     }
@@ -6116,46 +7988,128 @@
         }
       });
 
-      document.getElementById('filter-cutoff').addEventListener('input', (e) => {
-        const val = e.target.value;
-        document.getElementById('cutoff-val').textContent = val;
-        document.getElementById('lcd-param').textContent = 'CUTOFF: ' + val;
-        if (filterNode && audioCtx) {
-          const hz = 30 + Math.pow(val / 127, 2.5) * 16000;
-          filterNode.frequency.setValueAtTime(hz, audioCtx.currentTime);
-          filterNode2.frequency.setValueAtTime(hz, audioCtx.currentTime);
+      // Front-Panel Real-Time Control Listeners
+      const osc1Wave = document.getElementById('osc1-wave');
+      if (osc1Wave) osc1Wave.addEventListener('change', (e) => {
+        if (synthEngine) synthEngine.params.osc1Wave = e.target.value;
+      });
+      const osc1Oct = document.getElementById('osc1-oct');
+      if (osc1Oct) osc1Oct.addEventListener('change', (e) => {
+        if (synthEngine) synthEngine.params.osc1Octave = parseInt(e.target.value) || 0;
+      });
+
+      const osc2Wave = document.getElementById('osc2-wave');
+      if (osc2Wave) osc2Wave.addEventListener('change', (e) => {
+        if (synthEngine) synthEngine.params.osc2Wave = e.target.value;
+      });
+      const osc2Oct = document.getElementById('osc2-oct');
+      if (osc2Oct) osc2Oct.addEventListener('change', (e) => {
+        if (synthEngine) synthEngine.params.osc2Octave = parseInt(e.target.value) || 0;
+      });
+      const osc2Detune = document.getElementById('osc2-detune');
+      if (osc2Detune) osc2Detune.addEventListener('input', (e) => {
+        if (synthEngine) synthEngine.params.osc2DetuneCents = parseFloat(e.target.value) || 0;
+      });
+
+      const subWave = document.getElementById('sub-wave');
+      if (subWave) subWave.addEventListener('change', (e) => {
+        if (synthEngine) synthEngine.params.subWave = e.target.value;
+      });
+      const subLevel = document.getElementById('sub-level');
+      if (subLevel) subLevel.addEventListener('input', (e) => {
+        if (synthEngine) synthEngine.params.subLevel = (parseFloat(e.target.value) / 100);
+      });
+      const noiseLevel = document.getElementById('noise-level');
+      if (noiseLevel) noiseLevel.addEventListener('input', (e) => {
+        if (synthEngine) synthEngine.params.noiseLevel = (parseFloat(e.target.value) / 100) * 0.3;
+      });
+
+      const filterType = document.getElementById('filter-type');
+      if (filterType) filterType.addEventListener('change', (e) => {
+        if (synthEngine) {
+          synthEngine.params.filterShape = e.target.value;
+          synthEngine.filterL.type = e.target.value;
+          synthEngine.filterR.type = e.target.value;
         }
+      });
+      const filterSlope = document.getElementById('filter-slope');
+      if (filterSlope) filterSlope.addEventListener('change', (e) => {
+        if (synthEngine) {
+          synthEngine.params.filterSlope = e.target.value === '12' ? '12dB' : '24dB';
+          const poles = e.target.value === '12' ? 2 : 4;
+          synthEngine.filterL.poles = poles;
+          synthEngine.filterR.poles = poles;
+        }
+      });
+      const filterAcid = document.getElementById('filter-acid');
+      if (filterAcid) filterAcid.addEventListener('change', (e) => {
+        if (synthEngine) synthEngine.params.filterAcid = e.target.checked;
+      });
+
+      document.getElementById('filter-cutoff').addEventListener('input', (e) => {
+        const raw = parseFloat(e.target.value);
+        const hz = 40 + Math.pow(raw / 127, 2.2) * 2400;
+        document.getElementById('cutoff-val').textContent = Math.round(hz) + ' Hz';
+        document.getElementById('lcd-param').textContent = 'CUTOFF: ' + Math.round(hz) + ' HZ';
+        if (synthEngine) synthEngine.params.baseCutoff = hz;
       });
 
       document.getElementById('filter-resonance').addEventListener('input', (e) => {
-        const val = e.target.value;
-        document.getElementById('res-val').textContent = val;
-        document.getElementById('lcd-param').textContent = 'RESONANCE: ' + val;
-        if (filterNode && audioCtx) {
-          const q = 0.5 + (val / 127) * 18;
-          filterNode.Q.setValueAtTime(q, audioCtx.currentTime);
-          filterNode2.Q.setValueAtTime(q, audioCtx.currentTime);
-        }
+        const raw = parseFloat(e.target.value);
+        const res = raw / 127;
+        document.getElementById('res-val').textContent = Math.round(res * 100) + '%';
+        document.getElementById('lcd-param').textContent = 'RESONANCE: ' + Math.round(res * 100) + '%';
+        if (synthEngine) synthEngine.params.resonance = res;
+      });
+
+      document.getElementById('filter-mod-depth').addEventListener('input', (e) => {
+        const raw = parseFloat(e.target.value);
+        const depthHz = (raw / 63) * 800;
+        document.getElementById('mod-depth-val').textContent = (depthHz >= 0 ? '+' : '') + Math.round(depthHz) + ' Hz';
+        if (synthEngine) synthEngine.params.filterEnvAmt = depthHz;
       });
 
       document.getElementById('synth-overdrive').addEventListener('input', (e) => {
-        const val = e.target.value;
-        document.getElementById('drive-val').textContent = val;
-        document.getElementById('lcd-param').textContent = 'OVERDRIVE: ' + val;
-        if (preDriveNode) preDriveNode.curve = makeDriveCurve(val);
+        const raw = parseFloat(e.target.value);
+        const drv = 1.0 + (raw / 127) * 3.0;
+        document.getElementById('drive-val').textContent = drv.toFixed(1) + 'x';
+        document.getElementById('lcd-param').textContent = 'OVERDRIVE: ' + drv.toFixed(1) + 'X';
+        if (synthEngine) synthEngine.params.drive = drv;
       });
 
       document.getElementById('synth-distortion').addEventListener('input', (e) => {
-        const val = e.target.value;
-        document.getElementById('dist-val').textContent = val;
-        document.getElementById('lcd-param').textContent = 'DISTORTION: ' + val;
-        if (postDistNode) postDistNode.curve = makeDiodeCurve(val);
+        const raw = parseFloat(e.target.value);
+        const dist = raw / 127;
+        document.getElementById('dist-val').textContent = Math.round(dist * 100) + '%';
+        document.getElementById('lcd-param').textContent = 'DISTORTION: ' + Math.round(dist * 100) + '%';
+        if (synthEngine) synthEngine.params.distortion = dist;
       });
 
+      document.getElementById('amp-attack').addEventListener('input', (e) => {
+        if (synthEngine) synthEngine.params.ampAttack = parseFloat(e.target.value);
+      });
+      document.getElementById('amp-release').addEventListener('input', (e) => {
+        if (synthEngine) synthEngine.params.ampRelease = parseFloat(e.target.value);
+      });
+
+      document.getElementById('glide-time').addEventListener('input', (e) => {
+        const val = parseFloat(e.target.value);
+        document.getElementById('lcd-param').textContent = 'PORTAMENTO: ' + val.toFixed(2) + 'S';
+        if (synthEngine) synthEngine.params.portamento = val;
+      });
+
+      const spaceToggle = document.getElementById('stereo-space-toggle');
+      if (spaceToggle) {
+        spaceToggle.addEventListener('change', (e) => {
+          const checked = e.target.checked;
+          document.getElementById('stereo-space-label').textContent = checked ? 'ON' : 'OFF';
+          document.getElementById('lcd-param').textContent = 'STEREO SPACE: ' + (checked ? 'ON' : 'OFF');
+          if (synthEngine) synthEngine.globalStereoSpace = checked;
+        });
+      }
+
       document.getElementById('master-volume').addEventListener('input', (e) => {
-        if (masterGain && audioCtx) {
-          masterGain.gain.setValueAtTime(parseFloat(e.target.value), audioCtx.currentTime);
-        }
+        if (synthEngine) synthEngine.masterVolume = parseFloat(e.target.value);
       });
 
       const QWERTY_MAP = {
