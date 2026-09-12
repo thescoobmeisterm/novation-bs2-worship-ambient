@@ -75,6 +75,16 @@ if (fs.existsSync(qrPrintSrc)) {
     console.log('Copied print_qr_sticker.html');
 }
 
+// Copy root icons & manifest
+const rootIconFiles = ['favicon.ico', 'apple-touch-icon.png', 'site.webmanifest'];
+for (const rf of rootIconFiles) {
+    const src = path.join(rootDir, rf);
+    if (fs.existsSync(src)) {
+        fs.copyFileSync(src, path.join(targetDir, rf));
+        console.log(`Copied root file: ${rf}`);
+    }
+}
+
 // Copy PNG sticker files in patches dir if any
 const patchPngs = fs.readdirSync(sourcePatchesDir).filter(f => f.endsWith('.png'));
 for (const f of patchPngs) {
