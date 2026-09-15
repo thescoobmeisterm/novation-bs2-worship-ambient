@@ -839,6 +839,64 @@
       </div>
 
       <!-- Active Song Recommendation Result Card -->
+      <!-- Collapsible 100-Song Worship Catalog Table -->
+      <div class="max-w-5xl mx-auto">
+        <details id="master-song-table-details" class="group bg-[#0d121d] rounded-2xl border border-brand-border overflow-hidden transition-all shadow-xl">
+          <summary class="p-4 sm:p-5 flex items-center justify-between cursor-pointer list-none select-none hover:bg-white/5 transition-colors">
+            <div class="flex items-center gap-3">
+              <span class="w-8 h-8 rounded-lg bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-sm font-bold border border-brand-cyan/30">📋</span>
+              <div>
+                <div class="flex items-center gap-2">
+                  <h3 class="text-sm sm:text-base font-bold text-white group-hover:text-brand-cyan transition-colors">
+                    Browse All 100 Worship Anthems &amp; Patch Pairings (2026 Catalog)
+                  </h3>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-brand-cyan/15 text-brand-cyan border border-brand-cyan/30">100 Songs</span>
+                </div>
+                <p class="text-slate-400 text-xs mt-0.5 hidden sm:block">
+                  Click any song to load into the setlist builder, or click either patch badge to load directly into the live synth
+                </p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-mono text-brand-cyan shrink-0">
+              <span class="group-open:hidden">Open Table ▾</span>
+              <span class="hidden group-open:inline">Hide Table ▴</span>
+            </div>
+          </summary>
+
+          <div class="p-4 sm:p-5 border-t border-brand-border/60 space-y-3">
+            <!-- Table Search Box -->
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div class="relative w-full sm:w-72">
+                <input id="table-song-search" type="text" placeholder="Filter 100 songs, artists, or keys..." class="w-full bg-[#141b2a] border border-brand-border rounded-xl px-3 py-2 pl-9 text-xs text-white placeholder-slate-500 font-mono focus:outline-none focus:border-brand-cyan">
+                <svg class="w-4 h-4 text-slate-500 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+              </div>
+              <div class="text-[11px] font-mono text-slate-400">
+                Showing <span id="table-visible-count" class="text-brand-cyan font-bold">100</span> of 100 songs
+              </div>
+            </div>
+
+            <!-- Scrollable Table Matrix -->
+            <div class="overflow-x-auto rounded-xl border border-[#1f283d] bg-[#0a0d14] max-h-[500px] overflow-y-auto">
+              <table class="w-full text-left text-xs font-mono divide-y divide-[#1c2438]">
+                <thead class="bg-[#111622] text-slate-300 sticky top-0 z-10">
+                  <tr>
+                    <th class="py-2.5 px-3 font-bold w-12 text-slate-500">#</th>
+                    <th class="py-2.5 px-3 font-bold">Song Title &amp; Artist</th>
+                    <th class="py-2.5 px-2 font-bold w-16 text-center">Key</th>
+                    <th class="py-2.5 px-2 font-bold w-20 text-center">BPM</th>
+                    <th class="py-2.5 px-3 font-bold">Bedrock Patch (Primary)</th>
+                    <th class="py-2.5 px-3 font-bold">Elevation Patch (Secondary)</th>
+                  </tr>
+                </thead>
+                <tbody id="master-song-table-body" class="divide-y divide-[#182032] text-slate-300">
+                  <!-- Rendered dynamically by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </details>
+      </div>
+
       <div id="song-result-container" class="max-w-5xl mx-auto">
         <!-- Rendered dynamically by renderSongRecommendation(song) -->
       </div>
@@ -4996,6 +5054,678 @@ const worshipSongsData = [
     "primaryRole": "Pre-Chorus & Bridge Riser: Analog white noise and sub sweep climbing over 5 seconds.",
     "secondaryRole": "Chorus Climax: Refinery Special dual-saw roar providing colossal power.",
     "fohTip": "Release key on the downbeat of beat 1 of the chorus for a pristine explosive drop."
+  },
+  {
+    "title": "Trust in God",
+    "artist": "Elevation Worship",
+    "bpm": 76,
+    "key": "C",
+    "energy": "Gospel Mid-Tempo Rock",
+    "primaryId": "02",
+    "secondaryId": "38",
+    "primaryRole": "Verses & Chorus: Heavy analog bedrock bass with high sine sub weight, locking with gospel kick.",
+    "secondaryRole": "Bridge Build: Gospel slap chop with percussive attack driving the celebration.",
+    "fohTip": "Keep sub below 60Hz tightly controlled with a slow-release optical compressor."
+  },
+  {
+    "title": "Same God",
+    "artist": "Elevation Worship",
+    "bpm": 72,
+    "key": "Db",
+    "energy": "Reverent Build to Monumental",
+    "primaryId": "01",
+    "secondaryId": "02",
+    "primaryRole": "Verse 1-2: Pure click-free sub-bass under piano without competing with warm acoustics.",
+    "secondaryRole": "Bridge & Final Chorus: Heavy dual saw bedrock with pre-filter overdrive cutting through full choir.",
+    "fohTip": "Use 24dB ladder filter; roll cutoff up on the 'You answered prayers then' declaration."
+  },
+  {
+    "title": "RATTLE!",
+    "artist": "Elevation Worship",
+    "bpm": 76,
+    "key": "Eb",
+    "energy": "High-Energy Battle Praise",
+    "primaryId": "02",
+    "secondaryId": "07",
+    "primaryRole": "Verse & Chorus Driving Pulse: Saturated punchy analog tone anchoring the 4-on-the-floor groove.",
+    "secondaryRole": "Bridge 'Dry Bones Hear': 16th-note driving arpeggio with high resonance bite.",
+    "fohTip": "Open up aftertouch for instant distortion bite right on the downbeats."
+  },
+  {
+    "title": "Jehovah",
+    "artist": "Elevation Worship / Chris Brown",
+    "bpm": 72,
+    "key": "F#",
+    "energy": "Monumental Battle Declaration",
+    "primaryId": "14",
+    "secondaryId": "01",
+    "primaryRole": "Main Battle Riffs: Heavy analog distortion roar on 'Jehovah fights for me'.",
+    "secondaryRole": "Prayer Vamps: Pure sub-bass floor holding ground beneath spontaneous prophetic chords.",
+    "fohTip": "Engage mild high-shelf cut at 4kHz to keep distortion from conflicting with lead vocal transients."
+  },
+  {
+    "title": "More Than Able",
+    "artist": "Elevation Worship / Chandler Moore",
+    "bpm": 66,
+    "key": "Bb",
+    "energy": "Spontaneous Gospel Ballad",
+    "primaryId": "03",
+    "secondaryId": "26",
+    "primaryRole": "Prayer Bed & Verses: Gentle analog filter bloom swelling slowly behind electric piano.",
+    "secondaryRole": "Spontaneous Vamps: Shimmering ambient swell with long release and tape flutter.",
+    "fohTip": "Keep Mod Wheel at ~25% for organic breath-like filter vibrato."
+  },
+  {
+    "title": "Praise You Anywhere",
+    "artist": "Brandon Lake",
+    "bpm": 115,
+    "key": "D",
+    "energy": "Uptempo Energetic Celebration",
+    "primaryId": "07",
+    "secondaryId": "45",
+    "primaryRole": "Verse & Chorus Engine: 16th-note driving praise arpeggio pushing driving kick pattern.",
+    "secondaryRole": "Turnarounds & Breakdowns: Octave pump disco bass for high-energy dancing praise.",
+    "fohTip": "Sync arpeggiator clock to FOH click via MIDI for airtight lock with drummer."
+  },
+  {
+    "title": "Fear Is Not My Future",
+    "artist": "Maverick City / Brandon Lake",
+    "bpm": 68,
+    "key": "C",
+    "energy": "Soulful Anthem of Hope",
+    "primaryId": "02",
+    "secondaryId": "03",
+    "primaryRole": "Main Groove: Warm punchy analog foundation with saturated harmonics locking with bass drum.",
+    "secondaryRole": "Chorus 2 & Bridge: Expansive stereo swell lifting 'Goodbye fear, goodbye guilt'.",
+    "fohTip": "Keep low-cut filter set cleanly at 30Hz to prevent low-end rumble on large arena subs."
+  },
+  {
+    "title": "I Believe",
+    "artist": "Phil Wickham",
+    "bpm": 140,
+    "key": "Bb",
+    "energy": "Fast-Paced High-Energy Anthem",
+    "primaryId": "09",
+    "secondaryId": "07",
+    "primaryRole": "Main Stadium Engine: Dual saw 16th praise arpeggiator powering four-on-the-floor energy.",
+    "secondaryRole": "Verses & Builds: Driving rhythmic 8th motor holding bedrock tempo.",
+    "fohTip": "Aftertouch introduces instant upper-midrange bite during the explosive chorus drop."
+  },
+  {
+    "title": "Hymn of Heaven",
+    "artist": "Phil Wickham",
+    "bpm": 72,
+    "key": "D",
+    "energy": "Majestic Orchestral Worship",
+    "primaryId": "03",
+    "secondaryId": "13",
+    "primaryRole": "Verse & Chorus Sustains: Warm analog swell providing reverent church-organ weight.",
+    "secondaryRole": "Final Triumphant Chorus: Bowed analog bass bloom adding cinematic grandeur.",
+    "fohTip": "Use long release; let chords gently ring and naturally overlap chord changes."
+  },
+  {
+    "title": "That's The Thing About Praise",
+    "artist": "Benjamin William Hastings / Blessing Offor",
+    "bpm": 78,
+    "key": "G",
+    "energy": "Soulful Gospel Groove",
+    "primaryId": "40",
+    "secondaryId": "37",
+    "primaryRole": "Main Verse Foundation: Vintage Moog/Bernie funk bass tone with round sub fundamentals.",
+    "secondaryRole": "Pre-Chorus & Climax: Auto-wah envelope filter giving vocal-like dynamics.",
+    "fohTip": "High-pass guitar lines slightly to give this round analog bass full acoustic space."
+  },
+  {
+    "title": "Promises",
+    "artist": "Maverick City Music",
+    "bpm": 86,
+    "key": "Bb",
+    "energy": "Spontaneous Gospel Rock",
+    "primaryId": "01",
+    "secondaryId": "02",
+    "primaryRole": "Verses: Pure sine sub locking under gospel organ without harsh treble frequencies.",
+    "secondaryRole": "Chorus & Bridge Drops: Heavy saturated analog tone on 'Great is Your faithfulness'.",
+    "fohTip": "Let the 40Hz sub ring freely; compress dynamically with a transparent VCA compressor."
+  },
+  {
+    "title": "I Thank God",
+    "artist": "Maverick City / UPPERROOM",
+    "bpm": 130,
+    "key": "Db",
+    "energy": "Explosive Gospel Celebration",
+    "primaryId": "43",
+    "secondaryId": "38",
+    "primaryRole": "Chorus Shout Breaks: High-tempo gospel shout 16th arpeggio driving foot-stomping groove.",
+    "secondaryRole": "Verses & Turns: Punchy percussive slap bass with quick decay on 'He picked me up'.",
+    "fohTip": "Boost 1.5kHz slightly on channel EQ to accent the snappy slap transients."
+  },
+  {
+    "title": "Wait on You",
+    "artist": "Elevation / Maverick City",
+    "bpm": 68,
+    "key": "Bb",
+    "energy": "Spontaneous Intercession Bed",
+    "primaryId": "03",
+    "secondaryId": "25",
+    "primaryRole": "Prayer Room Bed: Long 2.5s attack swell anchoring the room during extended free worship.",
+    "secondaryRole": "Spontaneous Whispers: Analog tape drift tone with subtle pitch detuning.",
+    "fohTip": "Keep volume pedal slightly cracked; swell in slowly after chord changes to avoid transients."
+  },
+  {
+    "title": "God Problems",
+    "artist": "Maverick City Music",
+    "bpm": 70,
+    "key": "G",
+    "energy": "Gospel Soul Groove",
+    "primaryId": "40",
+    "secondaryId": "02",
+    "primaryRole": "Main Verses: Round warm Moog funk bass with deep bottom end.",
+    "secondaryRole": "Chorus Builds: Overdriven saw bass adding grit on 'Those are God problems'.",
+    "fohTip": "DI box with transformer saturation provides extra warmth and vintage glue."
+  },
+  {
+    "title": "Million Little Miracles",
+    "artist": "Elevation / Maverick City",
+    "bpm": 72,
+    "key": "Db",
+    "energy": "Spontaneous Acoustic Build",
+    "primaryId": "01",
+    "secondaryId": "03",
+    "primaryRole": "Verses: Ultra-low sub weight reinforcing piano downbeats.",
+    "secondaryRole": "Chorus Climax: Rich analog swell lifting vocal harmonies.",
+    "fohTip": "Dip 250Hz slightly to remove boxiness and keep the low-end crystal clear."
+  },
+  {
+    "title": "Honey in the Rock",
+    "artist": "Brooke Ligertwood / Brandon Lake",
+    "bpm": 62,
+    "key": "D",
+    "energy": "Soulful Acoustic Gospel",
+    "primaryId": "02",
+    "secondaryId": "39",
+    "primaryRole": "Main Foundation: Rich analog bedrock holding down the deep Southern gospel feel.",
+    "secondaryRole": "Bridge Build: Talkbox vocalized lead bass adding distinctive melodic counter-hooks.",
+    "fohTip": "Balance sub level with acoustic kick; keep sub fader at unity."
+  },
+  {
+    "title": "A Thousand Hallelujahs",
+    "artist": "Brooke Ligertwood",
+    "bpm": 68,
+    "key": "Db",
+    "energy": "Majestic Cathedral Praise",
+    "primaryId": "01",
+    "secondaryId": "13",
+    "primaryRole": "Verses: Pure 35Hz sub-bass holding roots under acoustic fingerpicking.",
+    "secondaryRole": "Chorus & Bridge: Bowed post-rock swell expanding the room into an arena.",
+    "fohTip": "Use 24dB low-pass slope to ensure zero high-frequency hiss enters the FOH reverb."
+  },
+  {
+    "title": "Bless God",
+    "artist": "Brooke Ligertwood / Cody Carnes",
+    "bpm": 76,
+    "key": "G",
+    "energy": "Heartfelt Declarative Anthem",
+    "primaryId": "02",
+    "secondaryId": "01",
+    "primaryRole": "Verses & Chorus: Warm detuned saw bass with punchy envelope holding rock foundation.",
+    "secondaryRole": "Bridge 'Praise the Lord': Sub drop on downbeats rattling the sanctuary.",
+    "fohTip": "Open filter cutoff by ~15% on the second chorus to lift band energy."
+  },
+  {
+    "title": "Lead On Good Shepherd",
+    "artist": "Patrick Mayberry",
+    "bpm": 76,
+    "key": "Ab",
+    "energy": "Driving Southern Praise",
+    "primaryId": "04",
+    "secondaryId": "07",
+    "primaryRole": "Main Verses: Punchy analog bass driver locking with the acoustic stomp-clap groove.",
+    "secondaryRole": "Bridge & Solo: High-energy driving 16th arp lifting the final chorus.",
+    "fohTip": "Medium compressor ratio (4:1) keeps aggressive fingerpicking transients steady."
+  },
+  {
+    "title": "Run to the Father",
+    "artist": "Cody Carnes",
+    "bpm": 69,
+    "key": "C",
+    "energy": "Tender to Colossal",
+    "primaryId": "03",
+    "secondaryId": "01",
+    "primaryRole": "Verses & Pre-Chorus: Gentle prayer swell blooming underneath piano chords.",
+    "secondaryRole": "Chorus 2 & Bridge: Colossal sub foundation grounding the massive drum fills.",
+    "fohTip": "Engage Mod Wheel slightly on long held notes for subtle analog warmth."
+  },
+  {
+    "title": "Christ Be Magnified",
+    "artist": "Cody Carnes",
+    "bpm": 72,
+    "key": "A",
+    "energy": "Intimate to Monumental Roar",
+    "primaryId": "01",
+    "secondaryId": "20",
+    "secondaryRole": "Bridge Climax 'I Won't Be Silent': Heavy blackgaze analog fuzz roar.",
+    "primaryRole": "Verses: Clean click-free sub-bass beneath acoustic guitar.",
+    "fohTip": "Switch to distortion patch on the bridge build; pad master fader by -2dB to compensate for gain."
+  },
+  {
+    "title": "Too Good to Not Believe",
+    "artist": "Brandon Lake / Cody Carnes",
+    "bpm": 72,
+    "key": "Bb",
+    "energy": "Declarative Miracle Anthem",
+    "primaryId": "02",
+    "secondaryId": "33",
+    "primaryRole": "Verses & Chorus: Solid analog saw/sub bedrock locking with the kick.",
+    "secondaryRole": "Bridge Build: 4-bar riser sweep lifting into 'I've seen cancer disappear'.",
+    "fohTip": "Modulate resonance knob on the riser build to increase excitement."
+  },
+  {
+    "title": "Thank You Jesus for the Blood",
+    "artist": "Charity Gayle",
+    "bpm": 74,
+    "key": "Bb",
+    "energy": "Classic Gospel Ballad",
+    "primaryId": "03",
+    "secondaryId": "01",
+    "primaryRole": "Verses & Chorus: Warm breathing analog swell supporting traditional gospel organ.",
+    "secondaryRole": "Final Chorus Modulation: Massive sub drop on 'Praise the One who set me free'.",
+    "fohTip": "Keep attack above 1 second so transients never clash with kick drum."
+  },
+  {
+    "title": "New Name Written Down in Glory",
+    "artist": "Charity Gayle",
+    "bpm": 116,
+    "key": "Bb",
+    "energy": "Uptempo Gospel Shout",
+    "primaryId": "43",
+    "secondaryId": "38",
+    "primaryRole": "Shout Break Engine: 16th gospel shout arp driving high-tempo praise.",
+    "secondaryRole": "Verses: Punchy gospel chop slap bass keeping the syncopated bounce.",
+    "fohTip": "Engage high-pass filter at 45Hz on the console to keep fast runs articulate."
+  },
+  {
+    "title": "Believe For It",
+    "artist": "CeCe Winans",
+    "bpm": 78,
+    "key": "D",
+    "energy": "Inspirational Gospel Soul",
+    "primaryId": "02",
+    "secondaryId": "03",
+    "primaryRole": "Verses: Deep warm analog foundation locking with contemporary gospel groove.",
+    "secondaryRole": "Chorus Elevation: Expansive swell lifting vocal choir declarations.",
+    "fohTip": "Maintain solid low-end energy around 50-80Hz to reinforce vocal depth."
+  },
+  {
+    "title": "Alabaster Heart",
+    "artist": "Bethel Music / Kalley",
+    "bpm": 72,
+    "key": "G",
+    "energy": "Tender Devotional Worship",
+    "primaryId": "25",
+    "secondaryId": "26",
+    "primaryRole": "Verses: Lo-Fi analog tape drift adding nostalgic warmth beneath acoustic guitar.",
+    "secondaryRole": "Chorus: Shimmering ether swell blooming into wide stereo space.",
+    "fohTip": "Subtle chorus or stereo widening on FOH console brings the tape drift to life."
+  },
+  {
+    "title": "No Longer Slaves",
+    "artist": "Bethel Music",
+    "bpm": 74,
+    "key": "Bb",
+    "energy": "Freedom Anthem",
+    "primaryId": "02",
+    "secondaryId": "01",
+    "primaryRole": "Verses: Warm vintage synth bass grounding acoustic guitars.",
+    "secondaryRole": "Bridge 'You Split the Sea': Colossal sub-bass shaking the sanctuary on the downbeats.",
+    "fohTip": "Let the pure sub hold through the bridge vocal breakdown."
+  },
+  {
+    "title": "Egypt",
+    "artist": "Bethel Music / Cory Asbury",
+    "bpm": 76,
+    "key": "C",
+    "energy": "Driving Celebration Rock",
+    "primaryId": "02",
+    "secondaryId": "07",
+    "primaryRole": "Main Groove: Punchy detuned saw bass powering the driving four-on-the-floor kick.",
+    "secondaryRole": "Chorus & Bridge: 16th anthem arp for arena-scale celebration.",
+    "fohTip": "Pre-filter overdrive gives this patch enough bite to cut through double electric guitars."
+  },
+  {
+    "title": "It Is Well (Through It All)",
+    "artist": "Bethel Music / Kristene DiMarco",
+    "bpm": 68,
+    "key": "G",
+    "energy": "Sacred Hymn to Monumental",
+    "primaryId": "03",
+    "secondaryId": "13",
+    "primaryRole": "Verses: Soft church-organ analog swell resting behind quiet vocals.",
+    "secondaryRole": "Bridge & Final Climax: Bowed analog bass bloom lifting 'Through it all'.",
+    "fohTip": "Set release to 2.5s to let chords melt into church sanctuary acoustic reverb."
+  },
+  {
+    "title": "Stand in Your Love",
+    "artist": "Josh Baldwin",
+    "bpm": 73,
+    "key": "C",
+    "energy": "Joyful Driving Mid-Tempo",
+    "primaryId": "04",
+    "secondaryId": "02",
+    "primaryRole": "Main Foundation: Punchy analog bass driver providing warm root propulsion.",
+    "secondaryRole": "Chorus & Bridge: Saturated bedrock saw reinforcing acoustic guitars.",
+    "fohTip": "Keep sub centered; ensure DI input has clean gain staging."
+  },
+  {
+    "title": "Evidence",
+    "artist": "Josh Baldwin",
+    "bpm": 70,
+    "key": "G",
+    "energy": "Reflective to Joyful Declaration",
+    "primaryId": "01",
+    "secondaryId": "02",
+    "primaryRole": "Verses: Pure sine sub beneath acoustic guitar and light kick.",
+    "secondaryRole": "Chorus 2 & Bridge: Rich analog sawtooth bedrock filling the room.",
+    "fohTip": "High-pass channel at 32Hz; let the 55Hz G root note resonate naturally."
+  },
+  {
+    "title": "Cornerstone",
+    "artist": "Hillsong Worship",
+    "bpm": 72,
+    "key": "C",
+    "energy": "Modern Hymn Anthem",
+    "primaryId": "01",
+    "secondaryId": "02",
+    "primaryRole": "Verses: Solid sub-bass providing church-organ weight.",
+    "secondaryRole": "Chorus: Dual saw bedrock locking with acoustic rhythm section.",
+    "fohTip": "Roll cutoff to 350Hz during the chorus for optimal vocal transparency."
+  },
+  {
+    "title": "Mighty to Save",
+    "artist": "Hillsong Worship",
+    "bpm": 75,
+    "key": "A",
+    "energy": "Mid-Tempo Classic Anthem",
+    "primaryId": "02",
+    "secondaryId": "07",
+    "primaryRole": "Verses & Chorus: Warm analog bedrock holding down the foundational low-end.",
+    "secondaryRole": "Bridge: 16th driving arp adding excitement beneath guitar solos.",
+    "fohTip": "Keep gate on the arp tight so transients punch through the mix."
+  },
+  {
+    "title": "Who You Say I Am",
+    "artist": "Hillsong Worship",
+    "bpm": 86,
+    "key": "Gb",
+    "energy": "Inspiring Identity Anthem",
+    "primaryId": "02",
+    "secondaryId": "01",
+    "primaryRole": "Main Verses: Saturated analog saw bass anchoring the 6/8 acoustic swing.",
+    "secondaryRole": "Bridge: Deep sub drop on 'In my Father's house'.",
+    "fohTip": "Sync envelope decay to dotted-quarter notes for natural 6/8 rhythmic feel."
+  },
+  {
+    "title": "O Praise The Name (An\u00e1stasis)",
+    "artist": "Hillsong Worship",
+    "bpm": 72,
+    "key": "C",
+    "energy": "Sacred Easter Hymn",
+    "primaryId": "03",
+    "secondaryId": "13",
+    "primaryRole": "Verses 1-2: Receptive analog swell rising under piano chords.",
+    "secondaryRole": "Verse 3-4 (Resurrection): Bowed cinematic bloom soaring into stadium majesty.",
+    "fohTip": "Boost 100Hz gently to give the resurrection build physical chest resonance."
+  },
+  {
+    "title": "Touch of Heaven",
+    "artist": "Hillsong UNITED",
+    "bpm": 68,
+    "key": "A",
+    "energy": "Ambient Spontaneous Worship",
+    "primaryId": "26",
+    "secondaryId": "18",
+    "primaryRole": "Prayer Vamps: Shimmering ether swell blooming softly behind ambient pads.",
+    "secondaryRole": "Extended Spontaneous: Shields glide tone adding dreamy pitch slides.",
+    "fohTip": "Engage stereo chorus on console to float the synth around vocal leads."
+  },
+  {
+    "title": "As It Is In Heaven",
+    "artist": "Hillsong Worship",
+    "bpm": 70,
+    "key": "D",
+    "energy": "Reverent Kingdom Declaration",
+    "primaryId": "01",
+    "secondaryId": "02",
+    "primaryRole": "Verses: Deep sub-bass grounding intimate acoustic fingerpicking.",
+    "secondaryRole": "Chorus: Warm detuned saw bass filling out the worship team.",
+    "fohTip": "Set high-pass filter at 35Hz on channel strip to clean sub-harmonic mud."
+  },
+  {
+    "title": "Lord I Need You",
+    "artist": "Matt Maher",
+    "bpm": 75,
+    "key": "B",
+    "energy": "Intimate Prayer Anthem",
+    "primaryId": "03",
+    "secondaryId": "01",
+    "primaryRole": "Verses: Warm analog swell providing soft, click-free chord roots.",
+    "secondaryRole": "Chorus & Bridge: Deep sub drop providing profound emotional weight.",
+    "fohTip": "Keep volume balanced with acoustic piano downbeats."
+  },
+  {
+    "title": "10,000 Reasons (Bless the Lord)",
+    "artist": "Matt Redman",
+    "bpm": 73,
+    "key": "G",
+    "energy": "Timeless Heartfelt Hymn",
+    "primaryId": "01",
+    "secondaryId": "03",
+    "primaryRole": "Verses: Smooth sub-bass beneath acoustic guitar and piano.",
+    "secondaryRole": "Chorus: Gentle analog swell filling the sanctuary with organ-like warmth.",
+    "fohTip": "Set cutoff around 280Hz to preserve the organic church acoustic aesthetic."
+  },
+  {
+    "title": "Good Good Father",
+    "artist": "Chris Tomlin",
+    "bpm": 73,
+    "key": "A",
+    "energy": "Gentle 6/8 Ballad",
+    "primaryId": "04",
+    "secondaryId": "03",
+    "primaryRole": "Verses: Smooth 6/8 analog bass driver carrying the swing of the rhythm section.",
+    "secondaryRole": "Chorus: Warm analog swell blooming on 'You're a good good Father'.",
+    "fohTip": "Keep resonance low to maintain an ultra-smooth, friendly low-end texture."
+  },
+  {
+    "title": "Our God",
+    "artist": "Chris Tomlin",
+    "bpm": 105,
+    "key": "B",
+    "energy": "Driving Stadium Anthem",
+    "primaryId": "07",
+    "secondaryId": "09",
+    "primaryRole": "Verse & Chorus Drive: 16th-note driving anthem arp providing forward kinetic motion.",
+    "secondaryRole": "Bridge Climax: Stadium praise arpeggio with high resonance bite.",
+    "fohTip": "Lock arpeggiator clock to click; roll open aftertouch on 'Our God is greater'."
+  },
+  {
+    "title": "God Turn It Around",
+    "artist": "Jon Reddick",
+    "bpm": 74,
+    "key": "C",
+    "energy": "Gospel Soul Ballad",
+    "primaryId": "02",
+    "secondaryId": "01",
+    "primaryRole": "Verses & Chorus: Warm analog bedrock locking with the gospel rhythm section.",
+    "secondaryRole": "Bridge Declaration: Pure sine sub drop on 'He will make a way'.",
+    "fohTip": "Sub-frequency glue compressor locks the kick and synth bass seamlessly."
+  },
+  {
+    "title": "You've Already Won",
+    "artist": "Shane & Shane",
+    "bpm": 74,
+    "key": "A",
+    "energy": "Modern Acoustic Hymn",
+    "primaryId": "01",
+    "secondaryId": "02",
+    "primaryRole": "Verses: Pure click-free sub beneath acoustic fingerpicking.",
+    "secondaryRole": "Chorus: Full analog sawtooth bedrock cutting through twin guitars.",
+    "fohTip": "Set release to 0.4s for clean, rhythmic note separation."
+  },
+  {
+    "title": "Yes I Will",
+    "artist": "Vertical Worship",
+    "bpm": 75,
+    "key": "C",
+    "energy": "Steadfast Mid-Tempo Praise",
+    "primaryId": "02",
+    "secondaryId": "07",
+    "primaryRole": "Verses: Solid analog bass holding the 4-beat pulse.",
+    "secondaryRole": "Chorus & Bridge: Driving 16th arp pushing forward momentum.",
+    "fohTip": "Keep sub level tight in the 60-120Hz band for clean kick interaction."
+  },
+  {
+    "title": "Open the Eyes of My Heart",
+    "artist": "Paul Baloche",
+    "bpm": 114,
+    "key": "E",
+    "energy": "Classic Uptempo Celebration",
+    "primaryId": "09",
+    "secondaryId": "02",
+    "primaryRole": "Main Rhythm: Stadium praise 16th arp keeping driving forward energy.",
+    "secondaryRole": "Bridge: Rich analog sawtooth bedrock supporting the soaring chorus.",
+    "fohTip": "Dial in moderate resonance to help the 16th arp cut through loud congregational singing."
+  },
+  {
+    "title": "In Christ Alone",
+    "artist": "Passion / Kristian Stanfill",
+    "bpm": 68,
+    "key": "D",
+    "energy": "Triumphant Modern Hymn",
+    "primaryId": "03",
+    "secondaryId": "13",
+    "primaryRole": "Verses 1-3: Warm analog swell holding reverent root notes.",
+    "secondaryRole": "Verse 4 (Triumph): Bowed post-rock bloom filling the room with grandeur.",
+    "fohTip": "Allow the natural release tail to ring into the transitions."
+  },
+  {
+    "title": "God So Loved",
+    "artist": "We The Kingdom",
+    "bpm": 100,
+    "key": "Bb",
+    "energy": "Folk-Rock Celebration",
+    "primaryId": "04",
+    "secondaryId": "37",
+    "primaryRole": "Main Verses: Driving analog bass driver keeping the syncopated acoustic bounce.",
+    "secondaryRole": "Chorus & Solo: Auto-wah envelope funk filter adding expressive dynamics.",
+    "fohTip": "Pre-filter overdrive gives this patch great acoustic bite."
+  },
+  {
+    "title": "Holy Water",
+    "artist": "We The Kingdom",
+    "bpm": 74,
+    "key": "E",
+    "energy": "Southern Swamp Rock Praise",
+    "primaryId": "14",
+    "secondaryId": "38",
+    "primaryRole": "Verses & Chorus: Gritty tectonic distortion bass powering the gospel rock groove.",
+    "secondaryRole": "Bridge Breakdown: Gospel chop percussive slap bass.",
+    "fohTip": "Use DI with analog drive to keep distortion harmonic and warm."
+  },
+  {
+    "title": "Joy of the Lord",
+    "artist": "Rend Collective",
+    "bpm": 112,
+    "key": "C",
+    "energy": "Celebratory Folk Praise",
+    "primaryId": "45",
+    "secondaryId": "09",
+    "primaryRole": "Main Rhythm: Octave gallop synth bass carrying the lively Irish folk bounce.",
+    "secondaryRole": "Chorus Drops: Stadium dual-saw praise arp for arena celebration.",
+    "fohTip": "Keep attack instant for maximum percussive bounce."
+  },
+  {
+    "title": "My Testimony",
+    "artist": "Elevation Worship",
+    "bpm": 97,
+    "key": "B",
+    "energy": "Uptempo Driving Praise",
+    "primaryId": "07",
+    "secondaryId": "02",
+    "primaryRole": "Verses & Turns: 16th anthem drive arp locking with drum groove.",
+    "secondaryRole": "Chorus: Saturated analog bedrock holding down the room.",
+    "fohTip": "Engage aftertouch on chorus beat 1 to open filter cutoff wide."
+  },
+  {
+    "title": "See A Victory",
+    "artist": "Elevation Worship",
+    "bpm": 77.5,
+    "key": "Bb",
+    "energy": "Steadfast Battle March",
+    "primaryId": "02",
+    "secondaryId": "33",
+    "primaryRole": "Verses & Chorus: Heavy analog saw/sub bedrock locking with the marching kick.",
+    "secondaryRole": "Bridge Build: 4-bar riser sweep driving into 'The weapon may be formed'.",
+    "fohTip": "Keep sub volume consistent; let the analog saw harmonics provide the perceived dynamic lift."
+  },
+  {
+    "title": "Resurrecting",
+    "artist": "Elevation Worship",
+    "bpm": 74,
+    "key": "Db",
+    "energy": "Atmospheric to Monumental",
+    "primaryId": "01",
+    "secondaryId": "02",
+    "primaryRole": "Verses: Low, clear sub-bass anchoring quiet piano and vocals.",
+    "secondaryRole": "Bridge 'By Your Spirit': Saturated analog bedrock shaking the sanctuary.",
+    "fohTip": "Cut 300Hz slightly to leave ample room for electric guitar wall of sound."
+  },
+  {
+    "title": "Do It Again",
+    "artist": "Elevation Worship",
+    "bpm": 86,
+    "key": "Bb",
+    "energy": "Anthem of Faith",
+    "primaryId": "01",
+    "secondaryId": "03",
+    "primaryRole": "Verses: Sub-bass fundamentals keeping the room grounded.",
+    "secondaryRole": "Chorus & Bridge: Warm analog swell lifting 'Your promise still stands'.",
+    "fohTip": "Swell slowly with volume pedal to let acoustic instruments lead the transient."
+  },
+  {
+    "title": "Great Things",
+    "artist": "Phil Wickham",
+    "bpm": 102,
+    "key": "B",
+    "energy": "Uptempo Energetic Praise",
+    "primaryId": "09",
+    "secondaryId": "07",
+    "primaryRole": "Main Anthem Engine: Stadium praise dual-saw 16th arp driving high-energy praise.",
+    "secondaryRole": "Verses: Driving rhythmic pulse locking with acoustic kick.",
+    "fohTip": "High-pass at 40Hz to prevent low-end clutter during fast 16th notes."
+  },
+  {
+    "title": "The Joy",
+    "artist": "The Worship Initiative / Shane & Shane",
+    "bpm": 120,
+    "key": "G",
+    "energy": "Driving Acoustic Bluegrass Praise",
+    "primaryId": "45",
+    "secondaryId": "04",
+    "primaryRole": "Main Rhythm: Octave gallop bass driving the fast-paced praise energy.",
+    "secondaryRole": "Chorus: Punchy analog bass driver locking with acoustic guitars.",
+    "fohTip": "Use quick decay on the envelope to prevent note bleed at 120 BPM."
+  },
+  {
+    "title": "Peace",
+    "artist": "Bethel Music / We The Kingdom",
+    "bpm": 68,
+    "key": "Bb",
+    "energy": "Intimate Lullaby Prayer",
+    "primaryId": "03",
+    "secondaryId": "25",
+    "primaryRole": "Verses: Gentle warm swell breathing beneath quiet piano and acoustic.",
+    "secondaryRole": "Bridge & Outro: Lo-Fi tape drift with subtle warble comforting the room.",
+    "fohTip": "Keep level modest; this patch is designed to sit comfortably underneath the spoken word."
   }
 ];
     let activeRecommendedSong = null;
@@ -6518,8 +7248,100 @@ const worshipSongsData = [
       renderPatchDirectory('all', 'all', '');
     }
 
+    function renderMasterSongTable(filterQuery = '') {
+      const tbody = document.getElementById('master-song-table-body');
+      const countEl = document.getElementById('table-visible-count');
+      if (!tbody) return;
+      tbody.innerHTML = '';
+
+      const q = (filterQuery || '').trim().toLowerCase();
+
+      const filtered = worshipSongsData.filter(s => {
+        if (!q) return true;
+        const p1 = patchData.find(p => p.id === s.primaryId);
+        const p2 = patchData.find(p => p.id === s.secondaryId);
+        return (
+          s.title.toLowerCase().includes(q) ||
+          s.artist.toLowerCase().includes(q) ||
+          s.key.toLowerCase().includes(q) ||
+          (s.bpm + '').includes(q) ||
+          (s.energy && s.energy.toLowerCase().includes(q)) ||
+          (p1 && p1.name.toLowerCase().includes(q)) ||
+          (p2 && p2.name.toLowerCase().includes(q))
+        );
+      });
+
+      if (countEl) countEl.textContent = filtered.length;
+
+      filtered.forEach((s, idx) => {
+        const p1 = patchData.find(p => p.id === s.primaryId);
+        const p2 = patchData.find(p => p.id === s.secondaryId);
+        const p1Idx = patchData.findIndex(p => p.id === s.primaryId);
+        const p2Idx = patchData.findIndex(p => p.id === s.secondaryId);
+
+        const tr = document.createElement('tr');
+        tr.className = 'hover:bg-[#141b2a] transition-colors cursor-pointer group';
+
+        tr.innerHTML = `
+          <td class="py-2.5 px-3 text-slate-500">${idx + 1}</td>
+          <td class="py-2.5 px-3">
+            <div class="font-bold text-white group-hover:text-brand-cyan transition-colors">${s.title}</div>
+            <div class="text-[11px] text-slate-400 font-sans">${s.artist} • <span class="italic text-slate-500">${s.energy}</span></div>
+          </td>
+          <td class="py-2.5 px-2 text-center text-amber-300 font-bold">${s.key}</td>
+          <td class="py-2.5 px-2 text-center text-slate-300">${s.bpm}</td>
+          <td class="py-2.5 px-3">
+            ${p1 ? `
+              <button class="table-load-patch-btn px-2 py-1 rounded bg-black/50 hover:bg-brand-cyan hover:text-black border border-teal-800/60 text-brand-cyan text-[11px] transition-colors flex items-center gap-1 cursor-pointer" data-idx="${p1Idx}">
+                <span>P${p1.slot}</span>
+                <span class="font-bold">${p1.name}</span>
+              </button>
+            ` : '-'}
+          </td>
+          <td class="py-2.5 px-3">
+            ${p2 ? `
+              <button class="table-load-patch-btn px-2 py-1 rounded bg-black/50 hover:bg-teal-300 hover:text-black border border-teal-800/60 text-teal-300 text-[11px] transition-colors flex items-center gap-1 cursor-pointer" data-idx="${p2Idx}">
+                <span>P${p2.slot}</span>
+                <span class="font-bold">${p2.name}</span>
+              </button>
+            ` : '-'}
+          </td>
+        `;
+
+        // Clicking row selects song in main recommender
+        tr.addEventListener('click', (e) => {
+          if (e.target.closest('.table-load-patch-btn')) return;
+          renderSongRecommendation(s);
+          document.getElementById('song-result-container')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+
+        // Patch load buttons
+        tr.querySelectorAll('.table-load-patch-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const targetIdx = parseInt(btn.dataset.idx);
+            if (!isNaN(targetIdx) && targetIdx >= 0) {
+              loadPatchIntoSynth(targetIdx, true);
+              document.getElementById('synth-section')?.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+
+        tbody.appendChild(tr);
+      });
+    }
+
 function initSongRecommender() {
       const searchInput = document.getElementById('song-search-input');
+      renderMasterSongTable();
+
+      const tableSearchInput = document.getElementById('table-song-search');
+      if (tableSearchInput) {
+        tableSearchInput.addEventListener('input', (e) => {
+          renderMasterSongTable(e.target.value);
+        });
+      }
+
       const clearBtn = document.getElementById('song-search-clear');
       const dropdown = document.getElementById('song-autocomplete-list');
       const chips = document.querySelectorAll('.song-chip');
