@@ -85,6 +85,9 @@
       color: #334155;
       transition: all 0.08s ease;
       user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      -webkit-touch-callout: none;
     }
     .white-key.active, .white-key:active {
       background: linear-gradient(to bottom, #bae6fd 0%, #38bdf8 85%, #0284c7 100%);
@@ -97,6 +100,9 @@
       color: #94a3b8;
       transition: all 0.08s ease;
       user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      -webkit-touch-callout: none;
     }
     .black-key.active, .black-key:active {
       background: linear-gradient(to bottom, #0369a1 0%, #0284c7 80%, #00f0ff 100%);
@@ -128,7 +134,7 @@
     ::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased selection:bg-brand-cyan selection:text-black">
+<body class="min-h-screen flex flex-col antialiased selection:bg-brand-cyan selection:text-black pb-20 lg:pb-0">
 
   <!-- ================= TOP BRANDING NAVBAR ================= -->
   <header class="sticky top-0 z-50 bg-[#0a0d14]/90 backdrop-blur-md border-b border-brand-border w-full overflow-hidden">
@@ -149,34 +155,39 @@
       </div>
 
       <!-- Navigation Links -->
-      <nav class="hidden lg:flex items-center gap-5 xl:gap-6 text-sm font-medium text-slate-300 shrink-0">
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-5 text-sm font-medium text-slate-300 shrink-0">
         <a href="#synth-section" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
           <svg class="w-4 h-4 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>
-          Live Synth &amp; Sequencer
+          Live Synth
         </a>
         <a href="#recommender-section" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
           <svg class="w-4 h-4 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-          Song Recommender
+          Song Matcher
         </a>
         <a href="#manual-section" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
           <svg class="w-4 h-4 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-          48-Patch Manual
+          48 Patches
         </a>
+        <button id="nav-fav-filter-btn" class="hover:text-amber-300 transition-colors flex items-center gap-1 text-amber-400 font-semibold px-2.5 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 cursor-pointer" title="View Favorite Patches">
+          <span>★</span>
+          <span>Favorites (<span class="fav-count-display">0</span>)</span>
+        </button>
         <a href="#download-section" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
           <svg class="w-4 h-4 text-brand-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-          Bank Download (.syx)
-        </a>
-        <a href="print_qr_sticker.html" class="hover:text-brand-cyan transition-colors flex items-center gap-1.5">
-          <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"></path></svg>
-          Hardware QR Sticker
+          Bank (.syx)
         </a>
       </nav>
 
-      <!-- External Link to Church Site -->
-      <div class="flex items-center gap-3 shrink-0">
-        <a href="https://www.refineryohio.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs sm:text-sm font-semibold text-black bg-gradient-to-r from-brand-cyan to-brand-teal hover:from-white hover:to-brand-cyan rounded-xl shadow-lg shadow-brand-cyan/25 transition-all transform hover:-translate-y-0.5">
-          <span>refineryohio.com</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+      <!-- Mobile quick favorites button + External Church Link -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <button id="mobile-header-fav-btn" class="lg:hidden flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-400 font-mono text-xs font-bold transition-all cursor-pointer" title="View Favorite Patches">
+          <span>★</span>
+          <span class="fav-count-display">0</span>
+        </button>
+        <a href="https://www.refineryohio.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 text-xs sm:text-sm font-semibold text-black bg-gradient-to-r from-brand-cyan to-brand-teal hover:from-white hover:to-brand-cyan rounded-xl shadow-lg shadow-brand-cyan/25 transition-all transform hover:-translate-y-0.5">
+          <span class="hidden xs:inline">refineryohio.com</span>
+          <span class="xs:hidden">Refinery</span>
+          <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
         </a>
       </div>
 
@@ -309,13 +320,13 @@
           </div>
 
           <!-- LCD Display (Authentic Novation Cyan Screen) & Patch Stepping -->
-          <div class="flex items-center gap-2 flex-1 min-w-0 w-full lg:max-w-xl xl:max-w-2xl mx-auto">
+          <div class="flex items-center gap-1.5 sm:gap-2 flex-1 min-w-0 w-full lg:max-w-xl xl:max-w-2xl mx-auto">
             <button id="patch-prev-btn" class="h-full px-2.5 sm:px-3 py-3 rounded-xl bg-black/60 hover:bg-brand-card text-brand-cyan border border-teal-800/60 font-mono text-xs font-bold transition-all shrink-0 active:scale-95 flex flex-col items-center justify-center gap-0.5 select-none cursor-pointer" title="Previous Patch (P-)">
               <span>◀</span>
               <span class="text-[9px] text-slate-400">DEC</span>
             </button>
 
-            <div id="lcd-screen-badge" class="lcd-screen px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl border border-teal-700/60 shadow-inner flex flex-col justify-center flex-1 min-w-0 overflow-hidden cursor-pointer hover:border-brand-cyan hover:shadow-lg hover:shadow-cyan-950/40 transition-all group select-none" title="Click to browse and select all 48 patches">
+            <div id="lcd-screen-badge" class="lcd-screen px-3 sm:px-6 py-2 sm:py-2.5 rounded-xl border border-teal-700/60 shadow-inner flex flex-col justify-center flex-1 min-w-0 overflow-hidden cursor-pointer hover:border-brand-cyan hover:shadow-lg hover:shadow-cyan-950/40 transition-all group select-none" title="Click to browse and select all 48 patches">
               <div class="flex items-center justify-between text-xs font-mono tracking-wider text-teal-300 gap-2 min-w-0">
                 <span id="lcd-slot" class="shrink-0 font-bold group-hover:text-white transition-colors">[ P001 ]</span>
                 <span class="text-[10px] text-teal-400/80 group-hover:text-brand-cyan font-mono flex items-center gap-1 shrink-0">
@@ -341,6 +352,12 @@
               <span>▶</span>
               <span class="text-[9px] text-slate-400">INC</span>
             </button>
+
+            <!-- Star / Favorite Button for current patch -->
+            <button id="lcd-fav-toggle-btn" class="h-full px-2.5 sm:px-3 py-3 rounded-xl bg-black/60 hover:bg-brand-card text-slate-400 hover:text-amber-400 border border-teal-800/60 font-mono text-xs font-bold transition-all shrink-0 active:scale-95 flex flex-col items-center justify-center gap-0.5 select-none cursor-pointer" title="Toggle Favorite for this patch">
+              <span id="lcd-fav-icon" class="text-base leading-none">☆</span>
+              <span class="text-[9px] text-slate-400">FAV</span>
+            </button>
           </div>
 
           <!-- Master Volume & Output -->
@@ -357,7 +374,88 @@
 
         </div>
 
-        <!-- SYNTHESIS MODULE CONTROLS (Knobs, Sliders & Selectors) -->
+        <!-- ================= 1. PLAYABLE HARDWARE KEYBOARD & WHEELS (INSTANT ACCESS) ================= -->
+        <!-- ================= 25-KEY HARDWARE KEYBOARD & WHEELS ================= -->
+        <div class="bg-[#0a0d14] p-4 sm:p-6 rounded-xl border border-[#1f283d] flex flex-col sm:flex-row items-stretch gap-4">
+          
+          <!-- Pitch & Mod Wheels + Octave Transpose -->
+          <div class="flex sm:flex-col justify-between items-center gap-3 bg-[#111622] p-3 rounded-lg border border-[#1f283d] shrink-0">
+            <!-- Octave Shift -->
+            <div class="flex sm:flex-col items-center gap-1">
+              <button id="octave-down" class="w-8 h-8 rounded bg-[#181f2e] hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-colors">
+                -
+              </button>
+              <span id="octave-display" class="font-mono text-xs text-brand-cyan font-bold my-1">Oct: 0</span>
+              <button id="octave-up" class="w-8 h-8 rounded bg-[#181f2e] hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-colors">
+                +
+              </button>
+            </div>
+
+            <!-- Pitch Wheel -->
+            <div class="text-center font-mono">
+              <span class="text-[9px] text-slate-400 uppercase tracking-widest block mb-1">Pitch</span>
+              <input id="pitch-wheel" type="range" min="-100" max="100" value="0" class="w-16 sm:w-20">
+            </div>
+
+            <!-- Mod Wheel -->
+            <div class="text-center font-mono">
+              <span class="text-[9px] text-slate-400 uppercase tracking-widest block mb-1">Mod</span>
+              <input id="mod-wheel-ctrl" type="range" min="0" max="127" value="0" class="w-16 sm:w-20">
+            </div>
+          </div>
+
+          <!-- Playable 25-Key Keyboard (C2 to C4) -->
+          <div class="relative flex-1 h-36 sm:h-44 flex select-none overflow-hidden rounded-lg border-2 border-[#1f283d] bg-black shadow-inner">
+            <div id="keyboard-container" class="relative w-full h-full flex">
+              <!-- Keys generated in JS -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Keyboard Keymap Guide -->
+        <div class="text-center font-mono text-xs text-slate-400">
+          <span>QWERTY Keys: </span>
+          <span class="text-slate-300 font-semibold">[A] [W] [S] [E] [D] [F] [T] [G] [Y] [H] [U] [J] [K]</span>
+          <span class="ml-3 text-slate-500">• [Z] Oct Down • [X] Oct Up</span>
+        </div>
+
+        <!-- Quick Toggle Bar for Synthesizer Sound Design & Sequencer -->
+        <div class="flex flex-wrap items-center justify-between gap-3 pt-1 border-t border-[#1f283d]">
+          <div class="flex flex-wrap items-center gap-2">
+            <button id="toggle-synth-params-btn" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-[#161c2b] hover:bg-slate-800 text-brand-cyan hover:text-white border border-[#232d44] transition-all flex items-center gap-2 cursor-pointer shadow-sm group">
+              <span>🎛️</span>
+              <span id="synth-params-btn-text">Show Synth Parameters (Osc, Filter, LFO)</span>
+              <span id="synth-params-chevron" class="text-[11px] transition-transform duration-200">▾</span>
+            </button>
+            <button id="toggle-sequencer-btn" type="button" class="px-4 py-2 rounded-xl text-xs font-semibold bg-[#161c2b] hover:bg-slate-800 text-brand-teal hover:text-white border border-[#232d44] transition-all flex items-center gap-2 cursor-pointer shadow-sm group">
+              <span>⚡</span>
+              <span id="sequencer-btn-text">Show 16-Step Sequencer</span>
+              <span id="sequencer-chevron" class="text-[11px] transition-transform duration-200">▾</span>
+            </button>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="quick-play-seq-btn" class="px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-cyan/20 hover:bg-brand-cyan text-brand-cyan hover:text-black border border-brand-cyan/40 transition-all flex items-center gap-1.5 cursor-pointer">
+              <span id="quick-seq-icon">▶</span>
+              <span id="quick-seq-label">Play Sequencer</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- ================= 2. COLLAPSIBLE SOUND DESIGN MODULES (OSCILLATORS, FILTER, DRIVE, LFO) ================= -->
+        <div id="synth-params-drawer" class="hidden space-y-4 pt-2 border-t border-[#1f283d]/60">
+          <div class="flex items-center justify-between text-xs font-mono text-slate-400 pb-1">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-cyan"></span>
+              <span class="text-white font-bold">Analog Voice Architecture Controls</span>
+              <span>(Real-Time Web Audio DSP)</span>
+            </div>
+            <button id="collapse-params-btn" class="text-slate-400 hover:text-white transition-colors text-xs flex items-center gap-1">
+              <span>Hide Panel</span>
+              <span>▴</span>
+            </button>
+          </div>
+          <!-- SYNTHESIS MODULE CONTROLS (Knobs, Sliders & Selectors) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           
           <!-- Column 1: Oscillators & Sub -->
@@ -592,8 +690,22 @@
           </div>
 
         </div>
+        </div>
 
-        <!-- ================= INTERACTIVE PIANO ROLL & STEP SEQUENCER ================= -->
+        <!-- ================= 3. COLLAPSIBLE 16-STEP PIANO ROLL & STEP SEQUENCER ================= -->
+        <div id="sequencer-drawer" class="hidden space-y-4 pt-2 border-t border-[#1f283d]/60">
+          <div class="flex items-center justify-between text-xs font-mono text-slate-400 pb-1">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-brand-teal"></span>
+              <span class="text-white font-bold">16-Step Pattern Sequencer &amp; Matrix</span>
+              <span>(Synced to AudioContext Clock)</span>
+            </div>
+            <button id="collapse-seq-btn" class="text-slate-400 hover:text-white transition-colors text-xs flex items-center gap-1">
+              <span>Hide Sequencer</span>
+              <span>▴</span>
+            </button>
+          </div>
+          <!-- ================= INTERACTIVE PIANO ROLL & STEP SEQUENCER ================= -->
         <div class="bg-[#0c101a] p-5 rounded-xl border border-[#1f283d] space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div class="flex items-center gap-2">
@@ -667,58 +779,13 @@
             </div>
           </div>
         </div>
-
-        <!-- ================= 25-KEY HARDWARE KEYBOARD & WHEELS ================= -->
-        <div class="bg-[#0a0d14] p-4 sm:p-6 rounded-xl border border-[#1f283d] flex flex-col sm:flex-row items-stretch gap-4">
-          
-          <!-- Pitch & Mod Wheels + Octave Transpose -->
-          <div class="flex sm:flex-col justify-between items-center gap-3 bg-[#111622] p-3 rounded-lg border border-[#1f283d] shrink-0">
-            <!-- Octave Shift -->
-            <div class="flex sm:flex-col items-center gap-1">
-              <button id="octave-down" class="w-8 h-8 rounded bg-[#181f2e] hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-colors">
-                -
-              </button>
-              <span id="octave-display" class="font-mono text-xs text-brand-cyan font-bold my-1">Oct: 0</span>
-              <button id="octave-up" class="w-8 h-8 rounded bg-[#181f2e] hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition-colors">
-                +
-              </button>
-            </div>
-
-            <!-- Pitch Wheel -->
-            <div class="text-center font-mono">
-              <span class="text-[9px] text-slate-400 uppercase tracking-widest block mb-1">Pitch</span>
-              <input id="pitch-wheel" type="range" min="-100" max="100" value="0" class="w-16 sm:w-20">
-            </div>
-
-            <!-- Mod Wheel -->
-            <div class="text-center font-mono">
-              <span class="text-[9px] text-slate-400 uppercase tracking-widest block mb-1">Mod</span>
-              <input id="mod-wheel-ctrl" type="range" min="0" max="127" value="0" class="w-16 sm:w-20">
-            </div>
-          </div>
-
-          <!-- Playable 25-Key Keyboard (C2 to C4) -->
-          <div class="relative flex-1 h-36 sm:h-44 flex select-none overflow-hidden rounded-lg border-2 border-[#1f283d] bg-black shadow-inner">
-            <div id="keyboard-container" class="relative w-full h-full flex">
-              <!-- Keys generated in JS -->
-            </div>
-          </div>
-
         </div>
 
-        <!-- Keyboard Keymap Guide -->
-        <div class="text-center font-mono text-xs text-slate-400">
-          <span>QWERTY Keys: </span>
-          <span class="text-slate-300 font-semibold">[A] [W] [S] [E] [D] [F] [T] [G] [Y] [H] [U] [J] [K]</span>
-          <span class="ml-3 text-slate-500">• [Z] Oct Down • [X] Oct Up</span>
         </div>
-
-      </div>
 
     </div>
   </section>
-
-  <!-- ================= SECTION: SONG-BASED PATCH RECOMMENDER ================= -->
+<!-- ================= SECTION: SONG-BASED PATCH RECOMMENDER ================= -->
   <section id="recommender-section" class="py-14 bg-gradient-to-b from-[#0a0d14] via-[#101522] to-[#080a0f] border-t border-b border-brand-border relative overflow-hidden">
     <!-- Subtle glow background accents -->
     <div class="absolute -top-40 left-1/4 w-96 h-96 bg-brand-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
@@ -830,22 +897,27 @@
 
         <!-- 4 Primary Lanes & Tag Filters -->
         <div class="space-y-3 pt-2 border-t border-brand-border">
-          <!-- Lane Selector -->
+          <!-- Lane Selector & Favorites Filter -->
           <div class="flex flex-wrap items-center gap-2">
-            <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold mr-1">Lanes:</span>
-            <button class="filter-tab active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-brand-cyan text-black" data-category="all">
+            <span class="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-bold mr-1">Filter:</span>
+            <button class="filter-tab active px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-brand-cyan text-black cursor-pointer" data-category="all">
               All Lanes (48)
             </button>
-            <button class="filter-tab px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all bg-brand-card hover:bg-slate-800 text-slate-300 border border-brand-border" data-category="worship">
+            <button class="filter-tab px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all bg-brand-card hover:bg-slate-800 text-amber-400 border border-amber-500/40 flex items-center gap-1.5 cursor-pointer" data-category="favorites" id="favorites-tab-btn">
+              <span>★</span>
+              <span>Favorites</span>
+              <span class="fav-count-badge px-1.5 py-0.2 rounded-full text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">0</span>
+            </button>
+            <button class="filter-tab px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all bg-brand-card hover:bg-slate-800 text-slate-300 border border-brand-border cursor-pointer" data-category="worship">
               1. Worship Foundation (12)
             </button>
-            <button class="filter-tab px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all bg-brand-card hover:bg-slate-800 text-slate-300 border border-brand-border" data-category="postrock">
+            <button class="filter-tab px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all bg-brand-card hover:bg-slate-800 text-slate-300 border border-brand-border cursor-pointer" data-category="postrock">
               2. Post-Rock (12)
             </button>
-            <button class="filter-tab px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all bg-brand-card hover:bg-slate-800 text-slate-300 border border-brand-border" data-category="ambient">
+            <button class="filter-tab px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all bg-brand-card hover:bg-slate-800 text-slate-300 border border-brand-border cursor-pointer" data-category="ambient">
               3. Ambient (12)
             </button>
-            <button class="filter-tab px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all bg-brand-card hover:bg-slate-800 text-slate-300 border border-brand-border" data-category="funk">
+            <button class="filter-tab px-3.5 py-1.5 rounded-lg text-xs font-medium transition-all bg-brand-card hover:bg-slate-800 text-slate-300 border border-brand-border cursor-pointer" data-category="funk">
               4. Funk &amp; Gospel (12)
             </button>
           </div>
@@ -929,50 +1001,62 @@
         </div>
       </div>
 
-      <!-- Step-by-Step Novation Components Setup Guide -->
-      <div class="bg-brand-surface p-6 sm:p-8 rounded-2xl border border-brand-border space-y-6">
-        <div>
-          <h3 class="text-xl font-bold text-white tracking-tight">How to Flash into Your Bass Station II (Novation Components)</h3>
-          <p class="text-slate-400 text-sm mt-1">
-            Novation Components is a free browser-based librarian that directly communicates with your Bass Station II over standard USB MIDI.
-          </p>
+      <!-- Step-by-Step Novation Components Setup Guide (Collapsible Details) -->
+      <details class="group bg-brand-surface rounded-2xl border border-brand-border overflow-hidden transition-all">
+        <summary class="p-6 flex items-center justify-between cursor-pointer list-none select-none hover:bg-white/5 transition-colors">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 rounded-lg bg-brand-cyan/20 text-brand-cyan flex items-center justify-center text-sm font-bold border border-brand-cyan/30">📖</span>
+            <div>
+              <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-brand-cyan transition-colors">
+                How to Flash into Your Bass Station II (Novation Components Guide)
+              </h3>
+              <p class="text-slate-400 text-xs mt-0.5">
+                4 quick steps to transfer the entire 48-patch bank via standard USB cable
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-xs font-mono text-brand-cyan shrink-0">
+            <span class="group-open:hidden">View Steps ▾</span>
+            <span class="hidden group-open:inline">Hide Steps ▴</span>
+          </div>
+        </summary>
+
+        <div class="px-6 pb-6 pt-2 border-t border-brand-border/60">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm mt-4">
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-border space-y-2">
+              <div class="w-7 h-7 rounded-full bg-brand-cyan text-black font-extrabold flex items-center justify-center text-xs">1</div>
+              <h4 class="font-bold text-white">Connect Hardware</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Connect your Novation Bass Station II to your computer using a standard USB-B cable and power the synth on.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-border space-y-2">
+              <div class="w-7 h-7 rounded-full bg-brand-cyan text-black font-extrabold flex items-center justify-center text-xs">2</div>
+              <h4 class="font-bold text-white">Open Components</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Open <a href="https://components.novationmusic.com/" target="_blank" rel="noopener noreferrer" class="text-brand-cyan underline">components.novationmusic.com</a> in Google Chrome or Microsoft Edge.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-border space-y-2">
+              <div class="w-7 h-7 rounded-full bg-brand-cyan text-black font-extrabold flex items-center justify-center text-xs">3</div>
+              <h4 class="font-bold text-white">Upload Bank</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Select <strong>Bass Station II</strong>, click <strong>Upload Bank / Import</strong>, and select <code class="text-brand-cyan text-[11px]">PostRock_Ambient_Worship_Bank.syx</code>.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-brand-card border border-brand-border space-y-2">
+              <div class="w-7 h-7 rounded-full bg-brand-cyan text-black font-extrabold flex items-center justify-center text-xs">4</div>
+              <h4 class="font-bold text-white">Send to Hardware</h4>
+              <p class="text-slate-400 text-xs leading-relaxed">
+                Click <strong>Send to Bass Station II</strong>. All 48 patches will instantly flash into Slots 000 through 047 on your synth!
+              </p>
+            </div>
+          </div>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-          <div class="p-4 rounded-xl bg-brand-card border border-brand-border space-y-2">
-            <div class="w-7 h-7 rounded-full bg-brand-cyan text-black font-extrabold flex items-center justify-center text-xs">1</div>
-            <h4 class="font-bold text-white">Connect Hardware</h4>
-            <p class="text-slate-400 text-xs leading-relaxed">
-              Connect your Novation Bass Station II to your computer using a standard USB-B cable and power the synth on.
-            </p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-brand-card border border-brand-border space-y-2">
-            <div class="w-7 h-7 rounded-full bg-brand-cyan text-black font-extrabold flex items-center justify-center text-xs">2</div>
-            <h4 class="font-bold text-white">Open Components</h4>
-            <p class="text-slate-400 text-xs leading-relaxed">
-              Open <a href="https://components.novationmusic.com/" target="_blank" rel="noopener noreferrer" class="text-brand-cyan underline">components.novationmusic.com</a> in Google Chrome or Microsoft Edge.
-            </p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-brand-card border border-brand-border space-y-2">
-            <div class="w-7 h-7 rounded-full bg-brand-cyan text-black font-extrabold flex items-center justify-center text-xs">3</div>
-            <h4 class="font-bold text-white">Upload Bank</h4>
-            <p class="text-slate-400 text-xs leading-relaxed">
-              Select <strong>Bass Station II</strong>, click <strong>Upload Bank / Import</strong>, and select <code class="text-brand-cyan text-[11px]">PostRock_Ambient_Worship_Bank.syx</code>.
-            </p>
-          </div>
-
-          <div class="p-4 rounded-xl bg-brand-card border border-brand-border space-y-2">
-            <div class="w-7 h-7 rounded-full bg-brand-cyan text-black font-extrabold flex items-center justify-center text-xs">4</div>
-            <h4 class="font-bold text-white">Send to Hardware</h4>
-            <p class="text-slate-400 text-xs leading-relaxed">
-              Click <strong>Send to Bass Station II</strong>. All 48 patches will instantly flash into Slots 000 through 047 on your synth!
-            </p>
-          </div>
-        </div>
-
-      </div>
+      </details>
 
       <!-- Hardware Synth QR Code Sticker Section -->
       <div class="bg-gradient-to-br from-[#131b2e] via-brand-card to-[#0d1424] border-2 border-brand-cyan/40 rounded-2xl p-6 sm:p-8 shadow-2xl relative overflow-hidden">
@@ -1091,6 +1175,9 @@
         </div>
         <div class="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs font-mono scrollbar-thin">
           <button class="modal-lane-tab px-3 py-1 rounded-lg bg-brand-cyan text-black font-bold whitespace-nowrap transition-colors cursor-pointer" data-lane="all">All (48)</button>
+          <button class="modal-lane-tab px-3 py-1 rounded-lg bg-brand-card hover:bg-slate-800 text-amber-400 border border-amber-500/40 whitespace-nowrap transition-colors cursor-pointer flex items-center gap-1 font-bold" data-lane="favorites">
+            <span>★</span> <span>Favorites</span> (<span class="fav-count-display">0</span>)
+          </button>
           <button class="modal-lane-tab px-3 py-1 rounded-lg bg-brand-card hover:bg-slate-800 text-slate-300 whitespace-nowrap transition-colors cursor-pointer" data-lane="worship">1. Worship (12)</button>
           <button class="modal-lane-tab px-3 py-1 rounded-lg bg-brand-card hover:bg-slate-800 text-slate-300 whitespace-nowrap transition-colors cursor-pointer" data-lane="postrock">2. Post-Rock (12)</button>
           <button class="modal-lane-tab px-3 py-1 rounded-lg bg-brand-card hover:bg-slate-800 text-slate-300 whitespace-nowrap transition-colors cursor-pointer" data-lane="ambient">3. Ambient (12)</button>
@@ -5303,26 +5390,58 @@ const worshipSongsData = [
     let currentPlayingWavId = null;
 
     let audioHardwareUnlocked = false;
+    let audioResumeInFlight = false;
+
+    // iOS Safari requires resume() to be awaited inside a user gesture handler.
+    // The silent-buffer trick must happen AFTER the context transitions to 'running'.
+    // We keep retrying on every gesture until confirmed working, because the
+    // first resume() call may not complete before the gesture ends on iOS.
     function unlockAudioHardware(ctx) {
       if (!ctx) return;
-      if (ctx.state === 'suspended') {
-        ctx.resume();
+      if (audioHardwareUnlocked && ctx.state === 'running') return;
+      if (ctx.state === 'suspended' && !audioResumeInFlight) {
+        audioResumeInFlight = true;
+        var resumePromise = ctx.resume();
+        if (resumePromise && resumePromise.then) {
+          resumePromise.then(function() {
+            audioResumeInFlight = false;
+            playSilentUnlockBuffer(ctx);
+          }).catch(function() {
+            audioResumeInFlight = false;
+          });
+        } else {
+          audioResumeInFlight = false;
+          playSilentUnlockBuffer(ctx);
+        }
+      } else if (ctx.state === 'running' && !audioHardwareUnlocked) {
+        playSilentUnlockBuffer(ctx);
       }
+    }
+
+    function playSilentUnlockBuffer(ctx) {
       if (audioHardwareUnlocked) return;
-      // Play a 1-sample silent buffer once to unlock iOS Safari hardware audio pipeline
       try {
-        const buffer = ctx.createBuffer(1, 1, 22050);
-        const source = ctx.createBufferSource();
+        var buffer = ctx.createBuffer(1, 1, 22050);
+        var source = ctx.createBufferSource();
         source.buffer = buffer;
         source.connect(ctx.destination);
         source.start(0);
-        audioHardwareUnlocked = true;
+        source.onended = function() { audioHardwareUnlocked = true; };
+        if (ctx.state === 'running') audioHardwareUnlocked = true;
+        // iOS Safari 16+: ScriptProcessor nodes can go silent after resume.
+        // Reconnecting within the user gesture handler fixes this.
+        if (synthEngine && synthEngine.processor) {
+          try {
+            synthEngine.processor.disconnect();
+            synthEngine.processor.connect(ctx.destination);
+          } catch(reconnErr) {}
+        }
       } catch(e) {}
     }
 
     function getAudioContext() {
       if (!audioCtx) {
-        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        var AudioContextClass = window.AudioContext || window.webkitAudioContext;
         if (!AudioContextClass) return null;
         audioCtx = new AudioContextClass();
         synthEngine = new BassStationEngine(audioCtx);
@@ -5332,21 +5451,38 @@ const worshipSongsData = [
       return audioCtx;
     }
 
-    // Register global touch/click audio unblocker for iOS Safari
-    const unlockEvents = ['touchstart', 'touchend', 'mousedown', 'pointerdown', 'keydown'];
-    function unlockAudioOnFirstGesture() {
+    // Register global touch/click audio unblocker for iOS Safari.
+    // CRITICAL: Do NOT use { once: true } — keep retrying until audio
+    // is confirmed running. ctx.resume() is async and the first gesture
+    // may not complete the unlock in time.
+    var iosUnlockEvents = ['touchstart', 'touchend', 'mousedown', 'pointerdown', 'keydown'];
+    function unlockAudioOnGesture() {
       getAudioContext();
-      unlockEvents.forEach(evt => window.removeEventListener(evt, unlockAudioOnFirstGesture, true));
+      if (audioHardwareUnlocked && audioCtx && audioCtx.state === 'running') {
+        iosUnlockEvents.forEach(function(evt) {
+          window.removeEventListener(evt, unlockAudioOnGesture, true);
+        });
+      }
     }
-    unlockEvents.forEach(evt => window.addEventListener(evt, unlockAudioOnFirstGesture, { capture: true, once: true, passive: true }));
+    iosUnlockEvents.forEach(function(evt) {
+      window.addEventListener(evt, unlockAudioOnGesture, { capture: true, passive: true });
+    });
 
     function midiToFreq(midi) {
       return 440 * Math.pow(2, (midi - 69) / 12);
     }
 
     function noteOn(midiNote, velocity = 100) {
-      getAudioContext();
-      if (synthEngine) synthEngine.noteOn(midiNote, velocity);
+      var ctx = getAudioContext();
+      // iOS Safari: re-attempt resume on every noteOn in case prior attempt failed
+      if (ctx && ctx.state === 'suspended') {
+        ctx.resume().then(function() {
+          playSilentUnlockBuffer(ctx);
+          if (synthEngine) synthEngine.noteOn(midiNote, velocity);
+        }).catch(function() {});
+      } else {
+        if (synthEngine) synthEngine.noteOn(midiNote, velocity);
+      }
       highlightKeyboardKey(midiNote, true);
     }
 
@@ -5366,6 +5502,7 @@ const worshipSongsData = [
       const params = p.synthParams;
 
       document.getElementById('lcd-slot').textContent = '[ P' + p.slot + ' ]';
+      updateLcdFavoriteButton(p.id);
       document.getElementById('lcd-category').textContent = p.categoryLabel.toUpperCase();
       document.getElementById('lcd-name').textContent = p.name.toUpperCase();
       document.getElementById('lcd-param').textContent = p.soundDescription;
@@ -5547,6 +5684,10 @@ const worshipSongsData = [
     function buildKeyboard() {
       const container = document.getElementById('keyboard-container');
       container.innerHTML = '';
+      // iOS: prevent browser gesture recognition from swallowing keyboard touches
+      container.style.touchAction = 'manipulation';
+      container.style.webkitUserSelect = 'none';
+      container.style.userSelect = 'none';
 
       const whiteKeys = KEY_DEFINITIONS.filter(k => !k.isBlack);
       const totalWhite = whiteKeys.length;
@@ -5800,6 +5941,7 @@ const worshipSongsData = [
         }
         document.querySelectorAll('.seq-step.head').forEach(el => el.classList.remove('head'));
       }
+      updateQuickSeqPlayButton();
     }
 
     function loadSeqPreset(presetName) {
@@ -5975,6 +6117,199 @@ const worshipSongsData = [
       audio.play().catch(e => console.log('Playback error:', e));
     }
 
+    // ================= FAVORITE PATCHES SYSTEM (COOKIES & LOCALSTORAGE) =================
+    function getFavorites() {
+      let favs = [];
+      try {
+        const rawLocal = localStorage.getItem('bs2_favorites');
+        if (rawLocal) {
+          favs = JSON.parse(rawLocal);
+        }
+      } catch(e) {}
+
+      // Cookie fallback / sync
+      if (!favs || !Array.isArray(favs) || favs.length === 0) {
+        try {
+          const match = document.cookie.match(/(?:^|;\s*)bs2_favs=([^;]*)/);
+          if (match && match[1]) {
+            favs = JSON.parse(decodeURIComponent(match[1]));
+          }
+        } catch(e) {}
+      }
+
+      return Array.isArray(favs) ? favs : [];
+    }
+
+    function saveFavorites(favs) {
+      const clean = Array.isArray(favs) ? favs : [];
+      try {
+        localStorage.setItem('bs2_favorites', JSON.stringify(clean));
+      } catch(e) {}
+      try {
+        document.cookie = "bs2_favs=" + encodeURIComponent(JSON.stringify(clean)) + "; path=/; max-age=31536000; SameSite=Lax";
+      } catch(e) {}
+      updateFavoritesUI();
+    }
+
+    function isFavorite(patchId) {
+      const favs = getFavorites();
+      return favs.includes(String(patchId));
+    }
+
+    function toggleFavorite(patchId) {
+      let favs = getFavorites();
+      const idStr = String(patchId);
+      if (favs.includes(idStr)) {
+        favs = favs.filter(id => id !== idStr);
+      } else {
+        favs.push(idStr);
+      }
+      saveFavorites(favs);
+
+      // If currently filtering by favorites in directory, re-render
+      if (currentFilterCategory === 'favorites') {
+        renderPatchDirectory('favorites', currentFilterTag, document.getElementById('search-input')?.value || '');
+      } else {
+        // Just update card stars in place
+        document.querySelectorAll(`.card-fav-btn[data-patch-id="${idStr}"]`).forEach(btn => {
+          const isFav = isFavorite(idStr);
+          btn.innerHTML = `<span class="text-sm">${isFav ? '★' : '☆'}</span>`;
+          btn.className = `card-fav-btn p-1.5 rounded-lg transition-colors cursor-pointer ${isFav ? 'text-amber-400 bg-amber-500/15 border border-amber-500/40 shadow-sm' : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800 border border-transparent'}`;
+          btn.title = isFav ? 'Remove from favorites' : 'Add to favorites';
+        });
+      }
+
+      // If modal is open, re-render modal list
+      const modal = document.getElementById('patch-selector-modal');
+      if (modal && !modal.classList.contains('hidden')) {
+        renderModalPatchList(currentModalFilterLane, document.getElementById('modal-patch-search')?.value || '');
+      }
+    }
+
+    function updateFavoritesUI() {
+      const favs = getFavorites();
+      const count = favs.length;
+
+      // Update all counter badges in header, dock, and filter tabs
+      document.querySelectorAll('.fav-count-display, .fav-count-badge').forEach(el => {
+        el.textContent = count;
+      });
+
+      // Update LCD star button
+      if (patchData && patchData[currentPatchIndex]) {
+        updateLcdFavoriteButton(patchData[currentPatchIndex].id);
+      }
+    }
+
+    function updateLcdFavoriteButton(patchId) {
+      const btn = document.getElementById('lcd-fav-toggle-btn');
+      const icon = document.getElementById('lcd-fav-icon');
+      if (!btn || !icon) return;
+      const isFav = isFavorite(patchId);
+      icon.textContent = isFav ? '★' : '☆';
+      if (isFav) {
+        icon.className = 'text-base leading-none text-amber-400';
+        btn.classList.add('border-amber-500/60', 'bg-amber-500/15');
+        btn.classList.remove('border-teal-800/60');
+        btn.title = 'Remove from Favorites (Current: ★ Favorited)';
+      } else {
+        icon.className = 'text-base leading-none text-slate-400';
+        btn.classList.remove('border-amber-500/60', 'bg-amber-500/15');
+        btn.classList.add('border-teal-800/60');
+        btn.title = 'Add to Favorites (Current: ☆ Not favorited)';
+      }
+    }
+
+    function showAllLanes() {
+      const allTab = document.querySelector('.filter-tab[data-category="all"]');
+      if (allTab) allTab.click();
+    }
+
+    // ================= COLLAPSIBLE EMULATOR DRAWERS =================
+    function initCollapsibleDrawers() {
+      const paramsBtn = document.getElementById('toggle-synth-params-btn');
+      const paramsDrawer = document.getElementById('synth-params-drawer');
+      const paramsText = document.getElementById('synth-params-btn-text');
+      const paramsChevron = document.getElementById('synth-params-chevron');
+      const collapseParamsBtn = document.getElementById('collapse-params-btn');
+
+      function toggleParams() {
+        if (!paramsDrawer) return;
+        const isHidden = paramsDrawer.classList.contains('hidden');
+        if (isHidden) {
+          paramsDrawer.classList.remove('hidden');
+          if (paramsText) paramsText.textContent = 'Hide Synth Parameters';
+          if (paramsChevron) {
+            paramsChevron.style.transform = 'rotate(180deg)';
+            paramsChevron.textContent = '▴';
+          }
+        } else {
+          paramsDrawer.classList.add('hidden');
+          if (paramsText) paramsText.textContent = 'Show Synth Parameters (Osc, Filter, LFO)';
+          if (paramsChevron) {
+            paramsChevron.style.transform = '';
+            paramsChevron.textContent = '▾';
+          }
+        }
+      }
+
+      if (paramsBtn) paramsBtn.addEventListener('click', toggleParams);
+      if (collapseParamsBtn) collapseParamsBtn.addEventListener('click', toggleParams);
+
+      const seqBtn = document.getElementById('toggle-sequencer-btn');
+      const seqDrawer = document.getElementById('sequencer-drawer');
+      const seqText = document.getElementById('sequencer-btn-text');
+      const seqChevron = document.getElementById('sequencer-chevron');
+      const collapseSeqBtn = document.getElementById('collapse-seq-btn');
+
+      function toggleSeq() {
+        if (!seqDrawer) return;
+        const isHidden = seqDrawer.classList.contains('hidden');
+        if (isHidden) {
+          seqDrawer.classList.remove('hidden');
+          if (seqText) seqText.textContent = 'Hide 16-Step Sequencer';
+          if (seqChevron) {
+            seqChevron.style.transform = 'rotate(180deg)';
+            seqChevron.textContent = '▴';
+          }
+        } else {
+          seqDrawer.classList.add('hidden');
+          if (seqText) seqText.textContent = 'Show 16-Step Sequencer';
+          if (seqChevron) {
+            seqChevron.style.transform = '';
+            seqChevron.textContent = '▾';
+          }
+        }
+      }
+
+      if (seqBtn) seqBtn.addEventListener('click', toggleSeq);
+      if (collapseSeqBtn) collapseSeqBtn.addEventListener('click', toggleSeq);
+
+      // Quick Play Sequencer button on top bar
+      const quickPlayBtn = document.getElementById('quick-play-seq-btn');
+      if (quickPlayBtn) {
+        quickPlayBtn.addEventListener('click', () => {
+          toggleSequencer();
+        });
+      }
+    }
+
+    function updateQuickSeqPlayButton() {
+      const quickLabel = document.getElementById('quick-seq-label');
+      const quickIcon = document.getElementById('quick-seq-icon');
+      const quickBtn = document.getElementById('quick-play-seq-btn');
+      if (!quickLabel || !quickIcon) return;
+      if (seqIsPlaying) {
+        quickLabel.textContent = 'Stop Arp';
+        quickIcon.textContent = '⏹';
+        if (quickBtn) quickBtn.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-red-500 text-black border border-red-400 transition-all flex items-center gap-1.5 cursor-pointer shadow-lg shadow-red-500/30';
+      } else {
+        quickLabel.textContent = 'Play Sequencer';
+        quickIcon.textContent = '▶';
+        if (quickBtn) quickBtn.className = 'px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider bg-brand-cyan/20 hover:bg-brand-cyan text-brand-cyan hover:text-black border border-brand-cyan/40 transition-all flex items-center gap-1.5 cursor-pointer';
+      }
+    }
+
     let currentFilterCategory = 'all';
     let currentFilterTag = 'all';
 
@@ -5988,7 +6323,11 @@ const worshipSongsData = [
       const q = (searchQuery || document.getElementById('search-input')?.value || '').toLowerCase().trim();
 
       const filtered = patchData.filter(p => {
-        const matchesCat = (currentFilterCategory === 'all' || p.category === currentFilterCategory);
+        const matchesCat = (
+          currentFilterCategory === 'all' ? true :
+          currentFilterCategory === 'favorites' ? isFavorite(p.id) :
+          p.category === currentFilterCategory
+        );
         const matchesTag = (currentFilterTag === 'all' || (p.tags && p.tags.includes(currentFilterTag)));
         const matchesQuery = !q || (
           p.name.toLowerCase().includes(q) ||
@@ -6002,14 +6341,28 @@ const worshipSongsData = [
       });
 
       if (filtered.length === 0) {
-        grid.innerHTML = `
-          <div class="col-span-full py-16 text-center text-slate-500 font-mono space-y-2">
-            <p class="text-base font-bold text-slate-400">No patches found matching your criteria.</p>
-            <p class="text-xs text-slate-500">Try selecting "All Lanes" or "All Tags", or clearing your search query.</p>
-            <button onclick="resetAllDirectoryFilters()" class="mt-2 px-3 py-1.5 rounded-lg text-xs bg-slate-800 text-brand-cyan hover:bg-slate-700 font-mono">
-              Reset Filters
-            </button>
-          </div>`;
+        if (currentFilterCategory === 'favorites') {
+          grid.innerHTML = `
+            <div class="col-span-full py-16 text-center text-slate-400 font-mono space-y-3 bg-brand-surface/50 rounded-2xl border border-dashed border-amber-500/30 p-8">
+              <div class="text-4xl text-amber-400">★</div>
+              <p class="text-lg font-bold text-white">No favorite patches yet</p>
+              <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">
+                Click the star icon (<span class="text-amber-400">★</span>) on any patch card or in the live synth LCD display to build your personal Sunday morning favorites list!
+              </p>
+              <button onclick="showAllLanes()" class="mt-3 px-4 py-2 rounded-xl text-xs font-bold bg-brand-cyan text-black hover:bg-white transition-colors cursor-pointer shadow-lg shadow-cyan-950/40">
+                Browse All 48 Patches
+              </button>
+            </div>`;
+        } else {
+          grid.innerHTML = `
+            <div class="col-span-full py-16 text-center text-slate-500 font-mono space-y-2">
+              <p class="text-base font-bold text-slate-400">No patches found matching your criteria.</p>
+              <p class="text-xs text-slate-500">Try selecting "All Lanes" or "All Tags", or clearing your search query.</p>
+              <button onclick="resetAllDirectoryFilters()" class="mt-2 px-3 py-1.5 rounded-lg text-xs bg-slate-800 text-brand-cyan hover:bg-slate-700 font-mono">
+                Reset Filters
+              </button>
+            </div>`;
+        }
         return;
       }
 
@@ -6025,17 +6378,22 @@ const worshipSongsData = [
         card.innerHTML = `
           <div class="space-y-3">
             <div class="flex items-center justify-between gap-2">
-              <div class="flex items-center gap-2">
-                <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-[#0d121d] text-brand-cyan border border-brand-border">
+              <div class="flex items-center gap-1.5 sm:gap-2 min-w-0">
+                <span class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-[#0d121d] text-brand-cyan border border-brand-border shrink-0">
                   Slot ${p.slot}
                 </span>
-                <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold ${p.isArp ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40' : 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40'}">
+                <span class="px-2 py-0.5 rounded-md text-[10px] font-mono font-bold shrink-0 ${p.isArp ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40' : 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40'}">
                   ${p.isArp ? '⚡ ARPEGGIATOR' : '🎹 SUSTAIN'}
                 </span>
               </div>
-              <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-800 text-slate-300 border border-slate-700">
-                ${p.categoryLabel}
-              </span>
+              <div class="flex items-center gap-1.5 shrink-0">
+                <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-slate-800 text-slate-300 border border-slate-700">
+                  ${p.categoryLabel}
+                </span>
+                <button class="card-fav-btn p-1.5 rounded-lg transition-colors cursor-pointer ${isFavorite(p.id) ? 'text-amber-400 bg-amber-500/15 border border-amber-500/40 shadow-sm' : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800 border border-transparent'}" data-patch-id="${p.id}" title="${isFavorite(p.id) ? 'Remove from favorites' : 'Add to favorites'}">
+                  <span class="text-sm">${isFavorite(p.id) ? '★' : '☆'}</span>
+                </button>
+              </div>
             </div>
 
             <div>
@@ -6105,6 +6463,14 @@ const worshipSongsData = [
         btn.addEventListener('click', () => {
           const clickedTag = btn.dataset.tag;
           applyTagFilter(clickedTag);
+        });
+      });
+
+      // Attach card favorite star clicks
+      document.querySelectorAll('.card-fav-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleFavorite(btn.dataset.patchId);
         });
       });
     }
@@ -6727,7 +7093,11 @@ function initSongRecommender() {
       const q = (query || '').trim().toLowerCase();
 
       const filtered = patchData.map((patch, originalIndex) => ({ patch, originalIndex })).filter(({ patch }) => {
-        const matchesLane = (lane === 'all' || patch.category === lane);
+        const matchesLane = (
+          lane === 'all' ? true :
+          lane === 'favorites' ? isFavorite(patch.id) :
+          patch.category === lane
+        );
         if (!matchesLane) return false;
         if (!q) return true;
 
@@ -6798,6 +7168,9 @@ function initSongRecommender() {
           </div>
 
           <div class="flex items-center gap-2 shrink-0 self-end sm:self-center">
+            <button class="modal-fav-btn p-1.5 rounded-lg text-sm transition-colors cursor-pointer ${isFavorite(patch.id) ? 'text-amber-400 bg-amber-500/20 border border-amber-500/40' : 'text-slate-500 hover:text-slate-300 border border-transparent'}" data-id="${patch.id}" title="${isFavorite(patch.id) ? 'Remove favorite' : 'Add favorite'}">
+              ${isFavorite(patch.id) ? '★' : '☆'}
+            </button>
             ${patch.sample ? `
               <button class="modal-audition-btn px-2.5 py-1.5 rounded-lg text-xs font-mono bg-black/60 hover:bg-slate-800 text-slate-300 border border-slate-700/60 hover:text-brand-cyan hover:border-brand-cyan transition-colors flex items-center gap-1 cursor-pointer" data-sample="${patch.sample}" data-id="${patch.id}" title="Audition studio recording">
                 <svg class="w-3 h-3 text-teal-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
@@ -6815,11 +7188,19 @@ function initSongRecommender() {
         `;
 
         card.addEventListener('click', (e) => {
-          if (e.target.closest('.modal-audition-btn')) return;
+          if (e.target.closest('.modal-audition-btn') || e.target.closest('.modal-fav-btn')) return;
           loadPatchIntoSynth(originalIndex, true);
           closePatchSelectorModal();
           document.getElementById('synth-section')?.scrollIntoView({ behavior: 'smooth' });
         });
+
+        const modalFavBtn = card.querySelector('.modal-fav-btn');
+        if (modalFavBtn) {
+          modalFavBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFavorite(patch.id);
+          });
+        }
 
         const auditionBtn = card.querySelector('.modal-audition-btn');
         if (auditionBtn) {
@@ -6837,10 +7218,39 @@ function initSongRecommender() {
       buildKeyboard();
       buildPianoRoll();
       loadSeqPreset('refinery');
+      initCollapsibleDrawers();
+      updateFavoritesUI();
       renderPatchDirectory('all', 'all', '');
       updateChassisUI(patchData[1]);
       currentPatchIndex = 1;
       initSongRecommender();
+
+      // LCD Favorite Toggle Button
+      const lcdFavBtn = document.getElementById('lcd-fav-toggle-btn');
+      if (lcdFavBtn) {
+        lcdFavBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const p = patchData[currentPatchIndex];
+          if (p) toggleFavorite(p.id);
+        });
+      }
+
+      // Quick Nav & Favorites Filter Triggers
+      function activateFavoritesFilter() {
+        const favTab = document.getElementById('favorites-tab-btn');
+        if (favTab) {
+          favTab.click();
+          document.getElementById('manual-section')?.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+      document.getElementById('nav-fav-filter-btn')?.addEventListener('click', activateFavoritesFilter);
+      document.getElementById('mobile-header-fav-btn')?.addEventListener('click', activateFavoritesFilter);
+      document.getElementById('dock-fav-patches-btn')?.addEventListener('click', activateFavoritesFilter);
+      document.getElementById('dock-all-patches-btn')?.addEventListener('click', () => {
+        const allTab = document.querySelector('.filter-tab[data-category="all"]');
+        if (allTab) allTab.click();
+        document.getElementById('manual-section')?.scrollIntoView({ behavior: 'smooth' });
+      });
 
       // Lane Filter Tabs
       document.querySelectorAll('.filter-tab').forEach(tab => {
@@ -7128,6 +7538,30 @@ function initSongRecommender() {
 
     });
   </script>
+
+  <!-- Floating Mobile Quick-Nav Dock (Visible on mobile/tablet) -->
+  <nav id="mobile-dock" class="lg:hidden fixed bottom-3 left-3 right-3 z-40 bg-[#0a0d14]/95 backdrop-blur-xl border border-brand-border/90 rounded-2xl px-2 py-2 shadow-2xl shadow-black/90 flex items-center justify-around select-none">
+    <a href="#synth-section" class="flex flex-col items-center gap-0.5 text-[10px] font-mono text-slate-400 hover:text-brand-cyan active:text-brand-cyan transition-colors px-2 py-1">
+      <span class="text-base leading-none">🎹</span>
+      <span class="tracking-tight">Synth</span>
+    </a>
+    <a href="#recommender-section" class="flex flex-col items-center gap-0.5 text-[10px] font-mono text-slate-400 hover:text-brand-cyan active:text-brand-cyan transition-colors px-2 py-1">
+      <span class="text-base leading-none">🔍</span>
+      <span class="tracking-tight">Songs</span>
+    </a>
+    <a href="#manual-section" id="dock-all-patches-btn" class="flex flex-col items-center gap-0.5 text-[10px] font-mono text-slate-400 hover:text-brand-cyan active:text-brand-cyan transition-colors px-2 py-1">
+      <span class="text-base leading-none">🗂️</span>
+      <span class="tracking-tight">Patches</span>
+    </a>
+    <button id="dock-fav-patches-btn" class="flex flex-col items-center gap-0.5 text-[10px] font-mono text-amber-400 hover:text-amber-300 active:text-amber-300 transition-colors px-2 py-1 cursor-pointer">
+      <span class="text-base leading-none">★</span>
+      <span class="tracking-tight font-bold">Favs (<span class="fav-count-display">0</span>)</span>
+    </button>
+    <a href="#download-section" class="flex flex-col items-center gap-0.5 text-[10px] font-mono text-slate-400 hover:text-brand-cyan active:text-brand-cyan transition-colors px-2 py-1">
+      <span class="text-base leading-none">📖</span>
+      <span class="tracking-tight">Guide</span>
+    </a>
+  </nav>
 
 </body>
 </html>
