@@ -17,7 +17,7 @@ const bank = fs.readFileSync(bankPath);
 for(const spec of specs) {
  const data=Buffer.from(fs.readFileSync(new URL('patches/01_Sanctuary_Sub.syx',root)));
  data[7]=0;data[8]=Number(spec.slot);data.fill(32,137,153);data.write(spec.name,137,'ascii');
- const cc={mixer_osc_1_level:0,mixer_osc_2_level:0,mixer_sub_osc_level:0,mixer_noise_level:0,mixer_ring_mod_level:0,mixer_external_signal_level:180,filter_type:0,filter_shape:0,filter_slope:0,filter_mod_env_depth:64,velocity_amp_env:64,velocity_mod_env:64,amp_env_attack:0,amp_env_decay:0,amp_env_sustain:127,amp_env_release:8,mod_env_attack:0,mod_env_decay:0,mod_env_sustain:0,mod_env_release:0,arp_on:0,arp_latch:0,lfo2_wave:0,lfo2_delay:0,vca_limit:0,...spec.cc};
+ const cc={mixer_osc_1_level:0,mixer_osc_2_level:0,mixer_sub_osc_level:0,mixer_noise_level:0,mixer_ring_mod_level:0,mixer_external_signal_level:180,filter_type:0,filter_shape:0,filter_slope:0,filter_mod_env_depth:64,velocity_amp_env:64,velocity_mod_env:64,amp_env_attack:0,amp_env_decay:0,amp_env_sustain:127,amp_env_release:8,mod_env_attack:0,mod_env_decay:0,mod_env_sustain:0,mod_env_release:0,arp_on:0,arp_latch:1,lfo2_wave:0,lfo2_delay:0,vca_limit:0,...spec.cc};
  for(const [key,value] of Object.entries(cc)) set(data,control[control_id[key]],value);
  const np={lfo2_speed_sync:0,lfo2_key_sync:0,lfo2_slew:0,aftertouch_lfo2_speed:64,filter_tracking:0,paraphonic:0,amp_env_triggering:0,amp_env_retriggering:0,mod_env_retriggering:0,mod_wheel_filter_freq:88,aftertouch_filter_freq:64,mod_wheel_lfo2_filter_freq:64};
  for(const [key,value] of Object.entries(np)) set(data,nrpn[nrpn_id[key]],value);

@@ -6,10 +6,10 @@ Twelve hardware patches for electric bass through the Bass Station II EXT IN. Or
 
 1. Connect your bass or buffered pedal/preamp output to EXT IN; take LINE OUTPUT to your amp or interface.
 2. Begin with low output volume. Function + upper B adjusts global Input Gain. Start at 0 dB and adjust for the bass/preamp; this is not a per-patch setting.
-3. Select a patch below. Hold a keyboard key to open the VCA. For hands-free playing, hold a sustain pedal down, tap and release a key, and keep the pedal down. Releasing the pedal closes the gate. Repeat after changing patches if needed.
+3. Select a patch below. Latch is saved ON with the arpeggiator OFF. Tap and release a key once to open the amp envelope for hands-free playing. Turn Latch off to close the gate. Tap a key again after changing patches if needed. The held note itself is not stored in the patch.
 4. Adjust cutoff for brightness; mod wheel opens the filter further. Motion patches use free-running LFO 2; adjust its Speed by ear.
 
-All internal mixer sources are muted, external level is 180/255, amp sustain is full, keyboard velocity does not change amp level, keyboard filter tracking is off, and the arpeggiator is off. This preserves your played bass articulation while processing its tone. LFO modulation is independent of bass plucks; these are not envelope-following auto-wahs. These patches do not add pitch tracking, delay or reverb.
+All internal mixer sources are muted, external level is 180/255, amp sustain is full, keyboard velocity does not change amp level, keyboard filter tracking is off, Latch is on, and the arpeggiator is off. This preserves your played bass articulation while processing its tone. LFO modulation is independent of bass plucks; these are not envelope-following auto-wahs. These patches do not add pitch tracking, delay or reverb.
 
 Hardware audition with your bass is still needed to tune gain, loudness and the useful cutoff range. No rendered synth WAV is presented as an external-bass demonstration.
 
@@ -39,3 +39,5 @@ Back up the destination slots before importing. Use the individual files or `pat
 [Novation: mixer, amp envelopes and global input gain](https://userguides.novationmusic.com/hc/en-gb/articles/25494313827986-Bass-Station-II-in-detail).
 
 `npm run verify:bass-through` decodes the twelve patches, checks muted internal sources, enabled external input, full sustained gate, modulation values, bank agreement and song recommendation integration. `npm run verify:balance` checks the original hardware balance revision remains intact.
+
+[Novation: hands-free external input using Latch](https://support.novationmusic.com/hc/en-gb/articles/206862179-How-to-use-Ext-In-on-the-Bass-Station-II).
