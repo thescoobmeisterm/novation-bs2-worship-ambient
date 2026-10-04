@@ -4,7 +4,7 @@ The collection now contains **60 patches**: the original 48 synth sounds plus th
 
 # Novation Bass Station II — Worship, Ambient, Post-Rock & Electronic Patch Collection
 
-A complete, church-tested collection of **48 custom analog patches** arranged across **7 distinct sonic pillars** for the **Novation Bass Station II**, accompanied by an interactive in-browser sound manual, virtual Web Audio synthesizer emulator, and smart Christian worship song recommender.
+A collection of **48 synth patches and 12 external-bass processing patches** arranged across **four sound lanes** for the **Novation Bass Station II**, accompanied by an interactive in-browser sound manual, virtual Web Audio synthesizer emulator, and smart Christian worship song recommender.
 
 Created with love for **Refinery Creative** / **The Refinery Church** ([https://www.refineryohio.com/](https://www.refineryohio.com/)) and the global analog synthesizer community.
 
