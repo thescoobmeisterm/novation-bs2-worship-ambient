@@ -4,7 +4,9 @@
   "description": "Post-Rock, Ambient, and Worship Patches for Novation Bass Station II",
   "type": "module",
   "scripts": {
-    "build": "node tools/generate_patches.js",
-    "verify": "node tools/verify_patches.js"
+    "build": "node tools/generate_patches.js && node tools/generate_bass_through.js",
+    "verify": "node tools/verify_patches.js",
+    "verify:balance": "node tools/verify_hardware_balance.js",
+    "verify:bass-through": "node tools/verify_bass_through.js"
   }
 }

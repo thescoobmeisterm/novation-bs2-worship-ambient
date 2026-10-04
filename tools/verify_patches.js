@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 const patchesDir = path.resolve(__dirname, '..', 'patches');
 
 console.log('====================================================');
-console.log('   BASS STATION II COMPLETE 48-PATCH VERIFICATION   ');
+console.log('   BASS STATION II COMPLETE 60-PATCH VERIFICATION   ');
 console.log('====================================================\n');
 
 const files = fs.readdirSync(patchesDir).filter(f => f.endsWith('.syx') && !f.includes('Bank'));
@@ -66,12 +66,14 @@ if (bankBuf.length !== 19712) {
 }
 console.log(`✓ Bank size exact match: 19712 bytes (128 patches * 154 bytes)`);
 
-for (let i = 0; i < 48; i++) {
+for (let i = 0; i < 60; i++) {
     const slot = bankBuf.subarray(i * 154, (i + 1) * 154);
     const slotName = String.fromCharCode(...slot.subarray(137, 153)).trim();
     console.log(`✓ Bank Slot ${String(i).padStart(3, '0')}: "${slotName}"`);
 }
 
 console.log('\n====================================================');
-console.log('       ALL 48 SEQUENTIAL PATCH CHECKS PASSED!        ');
+console.log('       ALL 60 SEQUENTIAL PATCH CHECKS PASSED!        ');
 console.log('====================================================\n');
+
+if (failCount) process.exit(1);

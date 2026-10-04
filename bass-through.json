@@ -1,0 +1,374 @@
+[
+  {
+    "id": "49",
+    "slot": "048",
+    "name": "Sanctuary Thru",
+    "file": "49_Sanctuary_Thru.syx",
+    "category": "worship",
+    "categoryLabel": "1. Worship Foundation",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "worship",
+      "steady"
+    ],
+    "soundDescription": "Warm, open low-pass body for supportive fingerstyle bass.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Goodness of God; The Blessing; King of Kings",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 160,
+      "filter_resonance": 10,
+      "filter_overdrive": 8,
+      "fx_distortion": 0,
+      "filter_lfo2_depth": 128,
+      "lfo2_speed": 18
+    }
+  },
+  {
+    "id": "50",
+    "slot": "049",
+    "name": "Refinery Grit",
+    "file": "50_Refinery_Grit.syx",
+    "category": "worship",
+    "categoryLabel": "1. Worship Foundation",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "worship",
+      "steady"
+    ],
+    "soundDescription": "Rounded edge and restrained drive for full-band praise.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Graves Into Gardens; Lion and the Lamb; Glorious Day",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 135,
+      "filter_resonance": 16,
+      "filter_overdrive": 36,
+      "fx_distortion": 8,
+      "filter_lfo2_depth": 128,
+      "lfo2_speed": 18
+    }
+  },
+  {
+    "id": "51",
+    "slot": "050",
+    "name": "Prayer Motion",
+    "file": "51_Prayer_Motion.syx",
+    "category": "worship",
+    "categoryLabel": "1. Worship Foundation",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "worship",
+      "motion"
+    ],
+    "soundDescription": "Gentle slow filter movement under spacious prayer sections.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Worthy of It All; Build My Life; Holy Forever",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 115,
+      "filter_resonance": 20,
+      "filter_overdrive": 12,
+      "fx_distortion": 0,
+      "filter_lfo2_depth": 140,
+      "lfo2_speed": 16
+    }
+  },
+  {
+    "id": "52",
+    "slot": "051",
+    "name": "Monolith Thru",
+    "file": "52_Monolith_Thru.syx",
+    "category": "postrock",
+    "categoryLabel": "2. Post-Rock",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "postrock",
+      "steady"
+    ],
+    "soundDescription": "Thick low-pass distortion for sustained post-rock bass lines.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "RATTLE!; Graves Into Gardens; Do It Again",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 130,
+      "filter_resonance": 18,
+      "filter_overdrive": 70,
+      "fx_distortion": 22,
+      "filter_lfo2_depth": 128,
+      "lfo2_speed": 18
+    }
+  },
+  {
+    "id": "53",
+    "slot": "052",
+    "name": "Crescendo Thru",
+    "file": "53_Crescendo_Thru.syx",
+    "category": "postrock",
+    "categoryLabel": "2. Post-Rock",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "postrock",
+      "steady"
+    ],
+    "soundDescription": "Dark drive with a broad mod-wheel opening for crescendos.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Oceans; So Will I; Another In The Fire",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 100,
+      "filter_resonance": 26,
+      "filter_overdrive": 42,
+      "fx_distortion": 10,
+      "filter_lfo2_depth": 128,
+      "lfo2_speed": 18
+    }
+  },
+  {
+    "id": "54",
+    "slot": "053",
+    "name": "Shoegaze Tide",
+    "file": "54_Shoegaze_Tide.syx",
+    "category": "postrock",
+    "categoryLabel": "2. Post-Rock",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "postrock",
+      "motion"
+    ],
+    "soundDescription": "Slow resonant movement through a gritty bass texture.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Touch of Heaven; With Everything; Hosanna",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 125,
+      "filter_resonance": 28,
+      "filter_overdrive": 48,
+      "fx_distortion": 14,
+      "filter_lfo2_depth": 150,
+      "lfo2_speed": 24
+    }
+  },
+  {
+    "id": "55",
+    "slot": "054",
+    "name": "Velvet Thru",
+    "file": "55_Velvet_Thru.syx",
+    "category": "ambient",
+    "categoryLabel": "3. Ambient",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "ambient",
+      "steady"
+    ],
+    "soundDescription": "Softened upper harmonics with stable bass fundamentals.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Peace; Goodness of God; The Blessing",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 100,
+      "filter_resonance": 12,
+      "filter_overdrive": 6,
+      "fx_distortion": 0,
+      "filter_lfo2_depth": 128,
+      "lfo2_speed": 18
+    }
+  },
+  {
+    "id": "56",
+    "slot": "055",
+    "name": "Aurora Thru",
+    "file": "56_Aurora_Thru.syx",
+    "category": "ambient",
+    "categoryLabel": "3. Ambient",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "ambient",
+      "motion"
+    ],
+    "soundDescription": "Slow triangle filter sweeps for evolving ambient bass.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Another In The Fire; Oceans; So Will I",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 120,
+      "filter_resonance": 28,
+      "filter_overdrive": 10,
+      "fx_distortion": 0,
+      "filter_lfo2_depth": 148,
+      "lfo2_speed": 14
+    }
+  },
+  {
+    "id": "57",
+    "slot": "056",
+    "name": "Orbit Thru",
+    "file": "57_Orbit_Thru.syx",
+    "category": "ambient",
+    "categoryLabel": "3. Ambient",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "ambient",
+      "motion"
+    ],
+    "soundDescription": "A more audible cyclical filter sweep for spacious repeating lines.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Rest On Us; Build My Life; Holy Spirit",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 135,
+      "filter_resonance": 34,
+      "filter_overdrive": 14,
+      "fx_distortion": 2,
+      "filter_lfo2_depth": 154,
+      "lfo2_speed": 29
+    }
+  },
+  {
+    "id": "58",
+    "slot": "057",
+    "name": "Pocket Thru",
+    "file": "58_Pocket_Thru.syx",
+    "category": "funk",
+    "categoryLabel": "4. Funk & Gospel",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "funk",
+      "steady"
+    ],
+    "soundDescription": "Open, lightly driven bass for articulate gospel runs.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Every Praise; Old Church Choir; House of the Lord",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 175,
+      "filter_resonance": 14,
+      "filter_overdrive": 18,
+      "fx_distortion": 2,
+      "filter_lfo2_depth": 128,
+      "lfo2_speed": 18
+    }
+  },
+  {
+    "id": "59",
+    "slot": "058",
+    "name": "Wah Current",
+    "file": "59_Wah_Current.syx",
+    "category": "funk",
+    "categoryLabel": "4. Funk & Gospel",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "funk",
+      "motion"
+    ],
+    "soundDescription": "Continuous LFO wah; follows its own cycle, not your picking dynamics.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Sunday Sermons; Every Praise; Sing Wherever I Go",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 130,
+      "filter_resonance": 48,
+      "filter_overdrive": 22,
+      "fx_distortion": 3,
+      "filter_lfo2_depth": 168,
+      "lfo2_speed": 55
+    }
+  },
+  {
+    "id": "60",
+    "slot": "059",
+    "name": "Disco Sweep",
+    "file": "60_Disco_Sweep.syx",
+    "category": "funk",
+    "categoryLabel": "4. Funk & Gospel",
+    "badgeColor": "teal",
+    "isArp": false,
+    "externalInput": true,
+    "tags": [
+      "bass-through",
+      "ext-in",
+      "funk",
+      "motion"
+    ],
+    "soundDescription": "Brisk repeating filter motion with a firm driven bass core.",
+    "inspiration": "External bass through the Bass Station II analog filter and drive.",
+    "songs": "Wake; Real Love; Look To The Son",
+    "controls": "Hold a key, or hold sustain then tap a key. Mod wheel opens cutoff. Set global Input Gain for your bass.",
+    "sample": null,
+    "synthParams": null,
+    "cc": {
+      "filter_frequency": 155,
+      "filter_resonance": 34,
+      "filter_overdrive": 32,
+      "fx_distortion": 6,
+      "filter_lfo2_depth": 154,
+      "lfo2_speed": 66
+    }
+  }
+]

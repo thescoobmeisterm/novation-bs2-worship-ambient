@@ -5,6 +5,7 @@ import sysex from './sysex.js';
 import { control, control_id } from './cc.js';
 import { nrpn, nrpn_id } from './nrpn.js';
 import meta from './meta.js';
+import { reviseHardwarePatch } from './hardware_balance.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,11 +21,11 @@ function os_mkdir(dir) {
 }
 
 // User original service dumps
-const baileyPath = 'C:\\Users\\dvgpr\\Downloads\\Bailey Special.syx';
-const heavenPath = 'C:\\Users\\dvgpr\\Downloads\\Heaven.syx';
+const baileyPath = process.env.BS2_BAILEY_REFERENCE || path.join(patchesDir, '02_Refinery_Special.syx');
+const heavenPath = process.env.BS2_HEAVEN_REFERENCE || path.join(patchesDir, '07_Anthem_Drive_Arp.syx');
 
 if (!fs.existsSync(baileyPath) || !fs.existsSync(heavenPath)) {
-    throw new Error('Original reference patches not found in Downloads');
+    throw new Error('Reference patches missing; set BS2_BAILEY_REFERENCE and BS2_HEAVEN_REFERENCE');
 }
 
 const baileyTemplate = fs.readFileSync(baileyPath);
@@ -1286,6 +1287,7 @@ for (const spec of patchSpecs) {
         buf = builder.getBuffer();
     }
 
+    buf = reviseHardwarePatch(buf);
     const filePath = path.join(patchesDir, spec.filename);
     fs.writeFileSync(filePath, buf);
     console.log(`✓ [Slot ${String(spec.slot).padStart(3, '0')}] Created: ${spec.filename.padEnd(25)} | "${spec.name}"`);

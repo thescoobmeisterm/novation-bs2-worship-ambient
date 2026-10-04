@@ -1,3 +1,7 @@
+# New: 12 bass-through patches · slots 048–059
+
+The collection now contains **60 patches**: the original 48 synth sounds plus three external-bass voicings per lane. See [Bass-through setup, patch list and song suggestions](BASS_THROUGH_GUIDE.md). Original slots remain unchanged. The full master bank contains 128 slots; use the collection-only download to avoid replacing other sounds.
+
 # Novation Bass Station II — Worship, Ambient, Post-Rock & Electronic Patch Collection
 
 A complete, church-tested collection of **48 custom analog patches** arranged across **7 distinct sonic pillars** for the **Novation Bass Station II**, accompanied by an interactive in-browser sound manual, virtual Web Audio synthesizer emulator, and smart Christian worship song recommender.
